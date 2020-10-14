@@ -1,0 +1,316 @@
+<head>
+<meta charset="utf-8" />
+<title>Rocket Elevators</title>
+<meta name="description" content="" />
+<meta name="Author" content="Louis Marmen [Mermaid]" />
+
+<!-- mobile settings -->
+<meta
+  name="viewport"
+  content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0"/>
+
+
+<!-- WEB FONTS : use %7C instead of | (pipe) -->
+<link
+  href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
+  rel="stylesheet"
+  type="text/css"/>
+
+<!-- CORE CSS -->
+<link
+  href="assets/plugins/bootstrap/css/bootstrap.min.css"
+  rel="stylesheet"
+  type="text/css"/>
+
+<!-- REVOLUTION SLIDER -->
+<link
+  href="assets/plugins/slider.revolution/css/extralayers.css"
+  rel="stylesheet"
+  type="text/css"/>
+<link
+  href="assets/plugins/slider.revolution/css/settings.css"
+  rel="stylesheet"
+  type="text/css"/>
+
+<!-- THEME CSS -->
+<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+
+<!-- PAGE LEVEL SCRIPTS -->
+<link href="assets/css/header-2.css" rel="stylesheet" type="text/css" />
+<link
+  href="assets/css/color_scheme/blue.css"
+  rel="stylesheet"
+  type="text/css"
+  id="color_scheme"/>
+</head>
+
+
+
+
+
+
+<!-- Building Type Selection -->
+<br>
+<div class="heading-title heading-dotted text-center">
+  <h2>Quote Form</h2>
+</div>
+<center>
+      <label for="buildingtype"><strong>Select the Building Type</strong></label>
+      <select id="selectator">
+          <option value="select">Select an Option</option>
+          <option value="residential">Residential</option>
+          <option value="commercial">Commercial</option>
+          <option value="corporate">Corporate</option>
+          <option value="hybrid">Hybrid</option>
+  </select>
+  <br>
+</center>
+
+<!-- Residential -->
+ 
+  <div id="residential" class="building_type" onkeyup= "residentialcalculator()">
+    <br><br>
+    <div class="heading-title heading-dotted text-center">
+      <h2>Residential Building Form</h2>
+    </div>
+    
+<div class="row">
+    <div class="col-md-4">
+      <center>
+      <label for="building-appartments"><strong>How many appartments are in the building?</strong>
+      </label>
+      <input required type="number" id="res1"></center>
+      </div>
+      <div class="col-md-4">
+        <center>
+      <label for="building-stories"><strong>How many stories are in the building?</strong>
+      </label>
+      <input required type="number" id="res2"></center>
+    </div>
+    <div class="col-md-4">
+      <center>
+      <label for="building-basements"><strong>How many basements in the building?</strong>
+      </label>
+      <input required type="number" id="res3"></center>
+    </div><br><br>
+ </div>
+</div>
+
+
+<!-- Commercial -->
+
+<div id="commercial" class="building_type" onkeyup= "commercialcalculator()">
+  <br><br>
+  <div class="heading-title heading-dotted text-center">
+    <h2>Commercial Building Form</h2>
+  </div>
+  
+<div class="row">
+  <div class="col-md-4">
+    <center>
+    <label for="building-units"><strong>How many commercial units are in the building?</strong>
+    </label>
+    <input required type="number" id="com1"></center>
+    </div>
+    <div class="col-md-4">
+      <center>
+    <label for="building-stories"><strong>How many stories are in the building?</strong>
+    </label>
+    <input required type="number" id="com2"></center>
+  </div>
+  <div class="col-md-4">
+    <center>
+    <label for="building-basements"><strong>How many basements in the building?</strong>
+    </label>
+    <input required type="number" id="com3"></center>
+  </div><br><br>
+</div>
+<div class="row">
+<div class="col-md-4">
+  <center>
+<label for="building-parkings"><strong>How many parking lots are in the building?</strong>
+</label>
+<input required type="number" id="com4"></center>
+</div>
+<div class="col-md-4">
+<center>
+<label for="building-shafts"><strong>How many elevator shafts is needed the building?</strong>
+</label>
+<input required type="number" id="com5"></center>
+</div><br><br>
+
+
+</div>
+</div>
+
+<!-- Corporate-->
+
+<div id="corporate" class="building_type" onkeyup= "corporatecalculator()">
+  <br><br>
+  <div class="heading-title heading-dotted text-center">
+    <h2>Corporate Building Form</h2>
+  </div>
+  
+<div class="row">
+  <div class="col-md-4">
+    <center>
+    <label for="building-businesses"><strong>How many businesses are in the building?</strong>
+    </label>
+    <input required type="number" id="cor1"></center>
+    </div>
+    <div class="col-md-4">
+      <center>
+    <label for="building-stories"><strong>How many stories are in the building?</strong>
+    </label>
+    <input required type="number" id="cor2"></center>
+  </div>
+  <div class="col-md-4">
+    <center>
+    <label for="building-basements"><strong>How many basements in the building?</strong>
+    </label>
+    <input required type="number" id="cor3"></center>
+  </div><br><br>
+</div>
+<div class="row">
+<div class="col-md-4">
+  <center>
+<label for="building-parkings"><strong>How many parking lots are in the building?</strong>
+</label>
+<input required type="number" id="cor4"></center>
+</div>
+<div class="col-md-4">
+<center>
+<label for="building-occupants"><strong>What is the maximum number of occupants per stories</strong>
+</label>
+<input required type="number" id="cor5"></center>
+</div><br><br>
+
+
+</div>
+</div>
+
+<!-- Hybrid -->
+
+<div id="hybrid" class="building_type" onkeyup= "hybridcalculator()">
+  <br><br>
+  <div class="heading-title heading-dotted text-center">
+    <h2>Hybrid Building Form</h2>
+  </div>
+  
+<div class="row">
+  <div class="col-md-4">
+    <center>
+    <label for="building-units"><strong>How many commercial units are in the building?</strong>
+    </label>
+    <input required type="number" id="hyb1"></center>
+    </div>
+    <div class="col-md-4">
+      <center>
+    <label for="building-stories"><strong>How many stories are in the building?</strong>
+    </label>
+    <input required type="number" id="hyb2"></center>
+  </div>
+  <div class="col-md-4">
+    <center>
+    <label for="building-basements"><strong>How many basements in the building?</strong>
+    </label>
+    <input required type="number" id="hyb3"></center>
+  </div><br><br>
+</div>
+<div class="row">
+<div class="col-md-4">
+  <center>
+<label for="building-parkings"><strong>How many parking lots are in the building?</strong>
+</label>
+<input required type="number" id="hyb4"></center>
+</div>
+<div class="col-md-4">
+<center>
+<label for="building-occupants"><strong>What is the maximum number of occupants per stories</strong>
+</label>
+<input required type="number" id="hyb5"></center>
+</div>
+<div class="col-md-4">
+<center>
+<label for="building-time"><strong>What is the buildings daily operational time?</strong>
+</label>
+<input type="number" size=10 name="onlynumbers" min="0" max="24" id="hyb6" ></label></center>
+</div>
+
+
+</div>
+</div>
+<br><br>
+
+<!--Shafts Needed-->
+
+<div class="heading-title heading-dotted text-center">
+<h2>Elevator Shafts Needed</h2>
+</div>
+<center>
+<label for="shaftsneeded"><strong>Number of Elevator Shafts needed:</strong></label>
+<input readonly type="text" id="numberneeded"/>
+
+</center>
+<br><br>
+ <!--Installation Selector--> 
+
+<div class="heading-title heading-dotted text-center">
+<h2>Select the Package</h2>
+</div>
+
+<center>
+<div>
+ 
+<input id= "stan" type="radio" onchange="pricecalculator()" value="standard" name="gender"> <strong>Standard</strong><br>
+<br>
+
+<input id= "premium" type="radio" onchange="pricecalculator()" value="standard" name="gender">  <strong>Premium</strong><br>
+<br>
+
+<input id= "excelium" type="radio" onchange="pricecalculator()" value="standard" name="gender">  <strong>Excelium</strong><br>
+<br>
+</div>
+<br>
+<div class="heading-title heading-dotted text-center">
+  <h2>Pricing</h2>
+</div>
+<label><strong>Elevators (CAD$) </strong></label>
+<input readonly type="text" id="elevatortotal"><br>
+<br>
+<label><strong>Installation Fee (CAD$)</strong></label>
+<input readonly type="text" id="servicetotal"><br>
+<br>
+<label><strong>Total Price (CAD$)</strong></label>
+<input readonly type="text" id="totalprice">
+</center>   
+<br><br>
+
+
+<button class="btn btn-green btn-lg" type= 'submit'>SUBMIT QUOTE</button>
+
+
+
+
+
+
+
+<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+        <script src="assets\js\form.js"></script>
+
+<!-- JAVASCRIPT FILES -->
+<script>
+  var plugin_path = "assets/plugins/";
+</script>
+<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+
+<script src="assets/js/scripts.js"></script>
+
+<!-- REVOLUTION SLIDER -->
+<script src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
+<script src="assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
+<script src="assets/js/view/demo.revolution_slider.js"></script>
+
+<!-- PAGELEVEL SCRIPTS -->
+<script src="assets/js/contact.js"></script>
