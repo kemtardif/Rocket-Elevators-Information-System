@@ -11,35 +11,35 @@ class QuotesController < ApplicationController
       
           buildingType = params['buildingType']
       
-          # residentialApartmentNumbers = params['ResidentialApartmentNumbers']
-          # residentialNumberofFloors = params['ResidentialNumberOfFloors']
-          # residentialNumberOfBasements = params['ResidentialNumberOfBasements']
+          residentialApartmentNumbers = params['ResidentialApartmentNumbers']
+          residentialNumberofFloors = params['ResidentialNumberOfFloors']
+          residentialNumberOfBasements = params['ResidentialNumberOfBasements']
       
-          # commercialNumberOfFloors = params['CommercialNumberOfFloors']
-          # commercialNumberOfStores = params['CommercialNumberOfStores']
-          # commercialNumberOfBasements = params['CommercialNumberOfBasements']
-          # commercialNumberCages = params['CommercialNumberCages']
-          # commercialParkingLevels = params['CommercialParkingLevels']
+          commercialNumberOfFloors = params['CommercialNumberOfFloors']
+          commercialNumberOfStores = params['CommercialNumberOfStores']
+          commercialNumberOfBasements = params['CommercialNumberOfBasements']
+          commercialNumberCages = params['CommercialNumberCages']
+          commercialParkingLevels = params['CommercialParkingLevels']
       
-          # corporateNumberOfCompanies = params['CorporateNumberOfCompanies']
-          # corporateNumberOfFloors = params['CorporateNumberOfFloors']
-          # corporateNumberOfBasements = params['CorporateNumberOfBasements']
-          # corporateParkingLevels = params['CorporateParkingLevels']
-          # corporateOccupantsPerFloor =params['CorporateOccupantsPerFloor']
+          corporateNumberOfCompanies = params['CorporateNumberOfCompanies']
+          corporateNumberOfFloors = params['CorporateNumberOfFloors']
+          corporateNumberOfBasements = params['CorporateNumberOfBasements']
+          corporateParkingLevels = params['CorporateParkingLevels']
+          corporateOccupantsPerFloor =params['CorporateOccupantsPerFloor']
       
-          # hybridNumberOfStores = params['HybridNumberOfStores']
-          # hybridNumberOfFloors = params['HybridNumberOfFloors']
-          # hybridNumberOfBasements = params['HybridNumberOfBasements']
-          # hybridParkingLevels = params['HybridParkingLevels']
-          # hybridOccupantsPerFloor = params['HybridOccupantsPerFloor']
+          hybridNumberOfStores = params['HybridNumberOfStores']
+          hybridNumberOfFloors = params['HybridNumberOfFloors']
+          hybridNumberOfBasements = params['HybridNumberOfBasements']
+          hybridParkingLevels = params['HybridParkingLevels']
+          hybridOccupantsPerFloor = params['HybridOccupantsPerFloor']
           
       
-          # estCagesNeeded = params['estimatedCagesNeeded']
-          # packageSelection = params['packageSelection']
+          estCagesNeeded = params['estimatedCagesNeeded']
+          packageSelection = params['packageSelection']
    
-          # elevatorPrice = params['elevatorPrice']
-          # installationCost =params['installationCost']
-          # totalPrice = params['totalPrice']
+          elevatorPrice = params['elevatorPrice']
+          installationCost =params['installationCost']
+          totalPrice = params['totalPrice']
       
       
           
@@ -50,16 +50,16 @@ class QuotesController < ApplicationController
           @quote.buildingType = buildingType
       
           if buildingType == 'residential'
-            # @quote.apartmentNumbers = residentialApartmentNumbers
-            # @quote.numberOfFloors = residentialNumberOfFloors
-            # @quote.numberOfBasements = residentialNumberOfBasements
+            @quote.apartmentNumbers = residentialApartmentNumbers
+            @quote.numberOfFloors = residentialNumberofFloors
+            @quote.numberOfBasements = residentialNumberOfBasements
       
-            # @quote.estimatedCagesNeeded = estCagesNeeded
-            # @quote.packageSelection = packageSelection
+            @quote.estimatedCagesNeeded = estCagesNeeded
+            @quote.packageSelection = packageSelection
           
-            # @quote.elevatorPrice = elevatorPrice
-            # @quote.installationCost = installationCost
-            # @quote.total_price = totalPrice
+            @quote.elevatorPrice = elevatorPrice
+            @quote.installationCost = installationCost
+            @quote.totalPrice = totalPrice
        
       
             @quote.save!
@@ -67,18 +67,18 @@ class QuotesController < ApplicationController
           end
       
           if buildingType == 'commercial'
-            # @quote.numberOfFloors = commercialNumberOfFloors
-            # @quote.numberOfStores = commercialNumberOfStores
-            # @quote.numberOfBasements = commercialNumberOfBasements
-            # @quote.numberCages = commercialnumberCages
-            # @quote.parkingLevels = commercialParkingLevels
+            @quote.numberOfFloors = commercialNumberOfFloors
+            @quote.numberOfStores = commercialNumberOfStores
+            @quote.numberOfBasements = commercialNumberOfBasements
+            @quote.numberCages = commercialNumberCages
+            @quote.parkingLevels = commercialParkingLevels
       
-            # @quote.estimatedCagesNeeded = estCagesNeeded
-            # @quote.packageSelection = packageSelection
+            @quote.estimatedCagesNeeded = estCagesNeeded
+            @quote.packageSelection = packageSelection
            
-            # @quote.elevatorPrice = elevatorPrice
-            # @quote.installationCost = installationCost
-            # @quote.totalPrice = totalPrice
+            @quote.elevatorPrice = elevatorPrice
+            @quote.installationCost = installationCost
+            @quote.totalPrice = totalPrice
          
       
             @quote.save!
@@ -86,18 +86,18 @@ class QuotesController < ApplicationController
           end
       
           if buildingType == 'corporate'
-            # @quote.companies_number = corporateCompanieNumber
-            # @quote.numberOfFloors = corporateNumberOfFloors
-            # @quote.numberOfBasements = corporateNumberOfBasements
-            # @quote.parkingLevels = corporateParkingLevels
-            # @quote.occupantsPerFloor = corporateOccupantsPerFloor
+            @quote.numberOfCompanies = corporateNumberOfCompanies
+            @quote.numberOfFloors = corporateNumberOfFloors
+            @quote.numberOfBasements = corporateNumberOfBasements
+            @quote.parkingLevels = corporateParkingLevels
+            @quote.occupantsPerFloor = corporateOccupantsPerFloor
       
-            # @quote.estimate_cage_number = estCageNumber
-            # @quote.packageSelection = packageSelection
+            @quote.estimatedCagesNeeded = estCagesNeeded
+            @quote.packageSelection = packageSelection
          
-            # @quote.elevatorPrice = elevatorPrice
-            # @quote.installationCost = installationCost
-            # @quote.totalPrice = totalPrice
+            @quote.elevatorPrice = elevatorPrice
+            @quote.installationCost = installationCost
+            @quote.totalPrice = totalPrice
             
             
             @quote.save!
@@ -105,19 +105,19 @@ class QuotesController < ApplicationController
           end
       
           if buildingType == 'hybrid'
-            # @quote.numberOfStores = hybridNumberOfStores
-            # @quote.numberOfFloors = hybridNumberOfFloors
-            # @quote.numberOfBasements = hybridNumberOfBasements
-            # @quote.parkingLevels = hybridParkingLevels
-            # @quote.occupantsPerFloor = hybridOccupantsPerFloor
+            @quote.numberOfStores = hybridNumberOfStores
+            @quote.numberOfFloors = hybridNumberOfFloors
+            @quote.numberOfBasements = hybridNumberOfBasements
+            @quote.parkingLevels = hybridParkingLevels
+            @quote.occupantsPerFloor = hybridOccupantsPerFloor
         
       
-            # @quote.estimatedCagesNeeded = estCagesNeeded
-            # @quote.packageSelection = packageSelection
+            @quote.estimatedCagesNeeded = estCagesNeeded
+            @quote.packageSelection = packageSelection
         
-            # @quote.elevatorPrice = elevatorPrice
-            # @quote.installationCost = installationCost
-            # @quote.totalPrice = totalPrice
+            @quote.elevatorPrice = elevatorPrice
+            @quote.installationCost = installationCost
+            @quote.totalPrice = totalPrice
          
       
             @quote.save!
@@ -134,16 +134,14 @@ end
     # def save
     #     @quote.save
     #     respond_to do |format|
-    #         format.html { redirect_to @quote, notice: 'Quote created' }
-    #         format.json { render :show, status: :created, location: @quote }    
+    #     
     #     end
     # end
     
     # def delete
     #     @quote.delete
     #     respond_to do |format|
-    #        format.html { redirect_to quotes_url, notice: 'Quote deleted' }
-    #        format.json { head :no_content }
+    #   
     #     end
     # end
         
