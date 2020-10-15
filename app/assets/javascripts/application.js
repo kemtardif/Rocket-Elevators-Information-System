@@ -9,7 +9,7 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//= require jquery
+//= require plugins/jquery/jquery-3.3.1.min.js
 //= require bootstrap
 //= require bootstrap.min.js
 //= require rails-ujs

@@ -1238,7 +1238,7 @@
 
 		if(_container.length > 0) {
 
-			loadScript(plugin_path + 'owl-carousel/owl.carousel.min.js', function() {
+			loadScript(plugin_path + 'javascripts/plugins/owl-carousel/owl.carousel.js', function() {
 
 				_container.each(function() {
 
