@@ -44,6 +44,7 @@ class QuotesController < ApplicationController
       
           
       
+<<<<<<< HEAD
           @quote = Quote.new
           
       
@@ -146,5 +147,111 @@ end
     #        format.json { head :no_content }
     #     end
     # end
+=======
+          @quote = Quote.new(quote_params)
+          
+          @quote.userName = userName
+          @quote.buildingType = buildingType
+      
+          if typeOfBuilding == 'residential'
+            @quote.apartmentNumbers = residentialApartmentNumbers
+            @quote.numberOfFloors = residentialNumberOfFloors
+            @quote.numberOfBasements = residentialNumberOfBasements
+      
+            @quote.estimatedCagesNeeded = estCagesNeeded
+            @quote.packageSelection = packageSelection
+          
+            @quote.elevatorPrice = elevatorPrice
+            @quote.installationCost = installationCost
+            @quote.total_price = totalPrice
+       
+      
+            @quote.save!
+        
+          end
+      
+          if typeOfBuilding == 'commercial'
+            @quote.numberOfFloors = commercialNumberOfFloors
+            @quote.numberOfStores = commercialNumberOfStores
+            @quote.numberOfBasements = commercialNumberOfBasements
+            @quote.numberCages = commercialnumberCages
+            @quote.parkingLevels = commercialParkingLevels
+      
+            @quote.estimatedCagesNeeded = estCagesNeeded
+            @quote.packageSelection = packageSelection
+           
+            @quote.elevatorPrice = elevatorPrice
+            @quote.installationCost = installationCost
+            @quote.totalPrice = totalPrice
+         
+      
+            @quote.save!
+        
+          end
+      
+          if typeOfBuilding == 'corporate'
+            @quote.companies_number = corporateCompanieNumber
+            @quote.numberOfFloors = corporateNumberOfFloors
+            @quote.numberOfBasements = corporateNumberOfBasements
+            @quote.parkingLevels = corporateParkingLevels
+            @quote.occupantsPerFloor = corporateOccupantsPerFloor
+      
+            @quote.estimate_cage_number = estCageNumber
+            @quote.packageSelection = packageSelection
+         
+            @quote.elevatorPrice = elevatorPrice
+            @quote.installationCost = installationCost
+            @quote.totalPrice = totalPrice
+            
+            
+            @quote.save!
+          
+          end
+      
+          if typeOfBuilding == 'hybrid'
+            @quote.numberOfStores = hybridNumberOfStores
+            @quote.numberOfFloors = hybridNumberOfFloors
+            @quote.numberOfBasements = hybridNumberOfBasements
+            @quote.parkingLevels = hybridParkingLevels
+            @quote.occupantsPerFloor = hybridOccupantsPerFloor
+        
+      
+            @quote.estimatedCagesNeeded = estCagesNeeded
+            @quote.packageSelection = packageSelection
+        
+            @quote.elevatorPrice = elevatorPrice
+            @quote.installationCost = installationCost
+            @quote.totalPrice = totalPrice
+         
+      
+            @quote.save!
+
+          end
+      
+          if typeOfBuilding == nil
+            redirect_to quote_new_path
+          end
+        end  
+
+    def index
+        @quote = Quote.all
+    end  
+
+    def save
+        @quote.save
+        respond_to do |format|
+            format.html { redirect_to @quote, notice: 'Quote created' }
+            format.json { render :show, status: :created, location: @quote }    
+        end
+    end
+    
+    def delete
+        @quote.delete
+        respond_to do |format|
+           format.html { redirect_to quotes_url, notice: 'Quote deleted' }
+           format.json { head :no_content }
+        end
+    end
+>>>>>>> 9450947102939af177b97e6e81f20d73bc64d173
         
     
