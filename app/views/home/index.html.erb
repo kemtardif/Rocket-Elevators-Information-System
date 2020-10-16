@@ -158,7 +158,7 @@
 				white-space: nowrap;
 				  "
 			  >	  
-                <a class="btn btn-secondary btn-lg" href="#services"
+                <a class="btn btn-secondary btn-lg" href="/#services"
                   >Services Offered &nbsp; <i class="fa fa-angle-right"></i
                 ></a>
               </div>
@@ -279,9 +279,7 @@
                   white-space: nowrap;
                 "
               >
-                <a class="btn btn-red btn-lg" href="residential.html"
-                  >Residential Services &nbsp; <i class="fa fa-angle-right"></i
-                ></a>
+                <a <%= link_to 'Residential Services',home_residential_path, :class => "btn btn-red btn-lg" %></a>
               </div>
             </li>
 
@@ -351,9 +349,8 @@
                   white-space: nowrap;
                 "
               >
-                <a class="btn btn-blue btn-lg" href="commercial.html"
-                  >Commercial Services &nbsp; <i class="fa fa-angle-right"></i
-                ></a>
+              <a <%= link_to 'Commercial',home_commercial_path, :class => "btn btn-secondary btn-lg" %>
+              </a>
               </div>
             </li>
 
@@ -392,7 +389,7 @@
               <p>
                 Throughout our 44 years of existence, we have always strived to offer the best quality in both products and services. Here are some of our most awarded and spectacular projects.
               </p>
-              <a href="#work" class="btn btn-default">Portfolio</a>
+              <a href="/#work" class="btn btn-default">Portfolio</a>
              </center>
             </div>
 
@@ -408,8 +405,8 @@
               <p>
                The dream might be more attainable than you ever tought! Let us show you our variety of elevators suited perfectly for your home... and budget!
               </p>
-              <a href="residential.html" class="btn btn-default">More Details</a>
-             </center>
+              <a <%= link_to 'Residential Services',home_residential_path, :class => "btn btn-default" %></a>
+              </center>
             </div>
 
             <div class="col-sm-4">
@@ -424,7 +421,8 @@
               <p>
                With our wide variety of commercial elevators, we are sure to have one that fits the demands of your next project. From low-rise buildings to high-rise towers, we have a solution for you!
               </p>
-              <a href="commercial.html" class="btn btn-default">More Details</a>
+              <a <%= link_to 'Commercial',home_commercial_path, :class => "btn btn-default" %>
+              </a>
              </center>
             </div>
           </div>
@@ -447,11 +445,11 @@
             <h2 class="fs-60 fw-900">
               Since 1976 
             </h2>
-            <a class="btn btn-red btn-lg" href="quote.html"
-              >Get a Quote <i class="fa fa-angle-right"></i
-            ></a>
+            <a <%= link_to 'Get a Quote',quote_path, :class => "btn btn-red btn-lg" %>
+            </a>
+       ></a>
             &nbsp; OR &nbsp;
-            <a class="btn btn-blue btn-lg" href="#contact"
+            <a class="btn btn-blue btn-lg" href="/#contact"
               >Contact Us <i class="fa fa-angle-right"></i
             ></a>
           </div>
@@ -900,8 +898,7 @@
                     src="/assets/awarde.png"
                     width="600"
                     height="399"
-                    alt=""
-                  />
+                    alt=""/>
                 </figure>
 
                 <div class="item-box-desc">
@@ -960,7 +957,7 @@
       <!-- Testimonials -->
       <section id ="testimonials" class="section-xs dark">
         <div class="container">
-          <div
+          <div id="faces-carousel"
             class="owl-carousel text-center owl-testimonial m-0"
             data-plugin-options='{"singleItem": true, "autoPlay": 3500, "navigation": false, "pagination": true, "transitionStyle":"fade"}'>
             
@@ -1031,7 +1028,7 @@
 							.owl-padding-15
 							.owl-padding-20
 					-->
-          <div
+          <div id="news-carousel"
             class="owl-carousel owl-padding-10 buttons-autohide controlls-over"
             data-plugin-options='{"singleItem": false, "items":"4", "autoPlay": 4000, "navigation": true, "pagination": false}'
           >
@@ -1517,7 +1514,7 @@
 
                 <div class="row">
                   <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary">
+                    <button class="btn btn-primary">
                       <i class="fa fa-check"></i> SEND MESSAGE
                     </button>
                   </div>
@@ -1646,8 +1643,11 @@
   
     $(document).ready(function() {
       $('#work').mixitup();
-      $(".owl-carousel").owlCarousel();
-
-            });
-            
+      $("#faces-carousel").owlCarousel(
+      {navigation: true, 
+      slideSpeed: 300,
+      paginationSpeed: 400,
+      singleItem: true});
+      $("#news-carousel").owlCarousel();
+           
             </script>
