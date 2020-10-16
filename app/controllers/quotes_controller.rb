@@ -135,22 +135,3 @@ class QuotesController < ApplicationController
     
 end 
 
-def index
-@quote = Quote.all
-end      
-
-    # def save
-    #     @quote.save
-    #     respond_to do |format|
-    #     
-    #     end
-    # end
-    
-    # def delete
-    #     @quote.delete
-    #     respond_to do |format|
-    #   
-    #     end
-    # end
-        
-    

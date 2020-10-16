@@ -46,11 +46,6 @@ gem 'font-awesome-rails'
 
 
 
-gem 'font-awesome-rails'
-
-
-
-
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

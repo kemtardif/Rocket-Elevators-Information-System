@@ -12,7 +12,6 @@
 
 //= require rails-ujs
 
-//= require_self
 //= require activestorage
 //= require turbolinks
 
