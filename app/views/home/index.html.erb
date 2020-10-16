@@ -1,6 +1,6 @@
 
 
-
+ 
     <!-- SLIDE TOP -->
     <div id="slidetop">
       <div class="container">
@@ -529,7 +529,7 @@
       <!-- Parallax -->
       <section
         class="parallax parallax-1"
-        style="background-image: url('assets/images/background.jpg')"
+        style="background-image: url('/assets/background.jpg')"
       >
         <div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
 
@@ -592,7 +592,7 @@
                       <!-- lightbox -->
                       <a
                         class="ico-rounded lightbox"
-                        href="assets/images/projects/project1.jpg"
+                        href="/assets/projects/project1.jpg"
                         data-plugin-options='{"type":"image"}'
                       >
                         <span class="fa fa-plus fs-20"></span>
@@ -995,7 +995,7 @@
           >
             <div class="testimonial">
               <figure>
-                <%# <%=image_tag "ceo.png", width:300, height:300%> 
+                <%=image_tag "ceo.png", width:300, height:300%> 
                  
               </figure>
               <div class="testimonial-content p-0">
@@ -1009,7 +1009,7 @@
             </div>
             <div class="testimonial">
               <figure>
-                <%# <%=image_tag "employee.jpg", width:300, height:300%> 
+               <%=image_tag "employee.jpg", width:300, height:300%> 
                   
               </figure>
               <div class="testimonial-content p-0">
@@ -1662,3 +1662,4 @@
       });
     </script>
 
+  <script>$(".owl-carousel").owlCarousel();</script>

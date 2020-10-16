@@ -22,6 +22,8 @@
 
 		Appear
 			https://github.com/bas2k/jquery.appear/
+
+			
 			
 		Parallax v1.1.3
 			http://www.ianlunn.co.uk/plugins/jquery-parallax/
@@ -41,6 +43,8 @@
 	window.width 	= jQuery(window).width();
 	window.height 	= jQuery(window).height();
 
+	
+
 
 	/* Init */
 	jQuery(window).ready(function () {
@@ -55,9 +59,10 @@
 
 		// Popper user by Bootstrap
 		_loadPopperBS4();
+		console.log(plugin_path);
 
 		// Load Bootstrap JS
-		loadScript(plugin_path + 'bootstrap/js/bootstrap.min.js', function() {
+		loadScript(plugin_path + 'bootstrap.min.js', function() {
 
 			// Load Material Design Js
 			if(jQuery("body").hasClass('enable-materialdesign')) {
@@ -239,6 +244,7 @@
 			// script.onreadystatechange = callback;
 			script.onload = callback;
 
+			console.log(script);
 			// fire the loading
 			body.appendChild(script);
 
@@ -2942,50 +2948,7 @@
  **************************************************************** **/
 	function _pickers() {
 
-		/** Date Picker
-			<input type="text" class="form-control datepicker" data-format="yyyy-mm-dd" data-lang="en" data-RTL="false">
-		 ******************* **/
-		var _container_1 = jQuery('.datepicker');
 		
-		if(_container_1.length > 0) {
-			loadScript(plugin_path + 'bootstrap.datepicker/js/bootstrap-datepicker.min.js', function() {
-		
-				if(jQuery().datepicker) {
-
-					_container_1.each(function() {
-						var _t 		= jQuery(this),
-							_lang 	=	_t.attr('data-lang') || 'en';
-
-						if(_lang != 'en' && _lang != '') { // load language file
-							loadScript(plugin_path + 'bootstrap.datepicker/locales/bootstrap-datepicker.'+_lang+'.min.js');
-						}
-
-						jQuery(this).datepicker({
-							format:			_t.attr('data-format') 			|| 'yyyy-mm-dd', 
-							language: 		_lang,
-							rtl: 			_t.attr('data-RTL') 			== "true"  ? true  : false,
-							changeMonth: 	_t.attr('data-changeMonth') 	== "false" ? false : true,
-							todayBtn: 		_t.attr('data-todayBtn') 		== "false" ? false : "linked",
-							calendarWeeks: 	_t.attr('data-calendarWeeks') 	== "false" ? false : true,
-							autoclose: 		_t.attr('data-autoclose') 		== "false" ? false : true,
-							todayHighlight: _t.attr('data-todayHighlight') 	== "false" ? false : true,
-
-							onRender: function(date) {
-								// return date.valueOf() < nowDate.valueOf() ? 'disabled' : '';
-							}
-						}).on('changeDate', function(ev) {
-
-							// AJAX POST - OPTIONAL
-
-						}).data('datepicker'); 
-					});
-					
-				}
-
-			});
-		}
-
-
 
 
 		/** Range Picker

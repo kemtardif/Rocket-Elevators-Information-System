@@ -129,7 +129,7 @@ class QuotesController < ApplicationController
           if typeOfBuilding == nil
             redirect_to quote_new_path
           end
-        end  
+      end  
 
     def index
         @quote = Quote.all
@@ -148,7 +148,8 @@ class QuotesController < ApplicationController
         respond_to do |format|
            format.html { redirect_to quotes_url, notice: 'Quote deleted' }
            format.json { head :no_content }
-        end
-    end
+      end
+end
+end
         
     
