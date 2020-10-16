@@ -9,7 +9,7 @@ gem 'sassc', '~> 2.1.0'
 
 gem 'remotipart', github: 'mshibuya/remotipart'
 
-gem 'rails_admin', github: 'sferik/rails_admin'
+gem 'rails_admin', github: 'sferik/rails_admin' 
 
 gem 'rails_admin_rollincode', '~> 1.0'
 
@@ -39,8 +39,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap', '~> 4.4.1'
 
-
 gem "mixitup-rails"
+
+
+
 
 
 

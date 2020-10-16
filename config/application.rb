@@ -16,6 +16,7 @@ module RocketElevatorsInformationSystem
     config.assets.paths << Rails.root.join('app/assets/javascripts/plugins/owl-carousel')
     config.assets.paths << Rails.root.join('app/assets/javascripts/plugins/slider.revolution/js')
     config.assets.paths << Rails.root.join('app/assets/javascripts/view')
+    config.assets.paths << Rails.root.join("app", "assets", "images", "fonts")
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

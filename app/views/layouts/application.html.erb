@@ -29,40 +29,9 @@
       type="text/css"/>
 
 </head>
-<body class = " enable-animation ">
-      <!----NAV BAR YO--->
-      <!-- SLIDE TOP -->
-        <div id="slidetop">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8">
-                <h6><i class="icon-heart"></i> Why Rocket Elevators?</h6>
-                <p>
-                  Since 1976, we have always kept our goal in sight; to be at the forefront of the elevator industry. By having the highest standard for our services, products and warranties, we have earned the trust of our many estimated clients. Let us find a mobility solution perfectly suited for your building, and most importantly let us offer you peace of mind!
-                </p>
-              </div>
-
-              <div class="col-md-4">
-                <h6><i class="icon-envelope"></i> Contact Us</h6>
-                <ul class="list-unstyled">
-                  <li>
-                  725 Boulevard Lebourneuf, Quebec, Canada
-                  </li>
-                  <li>1-581-701-0303</li>
-                  <li>
-                    <a href="mailto:info@codeboxx.biz">info@codeboxx.biz</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <a class="slidetop-toggle" href="#"><!-- toggle button --></a>
-        </div>
-        <!-- /SLIDE TOP -->
-
-    <!-- wrapper -->
-    <div id="wrapper">
+<body class = "enable-animation">
+  
+      <div id="wrapper">
       <!-- 
 				AVAILABLE HEADER CLASSES
 
@@ -89,7 +58,7 @@
 
 				Example Usage:  class="clearfix sticky header-sm transparent b-0"
 			-->
-      <div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+      <div id="header" class="navbar-toggleable-md fixed-top header-md clearfix" style = "position: fixed;">
         <!-- TOP NAV -->
         <header id="topNav">
           <div class="container">
@@ -103,9 +72,11 @@
             </button>
 
             <!-- Logo -->
-            <a class="logo float-left scrollTo" href="#top">
-              <img src="/assets/rocketlogonoslogan.png" alt="" 
-              style="width:200px;height:70px;"
+            <a class="logo float-left" >
+              <img
+                src="/assets/rocketlogonoslogan.png"
+                alt=""
+                style="width: 200px; height: 70px"
               />
             </a>
 
@@ -118,78 +89,81 @@
             <div
               class="navbar-collapse collapse float-right nav-main-collapse submenu-dark"
             >
-                <nav class="nav-main">
-                      <!-- 
-                        .nav-onepage
-                        Required for onepage navigation links
-                        
-                        Add .external for an external link!
-                      -->
-                      <ul id="topMain" class="nav nav-pills nav-justified nav-onepage">
-                        <li class="active">
-                          <!-- HOME -->
-                          <a href="#slidetop"> Home </a>
-                        </li>
-                        <li>
-                          <!-- SERVICES -->
-                          <a href="#services"> Services </a>
-                        </li>
-                        <li>
-                          <!-- WORK -->
-                          <a href="#work"> Portfolio </a>
-                        </li>
-                        <li>
-                          <!-- NEWS -->
-                          <a href="#news"> News </a>
-                        </li>
-                        <li>
-                          <!-- CLIENTS -->
-                          <a href="#clients"> Clients </a>
-                        </li>
-                        <li>
-                          <!-- CONTACT -->
-                          <a href="#contact"> Contact </a>
-                        </li>
-                        <li>
-                          <!-- PROFILE -->
-                          <a href="#slidetop"> Profile </a>
-                          <ul class="dropdown-menu">
-                              <% if user_signed_in? %>
-                                  <li><%= link_to "Edit profile", edit_user_registration_path %></li>
-                              <% else %>
-                                  <li><%= link_to "Sign up", new_user_registration_path %></li>
-                                  <li><%= link_to "Login", new_user_session_path %></li>
-                              <% end %>
-                              <% if user_signed_in? %>
-                                  <li role="separator" class="divider"></li>
-                                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-                              <% end %>
-                            </ul>
-                        </li>
-                        <li>
-                          <!-- ADMIN -->
-                          <a href="#slidetop"> Admin </a>
-                          <ul class="dropdown-menu">
-                              <% if employee_signed_in? %>
-                                <li><%= link_to "Backdoor", root_url + "/admin" %></li>
-                              <% else %>
-                                <li><%= link_to "Login", root_url + "/admin" %></li>
-                              <% end %>
-                              <% if employee_signed_in? %>
-                                <li role="separator" class="divider"></li>
-                                <li><%= link_to "Logout", destroy_employee_session_path, method: :delete %></li>
-                              <% end %>
-                            </ul>
-                        </li>
-                          </ul>
-                        </li>
+              <nav class="nav-main">
+                <!-- 
+									.nav-onepage
+									Required for onepage navigation links
+									
+									Add .external for an external link!
+								-->
+                <ul
+                  id="topMain"
+                  class="nav nav-pills nav-justified nav-onepage"
+                >
+                  <li class="active">
+                    <!-- HOME -->
+                    <a <%= link_to 'Home',root_path %> </a>
+                  </li>
+                  <li>
+                    <!-- SERVICES -->
+                    <a href="index.html#services"> Services </a>
+                  </li>
+                  <li>
+                    <!-- WORK -->
+                    <a href="index.html#work"> Portfolio </a>
+                  </li>
+                  <li>
+                    <!-- NEWS -->
+                    <a href="index.html#news"> News </a>
+                  </li>
+                  <li>
+                    <!-- CLIENTS -->
+                    <a href="index.html#clients"> Clients </a>
+                  </li>
+                  <li>
+                    <!-- CONTACT -->
+                    <a href="index.html#contact"> Contact </a>
+                  </li>
+                  <li>
+                    <!-- PROFILE -->
+                    <a href="#slidetop"> Profile </a>
+                     <ul class="dropdown-menu">
+                        <% if user_signed_in? %>
+                            <li><%= link_to "My profile", edit_user_registration_path %></li>
+                        <% else %>
+                            <li><%= link_to "Sign up", new_user_registration_path %></li>
+                            <li><%= link_to "Login", new_user_session_path %></li>
+                        <% end %>
+                         <% if user_signed_in? %>
+                            <li role="separator" class="divider"></li>
+                            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                        <% end %>
                       </ul>
-                  </nav>
-              </div>
+                  </li>
+                  <li>
+                    <!-- ADMIN -->
+                    <a href="#slidetop"> Admin </a>
+                     <ul class="dropdown-menu">
+                        <% if employee_signed_in? %>
+                          <li><%= link_to "Backdoor", root_url + "/admin" %></li>
+                        <% else %>
+                          <li><%= link_to "Login", root_url + "/admin" %></li>
+                        <% end %>
+                        <% if employee_signed_in? %>
+                          <li role="separator" class="divider"></li>
+                          <li><%= link_to "Logout", destroy_employee_session_path, method: :delete %></li>
+                        <% end %>
+                      </ul>
+                  </li>
+                   
+                </ul>
+              </nav>
             </div>
-          </header>
-          <!-- /Top Nav -->
-        </div>
+          </div>
+        </header>
+        <!-- /Top Nav -->
+      </div>
+
   <div id="main-container" class="container">
   <%= yield %>
   </div>
