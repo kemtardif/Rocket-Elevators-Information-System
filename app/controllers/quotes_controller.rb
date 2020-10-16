@@ -127,9 +127,10 @@ class QuotesController < ApplicationController
     end  
     
 end 
-    # def index
-    #     @quote = Quote.all
-    # end  
+
+def index
+@quote = Quote.all
+end      
 
     # def save
     #     @quote.save
