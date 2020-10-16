@@ -3,7 +3,7 @@
 <head>
   
   
-  <script> var plugin_path = 'assets/' </script>
+  <script> var plugin_path = 'assets/javascripts' </script>
   <%= stylesheet_link_tag	'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -13,7 +13,7 @@
   <meta name="description" content="" />
     <meta name="Author" content="Louis Marmen [Mermaid]" />
 
-    <script> var plugin_path ='assets/javascripts/';</script>
+    
   
   
 
@@ -29,8 +29,7 @@
       type="text/css"/>
 
 </head>
-<body class = "smoothscroll enable-animation ">
-  
+<body class = " enable-animation ">
       <!----NAV BAR YO--->
       <!-- SLIDE TOP -->
         <div id="slidetop">
@@ -119,84 +118,78 @@
             <div
               class="navbar-collapse collapse float-right nav-main-collapse submenu-dark"
             >
-              <nav class="navbar sticky-top navbar-inverse navbar-top ">
-                <!-- 
-									.nav-onepage
-									Required for onepage navigation links
-									
-									Add .external for an external link!
-								-->
-                <ul id="topMain" class="nav nav-pills nav-justified nav-onepage">
-                  <li class="active">
-                    <!-- HOME -->
-                    <a href="#slidetop"> Home </a>
-                  </li>
-                  <li>
-                    <!-- SERVICES -->
-                    <a href="#services"> Services </a>
-                  </li>
-                  <li>
-                    <!-- WORK -->
-                    <a href="#work"> Portfolio </a>
-                  </li>
-                  <li>
-                    <!-- NEWS -->
-                    <a href="#news"> News </a>
-                  </li>
-                  <li>
-                    <!-- CLIENTS -->
-                    <a href="#clients"> Clients </a>
-                  </li>
-                  <li>
-                    <!-- CONTACT -->
-                    <a href="#contact"> Contact </a>
-                  </li>
-                  <li>
-                    <!-- PROFILE -->
-                    <a href="#slidetop"> Profile </a>
-                     <ul class="dropdown-menu">
-                        <% if user_signed_in? %>
-                            <li><%= link_to "Edit profile", edit_user_registration_path %></li>
-                        <% else %>
-                            <li><%= link_to "Sign up", new_user_registration_path %></li>
-                            <li><%= link_to "Login", new_user_session_path %></li>
-                        <% end %>
-                         <% if user_signed_in? %>
-                            <li role="separator" class="divider"></li>
-                            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-                        <% end %>
+                <nav class="nav-main">
+                      <!-- 
+                        .nav-onepage
+                        Required for onepage navigation links
+                        
+                        Add .external for an external link!
+                      -->
+                      <ul id="topMain" class="nav nav-pills nav-justified nav-onepage">
+                        <li class="active">
+                          <!-- HOME -->
+                          <a href="#slidetop"> Home </a>
+                        </li>
+                        <li>
+                          <!-- SERVICES -->
+                          <a href="#services"> Services </a>
+                        </li>
+                        <li>
+                          <!-- WORK -->
+                          <a href="#work"> Portfolio </a>
+                        </li>
+                        <li>
+                          <!-- NEWS -->
+                          <a href="#news"> News </a>
+                        </li>
+                        <li>
+                          <!-- CLIENTS -->
+                          <a href="#clients"> Clients </a>
+                        </li>
+                        <li>
+                          <!-- CONTACT -->
+                          <a href="#contact"> Contact </a>
+                        </li>
+                        <li>
+                          <!-- PROFILE -->
+                          <a href="#slidetop"> Profile </a>
+                          <ul class="dropdown-menu">
+                              <% if user_signed_in? %>
+                                  <li><%= link_to "Edit profile", edit_user_registration_path %></li>
+                              <% else %>
+                                  <li><%= link_to "Sign up", new_user_registration_path %></li>
+                                  <li><%= link_to "Login", new_user_session_path %></li>
+                              <% end %>
+                              <% if user_signed_in? %>
+                                  <li role="separator" class="divider"></li>
+                                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                              <% end %>
+                            </ul>
+                        </li>
+                        <li>
+                          <!-- ADMIN -->
+                          <a href="#slidetop"> Admin </a>
+                          <ul class="dropdown-menu">
+                              <% if employee_signed_in? %>
+                                <li><%= link_to "Backdoor", root_url + "/admin" %></li>
+                              <% else %>
+                                <li><%= link_to "Login", root_url + "/admin" %></li>
+                              <% end %>
+                              <% if employee_signed_in? %>
+                                <li role="separator" class="divider"></li>
+                                <li><%= link_to "Logout", destroy_employee_session_path, method: :delete %></li>
+                              <% end %>
+                            </ul>
+                        </li>
+                          </ul>
+                        </li>
                       </ul>
-                  </li>
-                  <li>
-                    <!-- ADMIN -->
-                    <a href="#slidetop"> Admin </a>
-                     <ul class="dropdown-menu">
-                        <% if employee_signed_in? %>
-                          <li><%= link_to "Backdoor", root_url + "/admin" %></li>
-                        <% else %>
-                          <li><%= link_to "Login", root_url + "/admin" %></li>
-                        <% end %>
-                        <% if employee_signed_in? %>
-                          <li role="separator" class="divider"></li>
-                          <li><%= link_to "Logout", destroy_employee_session_path, method: :delete %></li>
-                        <% end %>
-                      </ul>
-                  </li>
-                    </ul>
-                  </li>
-                </ul>
-              </nav>
+                  </nav>
+              </div>
             </div>
-          </div>
-        </header>
-        <!-- /Top Nav -->
-      </div>
-
-
-  
-
-
-   </nav>
+          </header>
+          <!-- /Top Nav -->
+        </div>
   <div id="main-container" class="container">
   <%= yield %>
   </div>
