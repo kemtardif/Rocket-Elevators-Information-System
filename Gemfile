@@ -39,7 +39,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap', '~> 4.4.1'
 
-gem 'font-awesome-sass', '~> 5.13.0'
+gem "mixitup-rails"
+
 
 
 

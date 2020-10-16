@@ -21,6 +21,7 @@
 //= require popper
 //= require bootstrap-sprockets
 
+//= require mixitup
 //= require jquery.themepunch.revolution.min
 //= require jquery.themepunch.tools.min
 //= require demo.revolution_slider

@@ -29,102 +29,6 @@
     </div>
     <!-- /SLIDE TOP -->
 
-    <!-- wrapper -->
-    <div id="wrapper">
-      <!-- 
-				AVAILABLE HEADER CLASSES
-
-				Default nav height: 96px
-				.header-md 		= 70px nav height
-				.header-sm 		= 60px nav height
-
-				.b-0 		= remove bottom border (only with transparent use)
-				.transparent	= transparent header
-				.translucent	= translucent header
-				.sticky			= sticky header
-				.static			= static header
-				.dark			= dark header
-				.bottom			= header on bottom
-				
-				shadow-before-1 = shadow 1 header top
-				shadow-after-1 	= shadow 1 header bottom
-				shadow-before-2 = shadow 2 header top
-				shadow-after-2 	= shadow 2 header bottom
-				shadow-before-3 = shadow 3 header top
-				shadow-after-3 	= shadow 3 header bottom
-
-				.clearfix		= required for mobile menu, do not remove!
-
-				Example Usage:  class="clearfix sticky header-sm transparent b-0"
-			-->
-      <div id="header" class="navbar-toggleable-md sticky header-md clearfix">
-        <!-- TOP NAV -->
-        <header id="topNav">
-          <div class="container">
-            <!-- Mobile Menu Button -->
-            <button
-              class="btn btn-mobile"
-              data-toggle="collapse"
-              data-target=".nav-main-collapse"
-            >
-              <i class="fa fa-bars"></i>
-            </button>
-
-            <!-- Logo -->
-            <a class="logo float-left scrollTo" href="#top">
-              <img src="/assets/rocketlogonoslogan.png" alt="" 
-              style="width:200px;height:70px;"
-              />
-            </a>
-
-            <!-- 
-							Top Nav 
-							
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
-            <div
-              class="navbar-collapse collapse float-right nav-main-collapse submenu-dark"
-            >
-              <nav class="nav-main">
-                <!-- 
-									.nav-onepage
-									Required for onepage navigation links
-									
-									Add .external for an external link!
-								-->
-                <ul id="topMain" class="nav nav-pills nav-justified nav-onepage">
-                  <li class="active">
-                    <!-- HOME -->
-                    <a href="#slidetop"> Home </a>
-                  </li>
-                  <li>
-                    <!-- SERVICES -->
-                    <a href="#services"> Services </a>
-                  </li>
-                  <li>
-                    <!-- WORK -->
-                    <a href="#work"> Portfolio </a>
-                  </li>
-                  <li>
-                    <!-- NEWS -->
-                    <a href="#news"> News </a>
-                  </li>
-                  <li>
-                    <!-- CLIENTS -->
-                    <a href="#clients"> Clients </a>
-                  </li>
-                  <li>
-                    <!-- CONTACT -->
-                    <a href="#contact"> Contact </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </header>
-        <!-- /Top Nav -->
-      </div>
 
       <!-- REVOLUTION SLIDER -->
       <div class="slider fullwidthbanner-container roundedcorners">
@@ -594,16 +498,16 @@
           <div class="text-center">
             <ul class="nav nav-pills mix-filter mb-60">
               <li data-filter="all" class="filter active">
-                <a href="#">All</a>
+                <a >All</a>
               </li>
               <li data-filter="residential" class="filter">
-                <a href="#">Residential</a>
+                <a >Residential</a>
               </li>
               <li data-filter="commercial" class="filter">
-                <a href="#">Commercial</a>
+                <a >Commercial</a>
               </li>
               <li data-filter="awards" class="filter">
-                <a href="#">Recent Awards</a>
+                <a >Recent Awards</a>
               </li>
             </ul>
           </div>
@@ -1766,3 +1670,4 @@
     </script>
 
     <script>$(".owl-carousel").owlCarousel();</script>
+    <script>$('#work').mixitup();</script>
