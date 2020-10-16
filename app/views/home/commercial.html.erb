@@ -279,7 +279,7 @@
                   white-space: nowrap;
                 "
               >
-                <a class="btn btn-secondary btn-lg" href="index.html#services"
+                <a <%= link_to ' Services offered',root_path,:class => "btn btn-secondary btn-lg" %>
                   >Services Offered &nbsp; <i class="fa fa-angle-right"></i
                 ></a>
               </div>
@@ -384,8 +384,8 @@
                   white-space: nowrap;
                 "
               >
-                <a class="btn btn-red btn-lg" href="residential.html"
-                  >Residential Services &nbsp; <i class="fa fa-angle-right"></i
+                <a <%= link_to 'Residential Services',home_residential_path, :class => "btn btn-red btn-lg" %>
+                  > <i class="fa fa-angle-right"></i
                 ></a>
               </div>
             </li>
@@ -449,9 +449,10 @@
                   white-space: nowrap;
                 "
               >
-                <a class="btn btn-blue btn-lg" href="commercial.html"
-                  >Commercial Services &nbsp; <i class="fa fa-angle-right"></i
-                ></a>
+              <a <%= link_to 'Commercial Services',home_commercial_path, :class => "btn btn-blue btn-lg" %>
+              >Commercial Services &nbsp; <i class="fa fa-angle-right"> </a>
+  
+  
               </div>
             </li>
           </ul>

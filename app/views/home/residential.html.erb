@@ -109,23 +109,23 @@
                   </li>
                   <li>
                     <!-- SERVICES -->
-                    <a href="index.html#services"> Services </a>
+                    <a <%= link_to 'Services',root_path, :id => "services" %> </a>
                   </li>
                   <li>
                     <!-- WORK -->
-                    <a href="index.html#work"> Portfolio </a>
+                    <a <%= link_to 'Portfolio',root_path, :id => "work" %> </a>
                   </li>
                   <li>
                     <!-- NEWS -->
-                    <a href="index.html#news"> News </a>
+                    <a <%= link_to 'News',root_path, :id => "news" %> </a>
                   </li>
                   <li>
                     <!-- CLIENTS -->
-                    <a href="index.html#clients"> Clients </a>
+                    <a <%= link_to 'Clients',root_path, :id => "clients" %> </a>
                   </li>
                   <li>
                     <!-- CONTACT -->
-                    <a href="index.html#contact"> Contact </a>
+                    <a <%= link_to 'Contact',root_path, :id => "contact" %> </a>
                   </li>
                 </ul>
               </nav>
@@ -284,9 +284,9 @@
                   white-space: nowrap;
                 "
               >
-                <a class="btn btn-secondary btn-lg" href="index.html#services"
-                  >Services Offered &nbsp; <i class="fa fa-angle-right"></i
-                ></a>
+              <a <%= link_to ' Services offered',root_path,:class => "btn btn-secondary btn-lg" %>
+              >Services Offered &nbsp; <i class="fa fa-angle-right"></i
+              ></a>
               </div>
 
               <div
@@ -396,9 +396,9 @@
                   white-space: nowrap;
                 "
               >
-                <a class="btn btn-red btn-lg" href="residential.html"
-                  >Residential Services &nbsp; <i class="fa fa-angle-right"></i
-                ></a>
+              <a <%= link_to 'Residential Services',home_residential_path, :class => "btn btn-red btn-lg" %>
+              > <i class="fa fa-angle-right"></i
+              ></a>
               </div>
             </li>
 
@@ -465,9 +465,8 @@
                   white-space: nowrap;
                 "
               >
-                <a class="btn btn-blue btn-lg" href="commercial.html"
-                  >Commercial Services &nbsp; <i class="fa fa-angle-right"></i
-                ></a>
+              <a <%= link_to 'Commercial Services',home_commercial_path, :class => "btn btn-blue btn-lg" %>
+              >Commercial Services &nbsp; <i class="fa fa-angle-right"> </a>
               </div>
             </li>
           </ul>
