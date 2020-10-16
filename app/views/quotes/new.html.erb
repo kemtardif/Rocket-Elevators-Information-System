@@ -77,19 +77,19 @@
       <center>
       <label for="building-appartments"><strong>How many appartments are in the building?</strong>
       </label>
-      <input required type="number" id="res1"></center>
+      <input name= 'ResidentialApartmentNumbers' required type="number" id="res1"></center>
       </div>
       <div class="col-md-4">
         <center>
       <label for="building-stories"><strong>How many stories are in the building?</strong>
       </label>
-      <input required type="number" id="res2"></center>
+      <input name= 'ResidentialNumberOfFloors' required type="number" id="res2"></center>
     </div>
     <div class="col-md-4">
       <center>
       <label for="building-basements"><strong>How many basements in the building?</strong>
       </label>
-      <input required type="number" id="res3"></center>
+      <input name= 'ResidentialNumberOfBasements' required type="number" id="res3"></center>
     </div><br><br>
  </div>
 </div>
@@ -108,19 +108,19 @@
     <center>
     <label for="building-units"><strong>How many commercial units are in the building?</strong>
     </label>
-    <input required type="number" id="com1"></center>
+    <input name= 'CommercialNumberOfStores' required type="number" id="com1"></center>
     </div>
     <div class="col-md-4">
       <center>
     <label for="building-stories"><strong>How many stories are in the building?</strong>
     </label>
-    <input required type="number" id="com2"></center>
+    <input name= 'CommercialNumberOfFloors' required type="number" id="com2"></center>
   </div>
   <div class="col-md-4">
     <center>
     <label for="building-basements"><strong>How many basements in the building?</strong>
     </label>
-    <input required type="number" id="com3"></center>
+    <input name= 'CommercialNumberOfBasements' required type="number" id="com3"></center>
   </div><br><br>
 </div>
 <div class="row">
@@ -128,13 +128,13 @@
   <center>
 <label for="building-parkings"><strong>How many parking lots are in the building?</strong>
 </label>
-<input required type="number" id="com4"></center>
+<input name= 'CommercialParkingLevels' required type="number" id="com4"></center>
 </div>
 <div class="col-md-4">
 <center>
 <label for="building-shafts"><strong>How many elevator shafts is needed the building?</strong>
 </label>
-<input required type="number" id="com5"></center>
+<input name= 'CommercialNumberCages' required type="number" id="com5"></center>
 </div><br><br>
 
 
@@ -154,19 +154,19 @@
     <center>
     <label for="building-businesses"><strong>How many businesses are in the building?</strong>
     </label>
-    <input required type="number" id="cor1"></center>
+    <input name= 'CorporateNumberOfCompanies' required type="number" id="cor1"></center>
     </div>
     <div class="col-md-4">
       <center>
     <label for="building-stories"><strong>How many stories are in the building?</strong>
     </label>
-    <input required type="number" id="cor2"></center>
+    <input name= 'CorporateNumberOfFloors' required type="number" id="cor2"></center>
   </div>
   <div class="col-md-4">
     <center>
     <label for="building-basements"><strong>How many basements in the building?</strong>
     </label>
-    <input required type="number" id="cor3"></center>
+    <input name= 'CorporateNumberOfBasements' required type="number" id="cor3"></center>
   </div><br><br>
 </div>
 <div class="row">
@@ -174,13 +174,13 @@
   <center>
 <label for="building-parkings"><strong>How many parking lots are in the building?</strong>
 </label>
-<input required type="number" id="cor4"></center>
+<input name= 'CorporateParkingLevels' required type="number" id="cor4"></center>
 </div>
 <div class="col-md-4">
 <center>
 <label for="building-occupants"><strong>What is the maximum number of occupants per stories</strong>
 </label>
-<input required type="number" id="cor5"></center>
+<input name= 'CorporateOccupantsPerFloor' required type="number" id="cor5"></center>
 </div><br><br>
 
 
@@ -200,19 +200,19 @@
     <center>
     <label for="building-units"><strong>How many commercial units are in the building?</strong>
     </label>
-    <input required type="number" id="hyb1"></center>
+    <input name= 'HybridNumberOfStores' required type="number" id="hyb1"></center>
     </div>
     <div class="col-md-4">
       <center>
     <label for="building-stories"><strong>How many stories are in the building?</strong>
     </label>
-    <input required type="number" id="hyb2"></center>
+    <input name= 'HybridNumberOfFloors' required type="number" id="hyb2"></center>
   </div>
   <div class="col-md-4">
     <center>
     <label for="building-basements"><strong>How many basements in the building?</strong>
     </label>
-    <input required type="number" id="hyb3"></center>
+    <input name= 'HybridNumberOfBasements' required type="number" id="hyb3"></center>
   </div><br><br>
 </div>
 <div class="row">
@@ -220,20 +220,15 @@
   <center>
 <label for="building-parkings"><strong>How many parking lots are in the building?</strong>
 </label>
-<input required type="number" id="hyb4"></center>
+<input name= 'HybridParkingLevels' required type="number" id="hyb4"></center>
 </div>
 <div class="col-md-4">
 <center>
 <label for="building-occupants"><strong>What is the maximum number of occupants per stories</strong>
 </label>
-<input required type="number" id="hyb5"></center>
+<input name= 'HybridOccupantsPerFloor' required type="number" id="hyb5"></center>
 </div>
-<div class="col-md-4">
-<center>
-<label for="building-time"><strong>What is the buildings daily operational time?</strong>
-</label>
-<input type="number" size=10 name="onlynumbers" min="0" max="24" id="hyb6" ></label></center>
-</div>
+
 
 
 </div>
@@ -247,7 +242,7 @@
 </div>
 <center>
 <label for="shaftsneeded"><strong>Number of Elevator Shafts needed:</strong></label>
-<input readonly type="text" id="numberneeded"/>
+<input name= 'estimatedCagesNeeded' readonly type="text" id="numberneeded"/>
 
 </center>
 <br><br>
@@ -260,13 +255,13 @@
 <center>
 <div>
  
-<input id= "stan" type="radio" onchange="pricecalculator()" value="standard" name="gender"> <strong>Standard</strong><br>
+<input name= 'packageSelection' id= "stan" type="radio" onclick="pricecalculator()" value="standard"> <strong>Standard</strong><br>
 <br>
 
-<input id= "premium" type="radio" onchange="pricecalculator()" value="standard" name="gender">  <strong>Premium</strong><br>
+<input name= 'packageSelection' id= "premium" type="radio" onclick="pricecalculator()" value="premium">  <strong>Premium</strong><br>
 <br>
 
-<input id= "excelium" type="radio" onchange="pricecalculator()" value="standard" name="gender">  <strong>Excelium</strong><br>
+<input name= 'packageSelection' id= "excelium" type="radio" onclick="pricecalculator()" value="excelium">  <strong>Excelium</strong><br>
 <br>
 </div>
 <br>
@@ -274,17 +269,17 @@
   <h2>Pricing</h2>
 </div>
 <label><strong>Elevators (CAD$) </strong></label>
-<input readonly type="text" id="elevatortotal"><br>
+<input name= 'elevatorPrice'readonly type="text" id="elevatortotal"><br>
 <br>
 <label><strong>Installation Fee (CAD$)</strong></label>
-<input readonly type="text" id="servicetotal"><br>
+<input name= 'installationCost' readonly type="text" id="servicetotal"><br>
 <br>
 <label><strong>Total Price (CAD$)</strong></label>
-<input readonly type="text" id="totalprice">
+<input name= 'totalPrice' readonly type="text" id="totalprice">
 </center>   
 <br><br>
-<button class="btn btn-green btn-lg" type= 'submit'>SUBMIT QUOTE</button>
-
+# <button class="btn btn-green btn-lg" type= 'submit'>SUBMIT QUOTE</button>
+<%= f.submit %>
 
 
 

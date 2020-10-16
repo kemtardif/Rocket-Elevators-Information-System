@@ -28,47 +28,6 @@ ActiveRecord::Schema.define(version: 2020_10_13_220957) do
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "userName"
-    t.string "buildingType"
-    t.integer "apartmentNumbers"
-    t.integer "numberOfFloors"
-    t.integer "numberOfBasements"
-    t.integer "numberOfStores"
-    t.integer "numberCages"
-    t.integer "parkingLevels"
-    t.integer "numberOfCompanies"
-    t.integer "occupantsPerFloor"
-    t.integer "estimatedCagesNeeded"
-    t.string "packageSelection"
-    t.decimal "elevatorPrice", precision: 10, scale: 2
-    t.decimal "installationCost", precision: 10, scale: 2
-    t.decimal "totalPrice", precision: 10, scale: 2
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "userName"
-    t.string "buildingType"
-    t.integer "apartmentNumbers"
-    t.integer "numberOfFloors"
-    t.integer "numberOfBasements"
-    t.integer "numberOfStores"
-    t.integer "numberCages"
-    t.integer "parkingLevels"
-    t.integer "numberOfCompanies"
-    t.integer "occupantsPerFloor"
-    t.integer "estimatedCagesNeeded"
-    t.string "packageSelection"
-    t.decimal "elevatorPrice", precision: 10, scale: 2
-    t.decimal "installationCost", precision: 10, scale: 2
-    t.decimal "totalPrice", precision: 10, scale: 2
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "userName"
     t.string "buildingType"
     t.integer "apartmentNumbers"
     t.integer "numberOfFloors"
