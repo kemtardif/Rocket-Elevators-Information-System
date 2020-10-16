@@ -12,7 +12,6 @@
 
 //= require rails-ujs
 
-//= require_self
 //= require activestorage
 //= require turbolinks
 
@@ -22,7 +21,14 @@
 //= require popper
 //= require bootstrap-sprockets
 
+//= require jquery.themepunch.revolution.min
+//= require jquery.themepunch.tools.min
+//= require demo.revolution_slider
+
 //= require owl.carousel
+
+//= require smoothscroll
+
 
 //= require_self
 //= require_tree .
