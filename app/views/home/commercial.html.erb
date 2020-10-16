@@ -46,7 +46,13 @@
             >
               <!-- MAIN IMAGE -->
 
-              <%= asset_path('rocketslider.jpeg')%>
+              <img
+                src="/assets/rocketslider.jpeg"
+                alt="cover image"
+                data-bgposition="center"
+                data-bgfit="cover"
+                data-bgrepeat="no-repeat"
+              />
              
 
               <div class="overlay dark-4">
@@ -168,7 +174,7 @@
                   white-space: nowrap;
                 "
               >
-                <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-secondary btn-lg" %>
+                <a <%= link_to 'Get a Quote',quote_path, :class => "btn btn-secondary btn-lg" %>
                   Get a Quote &nbsp; <i class="fa fa-angle-right"></i
                 ></a>
               </div>
@@ -185,7 +191,11 @@
                 style="z-index: 1"
               >
 
-             <%= asset_path('rocketlogo.png', style:"width:300px;height:400px")%>
+             <img
+                  src="/assets/rocketlogo.png"
+                  alt=""
+                  style="width: 300px; height: 400px"
+                />
         
               </div>
             </li>
@@ -200,7 +210,13 @@
             >
               <!-- MAIN IMAGE -->
 
-              <%= asset_path('residentialslider.jpeg')%>
+              <img
+                src="/assets/residentialslider.jpeg"
+                alt="cover image"
+                data-bgposition="Pcenter top"
+                data-bgfit="cover"
+                data-bgrepeat="no-repeat"
+              />
             
               <div class="overlay dark-4">
                 <!-- dark overlay [0 to 9 opacity] -->
@@ -265,7 +281,13 @@
             >
               <!-- MAIN IMAGE -->
 
-              <%= asset_path('commercialslider.jpeg')%>
+              <img
+                src="/assets/commercialslider.jpeg"
+                alt="cover image"
+                data-bgposition="Pcenter top"
+                data-bgfit="cover"
+                data-bgrepeat="no-repeat"
+              />
               
               <div class="overlay dark-4">
                 <!-- dark overlay [0 to 9 opacity] -->
@@ -365,7 +387,7 @@
                   the minimum price available on the market.
                 </p>
 
-                <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-secondary btn-lg" %></a>
+                <a <%= link_to 'Get a Quote',quote_path, :class => "btn btn-secondary btn-lg" %></a>
               </center>
               <br /><br />
             </div>
@@ -461,7 +483,7 @@
                   services, this might be the perfect option for you!
                 </p>
                 <br /><br />
-                <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-secondary btn-lg" %></a>
+                <a <%= link_to 'Get a Quote',quote_path, :class => "btn btn-secondary btn-lg" %></a>
               </center>
             </div>
           </div>
@@ -491,7 +513,7 @@
                   the Premium Package!
                 </p>
                 <br /><br />
-                <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-secondary btn-lg" %></a>
+                <a <%= link_to 'Get a Quote',quote_path, :class => "btn btn-secondary btn-lg" %></a>
               </center>
             </div>
 
