@@ -8,10 +8,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <meta charset="utf-8" />
-  <title>Rocket Elevators</title>
-  <meta name="description" content="" />
-    <meta name="Author" content="Louis Marmen [Mermaid]" />
+<meta charset="utf-8" />
+<title>Rocket Elevators</title>
+<meta name="description" content="" />
+  <meta name="Author" content="Louis Marmen [Mermaid]" />
 
     
   
@@ -106,23 +106,23 @@
                   </li>
                   <li>
                     <!-- SERVICES -->
-                    <a href="index.html#services"> Services </a>
+                    <a <%= link_to 'Services',root_path, :id => "services" %>  </a>
                   </li>
                   <li>
                     <!-- WORK -->
-                    <a href="index.html#work"> Portfolio </a>
+                    <a <%= link_to 'Portfolio',root_path, :id => "work" %> </a>
                   </li>
                   <li>
                     <!-- NEWS -->
-                    <a href="index.html#news"> News </a>
+                    <a <%= link_to 'News',root_path, :id => "news" %> </a>
                   </li>
                   <li>
                     <!-- CLIENTS -->
-                    <a href="index.html#clients"> Clients </a>
+                    <a<%= link_to 'Clients',root_path, :id => "clients" %> </a>
                   </li>
                   <li>
                     <!-- CONTACT -->
-                    <a href="index.html#contact"> Contact </a>
+                    <a <%= link_to 'Contact',root_path, :id => "contact" %> </a>
                   </li>
                   <li>
                     <!-- PROFILE -->

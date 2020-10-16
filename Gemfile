@@ -46,7 +46,10 @@ gem "mixitup-rails"
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 458c66514e73036ce74cf2c432320c1c0748f10f
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

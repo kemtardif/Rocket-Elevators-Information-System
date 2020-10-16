@@ -1,141 +1,4 @@
 
-  <body class="enable-animation">
-    <!-- SLIDE TOP -->
-    <div id="slidetop">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <h6><i class="icon-heart"></i> Why Rocket Elevators?</h6>
-            <p>
-              Since 1976, we have always kept our goal in sight; to be at the
-              forefront of the elevator industry. By having the highest standard
-              for our services, products and warranties, we have earned the
-              trust of our many estimated clients. Let us find a mobility
-              solution perfectly suited for your building, and most importantly
-              let us offer you peace of mind!
-            </p>
-          </div>
-
-          <div class="col-md-4">
-            <h6><i class="icon-envelope"></i> Contact Us</h6>
-            <ul class="list-unstyled">
-              <li>725 Boulevard Lebourneuf, Quebec, Canada</li>
-              <li>1-581-701-0303</li>
-              <li>
-                <a href="mailto:info@codeboxx.biz">info@codeboxx.biz</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <a class="slidetop-toggle" href="#"><!-- toggle button --></a>
-    </div>
-    <!-- /SLIDE TOP -->
-
-    <!-- wrapper -->
-    <div id="wrapper">
-      <!-- 
-				AVAILABLE HEADER CLASSES
-
-				Default nav height: 96px
-				.header-md 		= 70px nav height
-				.header-sm 		= 60px nav height
-
-				.b-0 		= remove bottom border (only with transparent use)
-				.transparent	= transparent header
-				.translucent	= translucent header
-				.sticky			= sticky header
-				.static			= static header
-				.dark			= dark header
-				.bottom			= header on bottom
-				
-				shadow-before-1 = shadow 1 header top
-				shadow-after-1 	= shadow 1 header bottom
-				shadow-before-2 = shadow 2 header top
-				shadow-after-2 	= shadow 2 header bottom
-				shadow-before-3 = shadow 3 header top
-				shadow-after-3 	= shadow 3 header bottom
-
-				.clearfix		= required for mobile menu, do not remove!
-
-				Example Usage:  class="clearfix sticky header-sm transparent b-0"
-			-->
-      <div id="header" class="navbar-toggleable-md sticky header-md clearfix">
-        <!-- TOP NAV -->
-        <header id="topNav">
-          <div class="container">
-            <!-- Mobile Menu Button -->
-            <button
-              class="btn btn-mobile"
-              data-toggle="collapse"
-              data-target=".nav-main-collapse"
-            >
-              <i class="fa fa-bars"></i>
-            </button>
-
-            <!-- Logo -->
-            <a class="logo float-left" >
-              <img
-                src="/assets/rocketlogonoslogan.png"
-                alt=""
-                style="width: 200px; height: 70px"
-              />
-            </a>
-
-            <!-- 
-							Top Nav 
-							
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
-            <div
-              class="navbar-collapse collapse float-right nav-main-collapse submenu-dark"
-            >
-              <nav class="nav-main">
-                <!-- 
-									.nav-onepage
-									Required for onepage navigation links
-									
-									Add .external for an external link!
-								-->
-                <ul
-                  id="topMain"
-                  class="nav nav-pills nav-justified nav-onepage"
-                >
-                  <li class="active">
-                    <!-- HOME -->
-                    <a <%= link_to 'Home',root_path %> </a>
-                  </li>
-                  <li>
-                    <!-- SERVICES -->
-                    <a href="index.html#services"> Services </a>
-                  </li>
-                  <li>
-                    <!-- WORK -->
-                    <a href="index.html#work"> Portfolio </a>
-                  </li>
-                  <li>
-                    <!-- NEWS -->
-                    <a href="index.html#news"> News </a>
-                  </li>
-                  <li>
-                    <!-- CLIENTS -->
-                    <a href="index.html#clients"> Clients </a>
-                  </li>
-                  <li>
-                    <!-- CONTACT -->
-                    <a href="index.html#contact"> Contact </a>
-                  </li>
-                   
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </header>
-        <!-- /Top Nav -->
-      </div>
-
       <!-- REVOLUTION SLIDER -->
       <div class="slider fullwidthbanner-container roundedcorners">
         <!--
@@ -285,9 +148,9 @@
                   white-space: nowrap;
                 "
               >
-                <a class="btn btn-secondary btn-lg" href="index.html#services"
-                  >Services Offered &nbsp; <i class="fa fa-angle-right"></i
-                ></a>
+              <a <%= link_to ' Services offered',root_path,:class => "btn btn-secondary btn-lg" %>
+              >Services Offered &nbsp; <i class="fa fa-angle-right"></i
+              ></a>
               </div>
 
               <div
@@ -397,9 +260,9 @@
                   white-space: nowrap;
                 "
               >
-                <a class="btn btn-red btn-lg" href="residential.html"
-                  >Residential Services &nbsp; <i class="fa fa-angle-right"></i
-                ></a>
+              <a <%= link_to 'Residential Services',home_residential_path, :class => "btn btn-red btn-lg" %>
+              > <i class="fa fa-angle-right"></i
+              ></a>
               </div>
             </li>
 
@@ -466,9 +329,8 @@
                   white-space: nowrap;
                 "
               >
-                <a class="btn btn-blue btn-lg" href="commercial.html"
-                  >Commercial Services &nbsp; <i class="fa fa-angle-right"></i
-                ></a>
+              <a <%= link_to 'Commercial Services',home_commercial_path, :class => "btn btn-blue btn-lg" %>
+              >Commercial Services &nbsp; <i class="fa fa-angle-right"> </a>
               </div>
             </li>
           </ul>
