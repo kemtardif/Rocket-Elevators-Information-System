@@ -75,7 +75,7 @@
             </button>
 
             <!-- Logo -->
-            <a class="logo float-left" href="index.html">
+            <a class="logo float-left" > 
               <img
                 src = <%= asset_path('rocketlogonoslogan.png')%>
                 alt=""
@@ -303,8 +303,8 @@
                   white-space: nowrap;
                 "
               >
-                <a class="btn btn-secondary btn-lg" href="quote.html"
-                  >Get a Quote &nbsp; <i class="fa fa-angle-right"></i
+                <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-secondary btn-lg" %>
+                  Get a Quote &nbsp; <i class="fa fa-angle-right"></i
                 ></a>
               </div>
               <div
@@ -500,7 +500,7 @@
                   the minimum price available on the market.
                 </p>
 
-                <a class="btn btn-red btn-lg" href="quote.html">Get a Quote</a>
+                <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-secondary btn-lg" %></a>
               </center>
               <br /><br />
             </div>
@@ -596,7 +596,7 @@
                   services, this might be the perfect option for you!
                 </p>
                 <br /><br />
-                <a class="btn btn-red btn-lg" href="quote.html">Get a Quote</a>
+                <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-secondary btn-lg" %></a>
               </center>
             </div>
           </div>
@@ -626,7 +626,7 @@
                   the Premium Package!
                 </p>
                 <br /><br />
-                <a class="btn btn-red btn-lg" href="quote.html">Get a Quote</a>
+                <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-secondary btn-lg" %></a>
               </center>
             </div>
 
@@ -702,7 +702,7 @@
         <div class="copyright">
           <div class="container">
             <ul class="float-right m-0 list-inline mobile-block">
-              <li><a href="terms.html">Terms &amp; Conditions</a></li>
+              <li><%= link_to 'Terms and services',terms_path %></a></li>
             </ul>
             &copy; All Rights Reserved, Company LTD
           </div>
@@ -715,11 +715,6 @@
     <!-- SCROLL TO TOP -->
     <a href="#" id="toTop"></a>
 
-<<<<<<< HEAD
-  
-
-=======
->>>>>>> 39f2b3715110ae74d14398e3e3c4b45f4c7867a4
     <!-- 
 			GMAP.JS 
 			http://hpneo.github.io/gmaps/

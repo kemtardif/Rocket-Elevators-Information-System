@@ -200,7 +200,7 @@
             white-space: nowrap;
           "
         >
-          <a class="btn btn-secondary btn-lg" href="quotes/new"
+          <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-secondary btn-lg" %>
             >Get a Quote &nbsp; <i class="fa fa-angle-right"></i
           ></a>
           
@@ -446,7 +446,7 @@
 <!-- Parallax -->
 <section
   class="parallax parallax-1"
-  style="background-image: url('assets/images/background.jpg')"
+  style="background-image: url('/assets/background.jpg')"
 >
   <div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
 
@@ -458,8 +458,8 @@
       <h2 class="fs-60 fw-900">
         Since 1976 
       </h2>
-      <a class="btn btn-red btn-lg" href="quotes/new"
-        >Get a Quote <i class="fa fa-angle-right"></i
+      <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-secondary btn-lg" %>
+        > <i class="fa fa-angle-right"></i
       ></a>
       &nbsp; OR &nbsp;
       <a class="btn btn-blue btn-lg" href="#contact"
