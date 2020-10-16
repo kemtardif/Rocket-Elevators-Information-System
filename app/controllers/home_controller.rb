@@ -5,4 +5,8 @@ class HomeController < ApplicationController
     end
     def commercial
     end
+    def quote
+    end
+    def terms
+    end
   end
