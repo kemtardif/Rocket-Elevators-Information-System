@@ -29,63 +29,177 @@
       type="text/css"/>
 
 </head>
-<body class = "enable-animation">
-  <nav class="navbar navbar-inverse navbar-top navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="container">
-        <div class="navbar-header">
-   	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-   	    <span class="sr-only">Toggle navigation</span>
-   	    <span class="icon-bar"></span>
-   	    <span class="icon-bar"></span>
-   	    <span class="icon-bar"></span>
-   	  </button>
-   	  <a class="navbar-brand" href="/">Rocket Elevators</a>
-   	</div>
+<body class = "smoothscroll enable-animation ">
+  
+      <!----NAV BAR YO--->
+      <!-- SLIDE TOP -->
+        <div id="slidetop">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8">
+                <h6><i class="icon-heart"></i> Why Rocket Elevators?</h6>
+                <p>
+                  Since 1976, we have always kept our goal in sight; to be at the forefront of the elevator industry. By having the highest standard for our services, products and warranties, we have earned the trust of our many estimated clients. Let us find a mobility solution perfectly suited for your building, and most importantly let us offer you peace of mind!
+                </p>
+              </div>
 
-          <!----NAV BAR YO--->
-  <ul class="nav navbar-nav navbar-right">
-  <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-             <% if user_signed_in? %>
-      <li><%= link_to "Edit profile", edit_user_registration_path %></li>
-    <% else %>
-    <li><%= link_to "Sign up", new_user_registration_path %></li>
-    <li><%= link_to "Login", new_user_session_path %></li>
-    <% end %>
-    <% if user_signed_in? %>
-    <li role="separator" class="divider"></li>
-    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-    <% end %>
-    </ul>
-  </li>
+              <div class="col-md-4">
+                <h6><i class="icon-envelope"></i> Contact Us</h6>
+                <ul class="list-unstyled">
+                  <li>
+                  725 Boulevard Lebourneuf, Quebec, Canada
+                  </li>
+                  <li>1-581-701-0303</li>
+                  <li>
+                    <a href="mailto:info@codeboxx.biz">info@codeboxx.biz</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-  <ul class="nav navbar-nav navbar-right">
-  <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-       <% if employee_signed_in? %>
-      <li><%= link_to "Backdoor", root_url + "/admin" %></li>
-    <% else %>
-    <li><%= link_to "Login", root_url + "/admin" %></li>
-    <% end %>
-    <% if employee_signed_in? %>
-    <li role="separator" class="divider"></li>
-    <li><%= link_to "Logout", destroy_employee_session_path, method: :delete %></li>
-    <% end %>
-    </ul>
-  </li>
+          <a class="slidetop-toggle" href="#"><!-- toggle button --></a>
+        </div>
+        <!-- /SLIDE TOP -->
+
+    <!-- wrapper -->
+    <div id="wrapper">
+      <!-- 
+				AVAILABLE HEADER CLASSES
+
+				Default nav height: 96px
+				.header-md 		= 70px nav height
+				.header-sm 		= 60px nav height
+
+				.b-0 		= remove bottom border (only with transparent use)
+				.transparent	= transparent header
+				.translucent	= translucent header
+				.sticky			= sticky header
+				.static			= static header
+				.dark			= dark header
+				.bottom			= header on bottom
+				
+				shadow-before-1 = shadow 1 header top
+				shadow-after-1 	= shadow 1 header bottom
+				shadow-before-2 = shadow 2 header top
+				shadow-after-2 	= shadow 2 header bottom
+				shadow-before-3 = shadow 3 header top
+				shadow-after-3 	= shadow 3 header bottom
+
+				.clearfix		= required for mobile menu, do not remove!
+
+				Example Usage:  class="clearfix sticky header-sm transparent b-0"
+			-->
+      <div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+        <!-- TOP NAV -->
+        <header id="topNav">
+          <div class="container">
+            <!-- Mobile Menu Button -->
+            <button
+              class="btn btn-mobile"
+              data-toggle="collapse"
+              data-target=".nav-main-collapse"
+            >
+              <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Logo -->
+            <a class="logo float-left scrollTo" href="#top">
+              <img src="/assets/rocketlogonoslogan.png" alt="" 
+              style="width:200px;height:70px;"
+              />
+            </a>
+
+            <!-- 
+							Top Nav 
+							
+							AVAILABLE CLASSES:
+							submenu-dark = dark sub menu
+						-->
+            <div
+              class="navbar-collapse collapse float-right nav-main-collapse submenu-dark"
+            >
+              <nav class="navbar sticky-top navbar-inverse navbar-top ">
+                <!-- 
+									.nav-onepage
+									Required for onepage navigation links
+									
+									Add .external for an external link!
+								-->
+                <ul id="topMain" class="nav nav-pills nav-justified nav-onepage">
+                  <li class="active">
+                    <!-- HOME -->
+                    <a href="#slidetop"> Home </a>
+                  </li>
+                  <li>
+                    <!-- SERVICES -->
+                    <a href="#services"> Services </a>
+                  </li>
+                  <li>
+                    <!-- WORK -->
+                    <a href="#work"> Portfolio </a>
+                  </li>
+                  <li>
+                    <!-- NEWS -->
+                    <a href="#news"> News </a>
+                  </li>
+                  <li>
+                    <!-- CLIENTS -->
+                    <a href="#clients"> Clients </a>
+                  </li>
+                  <li>
+                    <!-- CONTACT -->
+                    <a href="#contact"> Contact </a>
+                  </li>
+                  <li>
+                    <!-- PROFILE -->
+                    <a href="#slidetop"> Profile </a>
+                     <ul class="dropdown-menu">
+                        <% if user_signed_in? %>
+                            <li><%= link_to "Edit profile", edit_user_registration_path %></li>
+                        <% else %>
+                            <li><%= link_to "Sign up", new_user_registration_path %></li>
+                            <li><%= link_to "Login", new_user_session_path %></li>
+                        <% end %>
+                         <% if user_signed_in? %>
+                            <li role="separator" class="divider"></li>
+                            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                        <% end %>
+                      </ul>
+                  </li>
+                  <li>
+                    <!-- ADMIN -->
+                    <a href="#slidetop"> Admin </a>
+                     <ul class="dropdown-menu">
+                        <% if employee_signed_in? %>
+                          <li><%= link_to "Backdoor", root_url + "/admin" %></li>
+                        <% else %>
+                          <li><%= link_to "Login", root_url + "/admin" %></li>
+                        <% end %>
+                        <% if employee_signed_in? %>
+                          <li role="separator" class="divider"></li>
+                          <li><%= link_to "Logout", destroy_employee_session_path, method: :delete %></li>
+                        <% end %>
+                      </ul>
+                  </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+        <!-- /Top Nav -->
       </div>
 
-      
-      
-    </div>
-</ul>
 
-  </nav>
+  
+
+
+   </nav>
   <div id="main-container" class="container">
-    <%= yield %>
+  <%= yield %>
   </div>
+   
 </body>
 </html>
