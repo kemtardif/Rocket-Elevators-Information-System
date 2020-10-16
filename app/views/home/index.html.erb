@@ -280,9 +280,9 @@
                   white-space: nowrap;
                 "
               >
-                <a <%= link_to 'Residential Services',_path, :class => "btn btn-secondary btn-lg" %>
-                 > <i class="fa fa-angle-right"></i
-                 ></a>
+                <a class="btn btn-red btn-lg" href="residential.html"
+                  >Residential Services &nbsp; <i class="fa fa-angle-right"></i
+                ></a>
               </div>
             </li>
 
@@ -1642,5 +1642,27 @@
     </script>
 
     
-    <script>$(".owl-carousel").owlCarousel();</script>
-    <script>$('#work').mixitup();</script>
+    <script>
+    
+  
+    $(document).ready(function() {
+      $('#work').mixitup();
+      $(".owl-carousel").owlCarousel({
+
+            navigation: true, // Show next and prev buttons
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            singleItem: true
+
+            // "singleItem:true" is a shortcut for:
+            // items : 1,
+            // itemsDesktop : false,
+            // itemsDesktopSmall : false,
+            // itemsTablet: false,
+            // itemsMobile : false
+
+            });
+
+            });
+            
+            </script>
