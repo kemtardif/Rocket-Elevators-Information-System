@@ -102,27 +102,27 @@
                 >
                   <li class="active">
                     <!-- HOME -->
-                    <a <%= link_to 'Home',root_path %> </a>
+                    <%= link_to 'Home',root_path, method: :get %>
                   </li>
                   <li>
                     <!-- SERVICES -->
-                    <a href="/#services"> Services </a>
+                    <%= link_to "Services" ,  {  :action => "index", :controller => "home", :anchor => "services" }, method: :get %>
                   </li>
                   <li>
                     <!-- WORK -->
-                    <a href="/#work"> Work </a>
+                    <%= link_to "Work" , {:action => "index", :controller => "home", :anchor => "work" }, method: :get %>
                   </li>
                   <li>
                     <!-- NEWS -->
-                    <a href="/#news"> News </a>
+                    <%= link_to "News" , {:action => "index", :controller => "home", :anchor => "news" }, method: :get %>
                   </li>
                   <li>
                     <!-- CLIENTS -->
-                    <a href="/#clients"> Clients </a>
+                    <%= link_to "Clients" , {:action => "index", :controller => "home", :anchor => "clients" }, method: :get %>
                   </li>
                   <li>
                     <!-- CONTACT -->
-                    <a href="/#contact"> Contact </a>
+                    <%= link_to "Contact" , {:action => "index", :controller => "home", :anchor => "contact" }, method: :get %>
                   </li>
                   <li>
                     <!-- PROFILE -->
@@ -168,4 +168,6 @@
 
    
   </body>
+
+
 </html>

@@ -1636,18 +1636,26 @@
         });
       });
     </script>
+          <script>
+
+$(document).on('turbolinks:load', function() {
+
+        $('#work').mixitup();
+        $("#faces-carousel").owlCarousel(
+        {navigation: true, 
+        slideSpeed: 300,
+        paginationSpeed: 400,
+        singleItem: true});
+        $("#news-carousel").owlCarousel();
+
+});
+
+
+  
+                   
+  </script>
 
     
-  <script>
-                    $(document).ready(function() {
-                      $('#work').mixitup();
-                      $("#faces-carousel").owlCarousel(
-                      {navigation: true, 
-                      slideSpeed: 300,
-                      paginationSpeed: 400,
-                      singleItem: true});
-                      $("#news-carousel").owlCarousel();
 
-                    
-                    });
-  </script>
+    
+ 
