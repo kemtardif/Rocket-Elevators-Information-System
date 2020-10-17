@@ -29,6 +29,7 @@
 //= require owl.carousel
 //= require scripts
 //= require smoothscroll
+//= require quote.js
 
 
 //= require_self

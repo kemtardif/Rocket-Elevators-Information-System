@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     $('.building_type').hide();
   
