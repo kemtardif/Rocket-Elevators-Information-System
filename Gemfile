@@ -41,6 +41,8 @@ gem 'bootstrap', '~> 4.4.1'
 
 gem "mixitup-rails"
 
+gem 'rack-cors', :require => 'rack/cors'
+
 
 
 
