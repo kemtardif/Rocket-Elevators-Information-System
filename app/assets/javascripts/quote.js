@@ -8,7 +8,7 @@ $(document).ready(function() {
   });
 
 
-  //Function for Residential Quote
+  //Function for Residential Quote    
 
   function residentialcalculator()
   {
