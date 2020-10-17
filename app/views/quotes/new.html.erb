@@ -235,10 +235,14 @@
 <br>
 <label><strong>Total Price (CAD$)</strong></label>
 <input name= 'totalPrice' readonly type="text" id="totalprice">
-</center>   
+ 
 <br><br>
-<%= flash_messages %>
-<%= f.submit %>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+<%= f.submit 'Submit Request', class: "btn btn-primary" %>
 </center>
 
 

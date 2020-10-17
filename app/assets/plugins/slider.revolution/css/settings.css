@@ -2341,11 +2341,11 @@ zoom: 1;
 
 @font-face {
   font-family: 'revicons';
-  src: url('<%= asset_path("revicons.eot")  %>');
-  src: url('<%= asset_path(revicons.eot") + "?#iefix" %>') format('embedded-opentype'),
-       url('<%= asset_path("revicons.woff") %>') format('woff'),
-       url('<%= asset_path("revicons.ttf") %>') format('truetype'),
-       url('<%= asset_path("revicons.svg") %>') format('svg');
+  src: url('/assets/images/fonts/revicons.eot?5510888');
+  src: url('/assets/images/fonts/revicons.eot?5510888#iefix') format('embedded-opentype'),
+       url('/assets/images/fonts/revicons.woff?5510888') format('woff'),
+       url('/assets/images/fonts/revicons.ttf?5510888') format('truetype'),
+       url('/assets/images/fonts/revicons.svg?5510888#revicons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
