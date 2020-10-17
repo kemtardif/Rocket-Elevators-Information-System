@@ -32,5 +32,6 @@
 //= require quote.js
 
 
+
 //= require_self
 //= require_tree .
