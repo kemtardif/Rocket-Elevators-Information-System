@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'home/residential', to: 'home#residential'
   get '/home/commercial'
   get 'quotes/new', to: 'quotes#new', as: 'quote'
-  get 'welcome/terms', to: 'welcome#terms', as: 'terms'
+  get 'home/terms', to: 'home#terms', as: 'terms'
   resources :quotes
 
 

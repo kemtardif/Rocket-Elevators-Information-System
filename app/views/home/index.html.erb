@@ -405,7 +405,7 @@
               <p>
                The dream might be more attainable than you ever tought! Let us show you our variety of elevators suited perfectly for your home... and budget!
               </p>
-              <a <%= link_to 'Residential Services',home_residential_path, :class => "btn btn-default" %></a>
+              <a <%= link_to 'Residential Services',home_residential_path, method: :get, :class => "btn btn-default" %></a>
               </center>
             </div>
 
@@ -421,7 +421,7 @@
               <p>
                With our wide variety of commercial elevators, we are sure to have one that fits the demands of your next project. From low-rise buildings to high-rise towers, we have a solution for you!
               </p>
-              <a <%= link_to 'Commercial',home_commercial_path, :class => "btn btn-default" %>
+              <a <%= link_to 'Commercial Services',home_commercial_path, method: :get, :class => "btn btn-default" %>
               </a>
              </center>
             </div>
@@ -445,12 +445,12 @@
             <h2 class="fs-60 fw-900">
               Since 1976 
             </h2>
-            <a <%= link_to 'Get a Quote',quote_path, :class => "btn btn-red btn-lg" %>
+            <a <%= link_to 'Get a Quote ',quote_path, :class => "btn btn-red btn-lg" %>
             </a>
-       ></a>
+       </a>
             &nbsp; OR &nbsp;
             <a class="btn btn-blue btn-lg" href="/#contact"
-              >Contact Us <i class="fa fa-angle-right"></i
+              >Contact Us </i
             ></a>
           </div>
         </div>
@@ -1599,7 +1599,7 @@
         <div class="copyright">
           <div class="container">
             <ul class="float-right m-0 list-inline mobile-block">
-              <li><a href="terms.html">Terms &amp; Conditions</a></li>
+              <li><%= link_to 'Terms and Conditions', terms_path, method: :get %></li>
             </ul>
             &copy; All Rights Reserved, Company LTD
           </div>
