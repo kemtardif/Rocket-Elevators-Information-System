@@ -1644,9 +1644,15 @@ $(document).on('turbolinks:load', function() {
         $("#faces-carousel").owlCarousel(
         {navigation: true, 
         slideSpeed: 300,
+        autoPlay: true ,
         paginationSpeed: 400,
         singleItem: true});
-        $("#news-carousel").owlCarousel();
+        $("#news-carousel").owlCarousel({
+        slideSpeed: 300,
+        autoPlay: true ,
+        paginationSpeed: 400,
+
+        });
 
 });
 
