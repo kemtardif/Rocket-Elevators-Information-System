@@ -145,9 +145,9 @@
                     <a href="#slidetop"> Admin </a>
                      <ul class="dropdown-menu">
                         <% if employee_signed_in? %>
-                          <li><%= link_to "Backdoor", root_url + "admin" %></li>
+                          <li><%= link_to "Backdoor", rails_admin.dashboard_path, method: :get %></li>
                         <% else %>
-                          <li><%= link_to "Login", root_url + "admin" %></li>
+                          <li><%= link_to "Login", rails_admin.dashboard_path, method: :get %></li>
                         <% end %>
                         <% if employee_signed_in? %>
                           <li role="separator" class="divider"></li>
