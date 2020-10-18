@@ -106,23 +106,23 @@
                   </li>
                   <li>
                     <!-- SERVICES -->
-                    <%= link_to "Services" ,  {  :action => "index", :controller => "home", :anchor => "services" }, method: :get %>
+                    
                   </li>
                   <li>
                     <!-- WORK -->
-                    <%= link_to "Work" , {:action => "index", :controller => "home", :anchor => "work" }, method: :get %>
+                    <%= link_to "Work" , home_index_path(anchor: 'work'), method: :get %>
                   </li>
                   <li>
                     <!-- NEWS -->
-                    <%= link_to "News" , {:action => "index", :controller => "home", :anchor => "news" }, method: :get %>
+                    <%= link_to "News" , home_index_path(anchor: 'news'), method: :get %>
                   </li>
                   <li>
                     <!-- CLIENTS -->
-                    <%= link_to "Clients" , {:action => "index", :controller => "home", :anchor => "clients" }, method: :get %>
+                    <%= link_to "Clients" , home_index_path(anchor: 'clients'), method: :get %>
                   </li>
                   <li>
                     <!-- CONTACT -->
-                    <%= link_to "Contact" , {:action => "index", :controller => "home", :anchor => "contact" }, method: :get %>
+                    <%= link_to "Contact" , home_index_path(anchor: 'contact'), method: :get %>
                   </li>
                   <li>
                     <!-- PROFILE -->
