@@ -157,10 +157,9 @@
 				max-height: auto;
 				white-space: nowrap;
 				  "
-			  >	  
-                <a class="btn btn-secondary btn-lg" href="/#services"
-                  >Services Offered &nbsp; <i class="fa fa-angle-right"></i
-                ></a>
+			  >	      
+          <%= link_to "Services Offered" , home_index_path(anchor: 'services'), class: "btn btn-secondary btn-lg", method: :get %>
+                
               </div>
 
               <div
@@ -183,8 +182,7 @@
                 "
               >
                
-              <a <%= link_to 'Get a Quote',quote_path, :class => "btn btn-secondary btn-lg" %>
-                 </a>
+              <%= link_to "Get a Quote" , quote_path, method: :get, class: "btn btn-secondary btn-lg" %>
                 
                 
               </div>
@@ -279,7 +277,7 @@
                   white-space: nowrap;
                 "
               >
-                <a <%= link_to 'Residential Services',home_residential_path, :class => "btn btn-red btn-lg" %></a>
+                <%= link_to "Residential Services" , home_residential_path, class: "btn btn-red btn-lg", method: :get %>
               </div>
             </li>
 
@@ -349,8 +347,7 @@
                   white-space: nowrap;
                 "
               >
-              <a <%= link_to 'Commercial',home_commercial_path, :class => "btn btn-secondary btn-lg" %>
-              </a>
+              <%= link_to "Commercial Services" , home_commercial_path, class: "btn btn-blue btn-lg", method: :get %>
               </div>
             </li>
 
@@ -389,7 +386,7 @@
               <p>
                 Throughout our 44 years of existence, we have always strived to offer the best quality in both products and services. Here are some of our most awarded and spectacular projects.
               </p>
-              <a href="/#work" class="btn btn-default">Portfolio</a>
+              <%= link_to "Portfolio" , home_index_path(anchor: 'work'), class: "btn btn-default", method: :get %>
              </center>
             </div>
 
@@ -405,7 +402,7 @@
               <p>
                The dream might be more attainable than you ever tought! Let us show you our variety of elevators suited perfectly for your home... and budget!
               </p>
-              <a <%= link_to 'Residential Services',home_residential_path, method: :get, :class => "btn btn-default" %></a>
+              <%= link_to 'Residential Services',home_residential_path, method: :get, :class => "btn btn-default" %>
               </center>
             </div>
 
@@ -421,7 +418,7 @@
               <p>
                With our wide variety of commercial elevators, we are sure to have one that fits the demands of your next project. From low-rise buildings to high-rise towers, we have a solution for you!
               </p>
-              <a <%= link_to 'Commercial Services',home_commercial_path, method: :get, :class => "btn btn-default" %>
+              <%= link_to 'Commercial Services',home_commercial_path, method: :get, :class => "btn btn-default" %>
               </a>
              </center>
             </div>
@@ -445,13 +442,11 @@
             <h2 class="fs-60 fw-900">
               Since 1976 
             </h2>
-            <a <%= link_to 'Get a Quote ',quote_path, :class => "btn btn-red btn-lg" %>
-            </a>
+            <%= link_to 'Get a Quote ',quote_path, method: :get, :class => "btn btn-red btn-lg" %>
+            
        </a>
             &nbsp; OR &nbsp;
-            <a class="btn btn-blue btn-lg" href="/#contact"
-              >Contact Us </i
-            ></a>
+            <%= link_to 'Contact Us ', home_index_path(anchor: 'contact'), method: :get, :class => "btn btn-blue btn-lg" %>
           </div>
         </div>
       </section>

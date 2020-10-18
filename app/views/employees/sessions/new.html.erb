@@ -1,6 +1,6 @@
 <%= flash_messages %>
 <header>
-  <h2>Employees Log in</h2>
+  <h2><br></h2>
 </header>
 
 
@@ -10,7 +10,8 @@
 <div class="container">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="devise-container">
-    <div class="row">
+  <h2>Employees Log In</h2></div>
+    <div class="row"> 
       <div class="form-group">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, class: "form-control" %>
