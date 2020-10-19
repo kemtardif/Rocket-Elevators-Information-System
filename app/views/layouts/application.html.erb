@@ -145,9 +145,9 @@
                     <a href="#slidetop"> Admin </a>
                      <ul class="dropdown-menu">
                         <% if employee_signed_in? %>
-                          <li><%= link_to "Backdoor", root_url + "employees/sign_in" %></li>
+                          <li><%= link_to "Backdoor", root_url + "admin" %></li>
                         <% else %>
-                          <li><%= link_to "Login", root_url + "employees/sign_in" %></li>
+                          <li><%= link_to "Login", root_url + "admin" %></li>
                         <% end %>
                         <% if employee_signed_in? %>
                           <li role="separator" class="divider"></li>
