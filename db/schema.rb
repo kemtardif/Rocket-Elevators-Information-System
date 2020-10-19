@@ -10,7 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_16_130435) do
+ActiveRecord::Schema.define(version: 2020_10_19_140157) do
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "typeOfAddress"
+    t.string "addressStatus"
+    t.string "addressEntity"
+    t.string "streetNumberAndName"
+    t.integer "suiteAndApartementNumber"
+    t.string "cityName"
+    t.string "postalCode"
+    t.string "countryAddress"
+    t.string "addressNotes"
+    t.string "whothecoolest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "buildingId"
+    t.string "buildingType"
+    t.string "batteryStatus"
+    t.integer "employeeId"
+    t.string "commissioningDate"
+    t.string "lastInspectionDate"
+    t.string "operationCertificate"
+    t.string "batteryInformation"
+    t.string "batteryNotes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "batteryId"
+    t.integer "numberOfServedFloors"
+    t.string "columnStatus"
+    t.string "columnInformation"
+    t.string "columnNotes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "columnId"
+    t.string "elevatorSerialNumber"
+    t.string "elevatorModel"
+    t.string "elevatorType"
+    t.string "elevatorStatus"
+    t.string "elevatorDateOfComissioning"
+    t.string "elevatorDateOfLastInspection"
+    t.string "elevatorCertificateOfInspection"
+    t.string "elevatorInformation"
+    t.string "elevatorNotes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
