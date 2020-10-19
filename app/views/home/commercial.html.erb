@@ -2,33 +2,33 @@
       <!-- REVOLUTION SLIDER -->
       <div class="slider fullwidthbanner-container roundedcorners">
         <!--
-        Navigation Styles:
-        
-          data-navigationStyle="" theme default navigation
-          
-          data-navigationStyle="preview1"
-          data-navigationStyle="preview2"
-          data-navigationStyle="preview3"
-          data-navigationStyle="preview4"
-          
-        Bottom Shadows
-          data-shadow="1"
-          data-shadow="2"
-          data-shadow="3"
-          
-        Slider Height (do not use on fullscreen mode)
-          data-height="300"
-          data-height="350"
-          data-height="400"
-          data-height="450"
-          data-height="500"
-          data-height="550"
-          data-height="600"
-          data-height="650"
-          data-height="700"
-          data-height="750"
-          data-height="800"
-      -->
+					Navigation Styles:
+					
+						data-navigationStyle="" theme default navigation
+						
+						data-navigationStyle="preview1"
+						data-navigationStyle="preview2"
+						data-navigationStyle="preview3"
+						data-navigationStyle="preview4"
+						
+					Bottom Shadows
+						data-shadow="1"
+						data-shadow="2"
+						data-shadow="3"
+						
+					Slider Height (do not use on fullscreen mode)
+						data-height="300"
+						data-height="350"
+						data-height="400"
+						data-height="450"
+						data-height="500"
+						data-height="550"
+						data-height="600"
+						data-height="650"
+						data-height="700"
+						data-height="750"
+						data-height="800"
+				-->
         <div
           class="fullwidthbanner"
           data-height="600"
@@ -36,7 +36,12 @@
           data-navigationStyle="preview2"
         >
           <ul class="hide">
-            <!-- Slide 1: Slogan - Rocket -->
+
+
+
+
+
+            <!-- Slide 1: Slogan - Lien vers l’offre de services, Lien vers le formulaire de demande de soumission  -->
             <li
               data-transition="parallaxtotop"
               data-slotamount="7"
@@ -45,13 +50,19 @@
               data-title="Rocket Elevators"
             >
               <!-- MAIN IMAGE -->
-
-              <%= asset_path('rocketslider.jpeg')%>
-             
+              <img
+                src="/assets/rocketslider.jpeg"
+                alt="cover image"
+                data-bgposition="center"
+                data-bgfit="cover"
+                data-bgrepeat="no-repeat"
+              />
 
               <div class="overlay dark-4">
                 <!-- dark overlay [0 to 9 opacity] -->
               </div>
+
+             
 
               <div
                 class="tp-caption font-roboto skewfromleft tp-resizeme"
@@ -67,7 +78,7 @@
                 data-endspeed="500"
                 style="
                   z-index: 2;
-                  color: rgb(210, 222, 233);
+                  color:rgb(210, 222, 233);
                   font-size: 65px;
                   line-height: 85px;
                   font-weight: bold;
@@ -78,53 +89,53 @@
                 Elevate Safety,
               </div>
               <div
-                class="tp-caption font-roboto skewfromleft tp-resizeme"
-                data-x="525"
-                data-y="200"
-                data-speed="500"
-                data-start="2500"
-                data-easing="Cubic.easeOut"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                data-endspeed="500"
-                style="
-                  z-index: 2;
-                  color: rgb(210, 222, 233);
-                  font-size: 65px;
-                  line-height: 85px;
-                  font-weight: bold;
-                  letter-spacing: 0;
-                  text-shadow: none;
-                "
-              >
-                Speed
-              </div>
-              <div
-                class="tp-caption font-roboto skewfromleft tp-resizeme"
-                data-x="730"
-                data-y="200"
-                data-speed="500"
-                data-start="3500"
-                data-easing="Cubic.easeOut"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                data-endspeed="500"
-                style="
-                  z-index: 2;
-                  color: rgb(210, 222, 233);
-                  font-size: 65px;
-                  line-height: 85px;
-                  font-weight: bold;
-                  letter-spacing: 0;
-                  text-shadow: none;
-                "
-              >
-                and Style
-              </div>
+              class="tp-caption font-roboto skewfromleft tp-resizeme"
+              data-x="525"
+              data-y="200"
+              data-speed="500"
+              data-start="2500"
+              data-easing="Cubic.easeOut"
+              data-splitin="none"
+              data-splitout="none"
+              data-elementdelay="0.1"
+              data-endelementdelay="0.1"
+              data-endspeed="500"
+              style="
+                z-index: 2;
+                color:rgb(210, 222, 233);
+                font-size: 65px;
+                line-height: 85px;
+                font-weight: bold;
+                letter-spacing: 0;
+                text-shadow: none;
+              "
+            >
+              Speed
+            </div>
+            <div
+            class="tp-caption font-roboto skewfromleft tp-resizeme"
+            data-x="730"
+            data-y="200"
+            data-speed="500"
+            data-start="3500"
+            data-easing="Cubic.easeOut"
+            data-splitin="none"
+            data-splitout="none"
+            data-elementdelay="0.1"
+            data-endelementdelay="0.1"
+            data-endspeed="500"
+            style="
+              z-index: 2;
+              color:rgb(210, 222, 233);
+              font-size: 65px;
+              line-height: 85px;
+              font-weight: bold;
+              letter-spacing: 0;
+              text-shadow: none;
+            "
+          >
+            and Style
+          </div>
               <div
                 class="tp-caption sfb tp-resizeme"
                 data-x="850"
@@ -137,16 +148,15 @@
                 data-elementdelay="1"
                 data-endelementdelay="0.1"
                 data-endspeed="500"
-                style="
-                  z-index: 4;
-                  max-width: auto;
-                  max-height: auto;
-                  white-space: nowrap;
-                "
-              >
-                <a <%= link_to ' Services offered',root_path,:class => "btn btn-secondary btn-lg" %>
-                  >Services Offered &nbsp; <i class="fa fa-angle-right"></i
-                ></a>
+				style="
+				z-index: 4;
+				max-width: auto;
+				max-height: auto;
+				white-space: nowrap;
+				  "
+			  >	      
+          <%= link_to "Services Offered" , home_index_path(anchor: 'services'), class: "btn btn-secondary btn-lg", method: :get %>
+                
               </div>
 
               <div
@@ -168,29 +178,40 @@
                   white-space: nowrap;
                 "
               >
-                <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-secondary btn-lg" %>
-                  Get a Quote &nbsp; <i class="fa fa-angle-right"></i
-                ></a>
+               
+              <%= link_to "Get a Quote" , quote_path, method: :get, class: "btn btn-secondary btn-lg" %>
+                
+                
               </div>
               <div
-                class="tp-caption tp-fade"
-                data-x="center"
-                data-y="center"
-                data-speed="300"
-                data-start="800"
-                data-easing="Power3.easeInOut"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                data-endspeed="300"
-                style="z-index: 1"
-              >
+              class="tp-caption tp-fade"
+              data-x="center"
+              data-y="center"
+              data-speed="300"
+              data-start="800"
+              data-easing="Power3.easeInOut"
+              data-elementdelay="0.1"
+              data-endelementdelay="0.1"
+              data-endspeed="300"
+              style="z-index: 1"
+            >
+              <img
+                src="/assets/rocketlogo.png"
+                alt=""
+                style="width:300px;height:400px;"
+              />
+            </div>
 
-             <%= asset_path('rocketlogo.png', style:"width:300px;height:400px")%>
-        
-              </div>
             </li>
 
-            <!-- Slide 2: Residential -->
+
+
+
+
+
+
+            <!-- Slide 2: Promotion du service pour immeubles résidentiels et lien vers la page de détail du service résidentiel
+  -->
             <li
               data-transition="parallaxtobottom"
               data-slotamount="7"
@@ -199,9 +220,13 @@
               data-title="Residential Services"
             >
               <!-- MAIN IMAGE -->
-
-              <%= asset_path('residentialslider.jpeg')%>
-            
+              <img
+                src="/assets/residentialslider.jpeg"
+                alt="cover image"
+                data-bgposition="Pcenter top"
+                data-bgfit="cover"
+                data-bgrepeat="no-repeat"
+              />
               <div class="overlay dark-4">
                 <!-- dark overlay [0 to 9 opacity] -->
               </div>
@@ -249,13 +274,14 @@
                   white-space: nowrap;
                 "
               >
-                <a <%= link_to 'Residential Services',home_residential_path, :class => "btn btn-red btn-lg" %>
-                  > <i class="fa fa-angle-right"></i
-                ></a>
+                <%= link_to "Residential Services" , home_residential_path, class: "btn btn-red btn-lg", method: :get %>
               </div>
             </li>
 
-            <!-- Slide 3: Commercial -->
+
+
+
+            <!-- Slide 3: Promotion du service pour immeubles corporatifs et lien vers la page de détail du service corporatif -->
             <li
               data-transition="parallaxtobottom"
               data-slotamount="7"
@@ -264,9 +290,13 @@
               data-title="Commercial Services"
             >
               <!-- MAIN IMAGE -->
-
-              <%= asset_path('commercialslider.jpeg')%>
-              
+              <img
+                src="/assets/commercialslider.jpeg"
+                alt="cover image"
+                data-bgposition="Pcenter top"
+                data-bgfit="cover"
+                data-bgrepeat="no-repeat"
+              />
               <div class="overlay dark-4">
                 <!-- dark overlay [0 to 9 opacity] -->
               </div>
@@ -284,7 +314,7 @@
                 data-endspeed="600"
                 style="
                   z-index: 2;
-                  color: rgb(229, 235, 241);
+                  color:rgb(229, 235, 241);
                   font-size: 46px;
                   line-height: 85px;
                   font-weight: bold;
@@ -292,8 +322,8 @@
                   text-shadow: none;
                 "
               >
-                Let us help you lift your company to prosperity!
-              </div>
+              Let us help you lift your company to prosperity!
+            </div>
 
               <div
                 class="tp-caption skewfromleft tp-resizeme un-button-2-lg"
@@ -314,17 +344,21 @@
                   white-space: nowrap;
                 "
               >
-              <a <%= link_to 'Commercial Services',home_commercial_path, :class => "btn btn-blue btn-lg" %>
-              >Commercial Services &nbsp; <i class="fa fa-angle-right"> </a>
-  
-  
+              <%= link_to "Commercial Services" , home_commercial_path, class: "btn btn-blue btn-lg", method: :get %>
               </div>
             </li>
+
           </ul>
         </div>
       </div>
 
+
+
+
+
+
       <!-- /REVOLUTION SLIDER -->
+      
       <section class="section-xs dark">
         <div class="container">
          <center>
@@ -366,7 +400,7 @@
                   the minimum price available on the market.
                 </p>
 
-                <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-secondary btn-lg" %></a>
+                <%= link_to "Get a Quote" , quote_path, method: :get, class: "btn btn-red btn-lg" %>
               </center>
               <br /><br />
             </div>
@@ -462,7 +496,7 @@
                   services, this might be the perfect option for you!
                 </p>
                 <br /><br />
-                <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-secondary btn-lg" %></a>
+                <%= link_to "Get a Quote" , quote_path, method: :get, class: "btn btn-red btn-lg" %>
               </center>
             </div>
           </div>
@@ -492,7 +526,7 @@
                   the Premium Package!
                 </p>
                 <br /><br />
-                <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-secondary btn-lg" %></a>
+                <%= link_to "Get a Quote" , quote_path, method: :get, class: "btn btn-red btn-lg" %>
               </center>
             </div>
 
@@ -568,7 +602,7 @@
         <div class="copyright">
           <div class="container">
             <ul class="float-right m-0 list-inline mobile-block">
-              <li><%= link_to 'Terms and services',terms_path %></a></li>
+              <li><%= link_to 'Terms and Conditions', terms_path, method: :get %></li>
             </ul>
             &copy; All Rights Reserved, Company LTD
           </div>

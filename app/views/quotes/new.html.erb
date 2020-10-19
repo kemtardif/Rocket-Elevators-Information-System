@@ -1,13 +1,17 @@
 
-<%= flash_messages %>
+
 <%= form_for @quote do |f| %>
 
 <!-- Building Type Selection -->
 <br>
 <div class="heading-title heading-dotted text-center">
   <h2>Quote Form</h2>
+  
 </div>
+
 <center>
+<h2>Quote Form</h2>
+ 
       <label for="buildingtype"><strong>Select the Building Type</strong></label>
       <select id="selectator" name="buildingType">
           <option value="">Select an Option</option>
@@ -221,7 +225,7 @@
 </div>
 <br>
 <div class="heading-title heading-dotted text-center">
-  <h2>Pricing</h2>
+  <h2>Pricing</h2>  
 </div>
 <label><strong>Elevators (CAD$) </strong></label>
 <input name= 'elevatorPrice'readonly type="text" id="elevatortotal"><br>
@@ -231,11 +235,15 @@
 <br>
 <label><strong>Total Price (CAD$)</strong></label>
 <input name= 'totalPrice' readonly type="text" id="totalprice">
-</center>   
+ 
 <br><br>
-
-<%= f.submit %>
-
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+<%= f.submit 'Submit Request', class: "btn btn-primary" %>
+</center>
 
 
 <% end %>

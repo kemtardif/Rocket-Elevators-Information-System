@@ -102,27 +102,27 @@
                 >
                   <li class="active">
                     <!-- HOME -->
-                    <a <%= link_to 'Home',root_path %> </a>
+                    <%= link_to 'Home',root_path, method: :get %>
                   </li>
                   <li>
                     <!-- SERVICES -->
-                    <a <%= link_to 'Services',root_path, :id => "services" %>  </a>
+                    <%= link_to "Services" , home_index_path(anchor: 'services'), method: :get %>
                   </li>
                   <li>
                     <!-- WORK -->
-                    <a <%= link_to 'Portfolio',root_path, :id => "work" %> </a>
+                    <%= link_to "Work" , home_index_path(anchor: 'work'), method: :get %>
                   </li>
                   <li>
                     <!-- NEWS -->
-                    <a <%= link_to 'News',root_path, :id => "news" %> </a>
+                    <%= link_to "News" , home_index_path(anchor: 'news'), method: :get %>
                   </li>
                   <li>
                     <!-- CLIENTS -->
-                    <a<%= link_to 'Clients',root_path, :id => "clients" %> </a>
+                    <%= link_to "Clients" , home_index_path(anchor: 'clients'), method: :get %>
                   </li>
                   <li>
                     <!-- CONTACT -->
-                    <a <%= link_to 'Contact',root_path, :id => "contact" %> </a>
+                    <%= link_to "Contact" , home_index_path(anchor: 'contact'), method: :get %>
                   </li>
                   <li>
                     <!-- PROFILE -->
@@ -164,9 +164,10 @@
         <!-- /Top Nav -->
       </div>  
 
-      
       <%= yield %>
-      
+
    
   </body>
+
+
 </html>

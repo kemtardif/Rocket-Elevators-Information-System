@@ -1,14 +1,21 @@
-$(document).ready(function() {
+
+document.addEventListener("turbolinks:load", function() {
+  $('.building_type').show().hide();
+
+  $('#selectator').change(function() {
     $('.building_type').hide();
+    $('#' + $(this).val()).show();
+  })
+})
+
+
+
+
   
-    $('#selectator').change(function() {
-      $('.building_type').hide();
-      $('#' + $(this).val()).show();
-    })
-  });
+  
 
 
-  //Function for Residential Quote
+  //Function for Residential Quote    
 
   function residentialcalculator()
   {
