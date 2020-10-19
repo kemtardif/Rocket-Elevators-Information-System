@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  batteryId: 1
+  numberOfServedFloors: 1
+  columnStatus: MyString
+  columnInformation: MyString
+  columnNotes: MyString
+
+two:
+  batteryId: 1
+  numberOfServedFloors: 1
+  columnStatus: MyString
+  columnInformation: MyString
+  columnNotes: MyString
