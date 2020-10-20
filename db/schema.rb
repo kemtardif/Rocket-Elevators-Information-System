@@ -27,10 +27,8 @@ ActiveRecord::Schema.define(version: 2020_10_20_160749) do
   end
 
   create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "buildingId"
     t.string "buildingType"
     t.string "batteryStatus"
-    t.integer "employeeId"
     t.string "commissioningDate"
     t.string "lastInspectionDate"
     t.string "operationCertificate"
@@ -47,7 +45,6 @@ ActiveRecord::Schema.define(version: 2020_10_20_160749) do
   end
 
   create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "BuildingId"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "building_id"
@@ -55,7 +52,6 @@ ActiveRecord::Schema.define(version: 2020_10_20_160749) do
   end
 
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "CustomerId"
     t.string "Address"
     t.string "AdminName"
     t.string "AdminEmail"
@@ -76,7 +72,6 @@ ActiveRecord::Schema.define(version: 2020_10_20_160749) do
   end
 
   create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "batteryId"
     t.integer "numberOfServedFloors"
     t.string "columnStatus"
     t.string "columnInformation"
@@ -105,7 +100,6 @@ ActiveRecord::Schema.define(version: 2020_10_20_160749) do
   end
 
   create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "columnId"
     t.string "elevatorSerialNumber"
     t.string "elevatorModel"
     t.string "elevatorType"

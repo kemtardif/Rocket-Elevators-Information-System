@@ -11,7 +11,7 @@ require_relative '../lib/populator_fix.rb'
 
 #Populate Users
 
-User.populate 1500 do |u|
+User.populate 15 do |u|
     u.username = Faker::FunnyName.name
     u.email = Faker::Internet.email
     u.encrypted_password = Faker::Internet.password
@@ -19,7 +19,7 @@ end
 
 #POPULATE EMPLOYEES
 
-Employee.populate 150 do |e|
+Employee.populate 10 do |e|
     e.email = Faker::Internet.email
     e.encrypted_password = 123456
     e.firstname = Faker::Name.first_name
@@ -61,7 +61,7 @@ end
 
 ##POPULATE CUSTOMERS TABLE AS FIRST 500 users
 
-User.find_each(finish: 490) do |u|
+User.find_each(finish: 5) do |u|
 
     Customer.create!(
         customersCreationDate: Faker::Date.between(from: '2017-12-31', to: '2020-12-31'),
@@ -86,14 +86,15 @@ Customer.find_each do |c|
 
     Building.create!(
         customer_id: c.id,
-        address_id: c.id + 491,
-        Address:  Address.find(c.id + 501).streetNumberAndName,
+        address_id: c.id + 6,
+        Address:  Address.find(c.id + 6).streetNumberAndName,
         AdminName: Faker::FunnyName.name,
         AdminEmail: Faker::Internet.email,
         AdminPhone: Faker::PhoneNumber.cell_phone,
         TechName: Faker::FunnyName.name,
         TechEmail: Faker::Internet.email,
         TechPhone: Faker::PhoneNumber.cell_phone,
+        
 
     )
 
@@ -104,7 +105,6 @@ end
 Building.find_each do |b|
 
     BuildingDetail.create!(
-        BuildingId: b.id,
         building_id: b.id
     )
 
@@ -118,14 +118,12 @@ status = ["Operational", "In repair", "Not Operational"]
 
 Building.find_each do |b|
 
-    x = Employee.find(rand(1..100)).id
+    x = Employee.find(rand(1..3)).id
 
-    Battery.create!(
-        buildingId: b.id,
+   a = Battery.create!(
         building_id: b.id,
         buildingType: buildType[rand(0..2)],
         batteryStatus: status[rand(0..2)],
-        employeeId: x,
         employee_id: x,
         commissioningDate:Faker::Date.between(from: '2017-12-31', to: '2020-12-31'),
         lastInspectionDate:Faker::Date.between(from: '2017-12-31', to: '2020-12-31'),
@@ -133,7 +131,7 @@ Building.find_each do |b|
         batteryInformation: Faker::Quote.most_interesting_man_in_the_world,
         batteryNotes: Faker::ChuckNorris
     )
-
+    b.update_attribute(:battery_id, a.id)
 end
 
 ##POPULATE COLUMNS TABLE
@@ -141,12 +139,11 @@ end
 Battery.find_each do |bat|
  
     Column.create!(
-        batteryId: bat.id,
         battery_id: bat.id,
         numberOfServedFloors: rand(10..30),
         columnStatus: status[rand(0..2)],
         columnInformation: Faker::Quote.most_interesting_man_in_the_world,
-        columnNotes: Faker::ChuckNorris
+        columnNotes: Faker::Quote.most_interesting_man_in_the_world
     )
 
 end
@@ -158,7 +155,6 @@ elType = ["1", "2", "3"]
 Column.find_each do |col|
 
     Elevator.create!(
-        columnId: col.id,
         column_id: col.id,
         elevatorSerialNumber: Faker::Barcode.ean(8), 
         elevatorModel: model[rand(0..2)],
@@ -168,7 +164,7 @@ Column.find_each do |col|
         elevatorDateOfLastInspection: Faker::Date.between(from: '2017-12-31', to: '2020-12-31'),
         elevatorCertificateOfInspection: Faker::Barcode.upc_e_with_composite_symbology,
         elevatorInformation: Faker::Quote.most_interesting_man_in_the_world,
-        elevatorNotes: Faker::ChuckNorris
+        elevatorNotes: Faker::Quote.most_interesting_man_in_the_world
     )
 
 end

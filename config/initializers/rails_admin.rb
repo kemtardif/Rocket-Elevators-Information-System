@@ -15,8 +15,7 @@ RailsAdmin.config do |config|
         field :quotes     
       end   
     end
-   
-   
+    
    config.model 'User' do
     create do
       field :name
