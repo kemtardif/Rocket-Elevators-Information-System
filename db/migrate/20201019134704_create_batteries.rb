@@ -12,6 +12,7 @@ class CreateBatteries < ActiveRecord::Migration[5.2]
       t.string :operationCertificate
       t.string :batteryInformation
       t.string :batteryNotes
+      
       t.timestamps
     end
   end

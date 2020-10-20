@@ -7,8 +7,9 @@ class CreateColumns < ActiveRecord::Migration[5.2]
       t.string :columnStatus
       t.string :columnInformation
       t.string :columnNotes
-
       t.timestamps
     end
   end
 end
+
+
