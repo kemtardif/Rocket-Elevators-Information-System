@@ -5,10 +5,10 @@ class CreateBuildings < ActiveRecord::Migration[5.2]
       t.string :Address
       t.string :AdminName
       t.string :AdminEmail
-      t.integer :AdminPhone
+      t.string :AdminPhone
       t.string :TechName
       t.string :TechEmail
-      t.integer :TechPhone
+      t.string :TechPhone
 
       t.timestamps
     end

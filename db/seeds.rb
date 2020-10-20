@@ -5,204 +5,46 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'json'
 
 require_relative '../lib/populator_fix.rb'
 
-User.populate 150 do |u|
+#Populate Users
+
+User.populate 1500 do |u|
     u.username = Faker::FunnyName.name
     u.email = Faker::Internet.email
     u.encrypted_password = Faker::Internet.password
 end
 
+#POPULATE EMPLOYEES
 
+Employee.populate 150 do |e|
+    e.email = Faker::Internet.email
+    e.encrypted_password = 123456
+    e.firstname = Faker::Name.first_name
+    e.lastname = Faker::Name.last_name  
+    e.function = "Employee"
+end
+
+
+
+
+    
+
+#ARRAYS WITH VARIOUS ATTRIBUTES USED tO RANDOMLY POPULATE TABLES 
 typeArr = ["Shipping", "Billing", "Home", "Business"]
 status = ["HQ", "Project"]
 entity = ["Corporation", "Residential", "Commercial"]
 
-address = [
-    {
-      "address": "777 Brockton Avenue",
-      "city": "Abington",
-      "state": "MA",
-      "zip": "2351"
-    },
-    {
-      "address": "30 Memorial Drive",
-      "city": "Avon",
-      "state": "MA",
-      "zip": "2322"
-    },
-    {
-      "address": "250 Hartford Avenue",
-      "city": "Bellingham",
-      "state": "MA",
-      "zip": "2019"
-    },
-    {
-      "address": "700 Oak Street",
-      "city": "Brockton",
-      "state": "MA",
-      "zip": "2301"
-    },
-    {
-      "address": "66-4 Parkhurst Rd",
-      "city": "Chelmsford",
-      "state": "MA",
-      "zip": "1824"
-    },
-    {
-      "address": "591 Memorial Dr",
-      "city": "Chicopee",
-      "state": "MA",
-      "zip": "1020"
-    },
-    {
-      "address": "55 Brooksby Village Way",
-      "city": "Danvers",
-      "state": "MA",
-      "zip": "1923"
-    },
-    {
-      "address": "137 Teaticket Hwy",
-      "city": "East Falmouth",
-      "state": "MA",
-      "zip": "2536"
-    },
-    {
-      "address": "42 Fairhaven Commons Way",
-      "city": "Fairhaven",
-      "state": "MA",
-      "zip": "2719"
-    },
-    {
-      "address": "374 William S Canning Blvd",
-      "city": "Fall River",
-      "state": "MA",
-      "zip": "2721"
-    },
-    {
-      "address": "121 Worcester Rd",
-      "city": "Framingham",
-      "state": "MA",
-      "zip": "1701"
-    },
-    {
-      "address": "677 Timpany Blvd",
-      "city": "Gardner",
-      "state": "MA",
-      "zip": "1440"
-    },
-    {
-      "address": "337 Russell St",
-      "city": "Hadley",
-      "state": "MA",
-      "zip": "1035"
-    },
-    {
-      "address": "295 Plymouth Street",
-      "city": "Halifax",
-      "state": "MA",
-      "zip": "2338"
-    },
-    {
-      "address": "1775 Washington St",
-      "city": "Hanover",
-      "state": "MA",
-      "zip": "2339"
-    },
-    {
-      "address": "280 Washington Street",
-      "city": "Hudson",
-      "state": "MA",
-      "zip": "1749"
-    },
-    {
-      "address": "20 Soojian Dr",
-      "city": "Leicester",
-      "state": "MA",
-      "zip": "1524"
-    },
-    {
-      "address": "11 Jungle Road",
-      "city": "Leominster",
-      "state": "MA",
-      "zip": "1453"
-    },
-    {
-      "address": "301 Massachusetts Ave",
-      "city": "Lunenburg",
-      "state": "MA",
-      "zip": "1462"
-    },
-    {
-      "address": "780 Lynnway",
-      "city": "Lynn",
-      "state": "MA",
-      "zip": "1905"
-    },
-    {
-      "address": "70 Pleasant Valley Street",
-      "city": "Methuen",
-      "state": "MA",
-      "zip": "1844"
-    },
-    {
-      "address": "830 Curran Memorial Hwy",
-      "city": "North Adams",
-      "state": "MA",
-      "zip": "1247"
-    },
-    {
-      "address": "1470 S Washington St",
-      "city": "North Attleboro",
-      "state": "MA",
-      "zip": "2760"
-    },
-    {
-      "address": "506 State Road",
-      "city": "North Dartmouth",
-      "state": "MA",
-      "zip": "2747"
-    },
-    {
-      "address": "742 Main Street",
-      "city": "North Oxford",
-      "state": "MA",
-      "zip": "1537"
-    },
-    {
-      "address": "72 Main St",
-      "city": "North Reading",
-      "state": "MA",
-      "zip": "1864"
-    },
-    {
-      "address": "200 Otis Street",
-      "city": "Northborough",
-      "state": "MA",
-      "zip": "1532"
-    },
-    {
-      "address": "180 North King Street",
-      "city": "Northhampton",
-      "state": "MA",
-      "zip": "1060"
-    },
-    {
-      "address": "555 East Main St",
-      "city": "Orange",
-      "state": "MA",
-      "zip": "1364"
-    },
-    {
-      "address": "555 Hubbard Ave-Suite 12",
-      "city": "Pittsfield",
-      "state": "MA",
-      "zip": "1201"
-    }
-]
 
-address.each do |add|
+#JSON USED FOR THE ADRESSES
+
+path = File.join(File.dirname(__FILE__), "./seeds/addresses.json")
+address = JSON.parse(File.read(path))
+
+address["addresses"].map do |add|
+
     Address.create(
         countryAddress: "United States",
         typeOfAddress: typeArr[rand(0..3)],
@@ -210,17 +52,123 @@ address.each do |add|
         suiteAndApartementNumber: rand(1..101),
         addressNotes: Faker::Marketing.buzzwords,
         addressEntity: entity[rand(0..2)],
-
-        streetNumberAndName: add[:address],
-        cityName: add[:city],
-        postalCode: add[:zip]
+        streetNumberAndName: add["address1"],
+        cityName: add["city"],
+        postalCode: add["postalCode"]
     )
+
+end
+
+##POPULATE CUSTOMERS TABLE AS FIRST 500 users
+
+User.find_each(finish: 490) do |u|
+
+    Customer.create!(
+        customersCreationDate: Faker::Date.between(from: '2017-12-31', to: '2020-12-31'),
+        companyName: Faker::Company.industry,
+        companyHHAddress: Address.find(u.id).streetNumberAndName,
+        user_id: u.id,
+        address_id: u.id,
+        companyContactFullName: Faker::GreekPhilosophers,
+        companyContactPhone: Faker::PhoneNumber.cell_phone,
+        companyContactEmail: Faker::Internet.email,
+        companyDescription: Faker::Company.industry,
+        technicalAuthorityFullName: Faker::FunnyName,
+        technicalAuthorityPhone: Faker::PhoneNumber.cell_phone,
+        technicalManagerEmail: Faker::Internet.email
+    )
+
+end
+
+##POPULATE BUILDINGS TABLE
+
+Customer.find_each do |c|
+
+    Building.create!(
+        customer_id: c.id,
+        address_id: c.id + 491,
+        Address:  Address.find(c.id + 501).streetNumberAndName,
+        AdminName: Faker::FunnyName.name,
+        AdminEmail: Faker::Internet.email,
+        AdminPhone: Faker::PhoneNumber.cell_phone,
+        TechName: Faker::FunnyName.name,
+        TechEmail: Faker::Internet.email,
+        TechPhone: Faker::PhoneNumber.cell_phone,
+
+    )
+
+end
+
+## POPULATE BUILDING_DETAILS TABLE
+
+Building.find_each do |b|
+
+    BuildingDetail.create!(
+        BuildingId: b.id,
+        building_id: b.id
+    )
+
 end
 
 
 
+##POPULATE BATTERIES TABLE
+buildType = ["Commercial", "Residential", "Corporate"]
+status = ["Operational", "In repair", "Not Operational"]
 
+Building.find_each do |b|
 
+    x = Employee.find(rand(1..100)).id
 
+    Battery.create!(
+        buildingId: b.id,
+        building_id: b.id,
+        buildingType: buildType[rand(0..2)],
+        batteryStatus: status[rand(0..2)],
+        employeeId: x,
+        employee_id: x,
+        commissioningDate:Faker::Date.between(from: '2017-12-31', to: '2020-12-31'),
+        lastInspectionDate:Faker::Date.between(from: '2017-12-31', to: '2020-12-31'),
+        operationCertificate: Faker::Barcode.upc_e_with_composite_symbology,  
+        batteryInformation: Faker::Quote.most_interesting_man_in_the_world,
+        batteryNotes: Faker::ChuckNorris
+    )
 
-    
+end
+
+##POPULATE COLUMNS TABLE
+
+Battery.find_each do |bat|
+ 
+    Column.create!(
+        batteryId: bat.id,
+        battery_id: bat.id,
+        numberOfServedFloors: rand(10..30),
+        columnStatus: status[rand(0..2)],
+        columnInformation: Faker::Quote.most_interesting_man_in_the_world,
+        columnNotes: Faker::ChuckNorris
+    )
+
+end
+
+##POPULATE ELEVATORS TABLE
+model = ["Standard", "Premium", "Excelium"]
+elType = ["1", "2", "3"]
+
+Column.find_each do |col|
+
+    Elevator.create!(
+        columnId: col.id,
+        column_id: col.id,
+        elevatorSerialNumber: Faker::Barcode.ean(8), 
+        elevatorModel: model[rand(0..2)],
+        elevatorType: elType[rand(0..2)],
+        elevatorStatus: status[rand(0..2)],
+        elevatorDateOfComissioning: Faker::Date.between(from: '2017-12-31', to: '2020-12-31'),
+        elevatorDateOfLastInspection: Faker::Date.between(from: '2017-12-31', to: '2020-12-31'),
+        elevatorCertificateOfInspection: Faker::Barcode.upc_e_with_composite_symbology,
+        elevatorInformation: Faker::Quote.most_interesting_man_in_the_world,
+        elevatorNotes: Faker::ChuckNorris
+    )
+
+end
