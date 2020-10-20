@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_19_140157) do
+ActiveRecord::Schema.define(version: 2020_10_20_013720) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "typeOfAddress"
@@ -38,6 +38,33 @@ ActiveRecord::Schema.define(version: 2020_10_19_140157) do
     t.string "batteryNotes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "column_id"
+    t.index ["column_id"], name: "index_batteries_on_column_id"
+  end
+
+  create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "BuildingId"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "battery_id"
+    t.index ["battery_id"], name: "index_building_details_on_battery_id"
+  end
+
+  create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "CustomerId"
+    t.string "Address"
+    t.string "AdminName"
+    t.string "AdminEmail"
+    t.integer "AdminPhone"
+    t.string "TechName"
+    t.string "TechEmail"
+    t.integer "TechPhone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "address_id"
+    t.bigint "building_detail_id"
+    t.index ["address_id"], name: "index_buildings_on_address_id"
+    t.index ["building_detail_id"], name: "index_buildings_on_building_detail_id"
   end
 
   create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -48,6 +75,25 @@ ActiveRecord::Schema.define(version: 2020_10_19_140157) do
     t.string "columnNotes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "elevator_id"
+    t.index ["elevator_id"], name: "index_columns_on_elevator_id"
+  end
+
+  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "customersCreationDate"
+    t.string "companyName"
+    t.string "companyHHAddress"
+    t.string "companyContactFullName"
+    t.string "companyContactPhone"
+    t.string "companyContactEmail"
+    t.string "companyDescription"
+    t.string "technicalAuthorityFullName"
+    t.string "technicalAuthorityPhone"
+    t.string "technicalManagerEmail"
+    t.bigint "address_id"
+    t.bigint "user_id"
+    t.index ["address_id"], name: "index_customers_on_address_id"
+    t.index ["user_id"], name: "index_customers_on_user_id"
   end
 
   create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -101,6 +147,17 @@ ActiveRecord::Schema.define(version: 2020_10_19_140157) do
     t.index ["user_id"], name: "index_quotes_on_user_id"
   end
 
+  create_table "settings", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "var", null: false
+    t.text "value"
+    t.string "target_type", null: false
+    t.integer "target_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["target_type", "target_id", "var"], name: "index_settings_on_target_type_and_target_id_and_var", unique: true
+    t.index ["target_type", "target_id"], name: "index_settings_on_target_type_and_target_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -114,5 +171,12 @@ ActiveRecord::Schema.define(version: 2020_10_19_140157) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "batteries", "columns"
+  add_foreign_key "building_details", "batteries"
+  add_foreign_key "buildings", "addresses"
+  add_foreign_key "buildings", "building_details"
+  add_foreign_key "columns", "elevators"
+  add_foreign_key "customers", "addresses"
+  add_foreign_key "customers", "users"
   add_foreign_key "quotes", "users"
 end

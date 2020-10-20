@@ -1,2 +1,3 @@
 class Building < ApplicationRecord
+    
 end

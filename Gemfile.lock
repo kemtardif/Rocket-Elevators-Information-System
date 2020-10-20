@@ -133,6 +133,8 @@ GEM
       warden (~> 1.2.3)
     erubi (1.9.0)
     execjs (2.7.0)
+    faker (2.14.0)
+      i18n (>= 1.6, < 2)
     ffi (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -166,6 +168,8 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
+    ledermann-rails-settings (2.5.0)
+      activerecord (>= 4.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -195,6 +199,7 @@ GEM
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     popper_js (1.16.0)
+    populator (1.0.0)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -330,12 +335,15 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  faker
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3.3)
   jquery-turbolinks
+  ledermann-rails-settings
   listen (>= 3.0.5, < 3.2)
   mixitup-rails
   mysql2 (>= 0.4.4, < 0.6.0)
+  populator
   pry-rails
   puma (~> 3.11)
   rack-cors
