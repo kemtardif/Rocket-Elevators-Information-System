@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_10_19_202719) do
+=======
+ActiveRecord::Schema.define(version: 2020_10_20_005324) do
+>>>>>>> bb48ae60a3002253cdd013de6ad4f68c5177637d
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "typeOfAddress"
@@ -69,6 +73,26 @@ ActiveRecord::Schema.define(version: 2020_10_19_202719) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
+=======
+  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "customersCreationDate"
+    t.string "companyName"
+    t.string "companyHHAddress"
+    t.string "companyContactFullName"
+    t.string "companyContactPhone"
+    t.string "companyContactEmail"
+    t.string "companyDescription"
+    t.string "technicalAuthorityFullName"
+    t.string "technicalAuthorityPhone"
+    t.string "technicalManagerEmail"
+    t.bigint "address_id"
+    t.bigint "user_id"
+    t.index ["address_id"], name: "index_customers_on_address_id"
+    t.index ["user_id"], name: "index_customers_on_user_id"
+  end
+
+>>>>>>> bb48ae60a3002253cdd013de6ad4f68c5177637d
   create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "columnId"
     t.string "elevatorSerialNumber"
@@ -144,5 +168,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_202719) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "customers", "addresses"
+  add_foreign_key "customers", "users"
   add_foreign_key "quotes", "users"
 end
