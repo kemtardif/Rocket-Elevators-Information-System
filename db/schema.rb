@@ -10,7 +10,79 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_16_130435) do
+ActiveRecord::Schema.define(version: 2020_10_19_202719) do
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "typeOfAddress"
+    t.string "addressStatus"
+    t.string "addressEntity"
+    t.string "streetNumberAndName"
+    t.integer "suiteAndApartementNumber"
+    t.string "cityName"
+    t.string "postalCode"
+    t.string "countryAddress"
+    t.string "addressNotes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "buildingId"
+    t.string "buildingType"
+    t.string "batteryStatus"
+    t.integer "employeeId"
+    t.string "commissioningDate"
+    t.string "lastInspectionDate"
+    t.string "operationCertificate"
+    t.string "batteryInformation"
+    t.string "batteryNotes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "BuildingId"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "CustomerId"
+    t.string "Address"
+    t.string "AdminName"
+    t.string "AdminEmail"
+    t.integer "AdminPhone"
+    t.string "TechName"
+    t.string "TechEmail"
+    t.integer "TechPhone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "batteryId"
+    t.integer "numberOfServedFloors"
+    t.string "columnStatus"
+    t.string "columnInformation"
+    t.string "columnNotes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "columnId"
+    t.string "elevatorSerialNumber"
+    t.string "elevatorModel"
+    t.string "elevatorType"
+    t.string "elevatorStatus"
+    t.string "elevatorDateOfComissioning"
+    t.string "elevatorDateOfLastInspection"
+    t.string "elevatorCertificateOfInspection"
+    t.string "elevatorInformation"
+    t.string "elevatorNotes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -46,6 +118,17 @@ ActiveRecord::Schema.define(version: 2020_10_16_130435) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_quotes_on_user_id"
+  end
+
+  create_table "settings", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "var", null: false
+    t.text "value"
+    t.string "target_type", null: false
+    t.integer "target_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["target_type", "target_id", "var"], name: "index_settings_on_target_type_and_target_id_and_var", unique: true
+    t.index ["target_type", "target_id"], name: "index_settings_on_target_type_and_target_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
