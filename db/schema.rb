@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_20_013720) do
+ActiveRecord::Schema.define(version: 2020_10_20_160749) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "typeOfAddress"
@@ -38,16 +38,20 @@ ActiveRecord::Schema.define(version: 2020_10_20_013720) do
     t.string "batteryNotes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "employee_id"
+    t.bigint "building_id"
     t.bigint "column_id"
+    t.index ["building_id"], name: "index_batteries_on_building_id"
     t.index ["column_id"], name: "index_batteries_on_column_id"
+    t.index ["employee_id"], name: "index_batteries_on_employee_id"
   end
 
   create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "BuildingId"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "battery_id"
-    t.index ["battery_id"], name: "index_building_details_on_battery_id"
+    t.bigint "building_id"
+    t.index ["building_id"], name: "index_building_details_on_building_id"
   end
 
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -55,16 +59,20 @@ ActiveRecord::Schema.define(version: 2020_10_20_013720) do
     t.string "Address"
     t.string "AdminName"
     t.string "AdminEmail"
-    t.integer "AdminPhone"
+    t.string "AdminPhone"
     t.string "TechName"
     t.string "TechEmail"
-    t.integer "TechPhone"
+    t.string "TechPhone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "address_id"
     t.bigint "building_detail_id"
+    t.bigint "customer_id"
+    t.bigint "battery_id"
     t.index ["address_id"], name: "index_buildings_on_address_id"
+    t.index ["battery_id"], name: "index_buildings_on_battery_id"
     t.index ["building_detail_id"], name: "index_buildings_on_building_detail_id"
+    t.index ["customer_id"], name: "index_buildings_on_customer_id"
   end
 
   create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -75,8 +83,8 @@ ActiveRecord::Schema.define(version: 2020_10_20_013720) do
     t.string "columnNotes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "elevator_id"
-    t.index ["elevator_id"], name: "index_columns_on_elevator_id"
+    t.bigint "battery_id"
+    t.index ["battery_id"], name: "index_columns_on_battery_id"
   end
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -109,6 +117,8 @@ ActiveRecord::Schema.define(version: 2020_10_20_013720) do
     t.string "elevatorNotes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "column_id"
+    t.index ["column_id"], name: "index_elevators_on_column_id"
   end
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -122,6 +132,8 @@ ActiveRecord::Schema.define(version: 2020_10_20_013720) do
     t.string "firstname"
     t.string "lastname"
     t.string "function"
+    t.bigint "battery_id"
+    t.index ["battery_id"], name: "index_employees_on_battery_id"
     t.index ["email"], name: "index_employees_on_email", unique: true
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
   end
@@ -171,12 +183,18 @@ ActiveRecord::Schema.define(version: 2020_10_20_013720) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "batteries", "buildings"
   add_foreign_key "batteries", "columns"
-  add_foreign_key "building_details", "batteries"
+  add_foreign_key "batteries", "employees"
+  add_foreign_key "building_details", "buildings"
   add_foreign_key "buildings", "addresses"
+  add_foreign_key "buildings", "batteries"
   add_foreign_key "buildings", "building_details"
-  add_foreign_key "columns", "elevators"
+  add_foreign_key "buildings", "customers"
+  add_foreign_key "columns", "batteries"
   add_foreign_key "customers", "addresses"
   add_foreign_key "customers", "users"
+  add_foreign_key "elevators", "columns"
+  add_foreign_key "employees", "batteries"
   add_foreign_key "quotes", "users"
 end
