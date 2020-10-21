@@ -1,4 +1,5 @@
 class CreateColumns < ActiveRecord::Migration[5.2]
+
   def change
     create_table :columns do |t|
       t.integer :numberOfServedFloors
@@ -11,3 +12,5 @@ class CreateColumns < ActiveRecord::Migration[5.2]
     end
   end
 end
+
+
