@@ -198,6 +198,7 @@ GEM
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    pg (1.2.3)
     popper_js (1.16.0)
     populator (1.0.0)
     pry (0.13.1)
@@ -343,6 +344,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   mixitup-rails
   mysql2 (>= 0.4.4, < 0.6.0)
+  pg
   populator
   pry-rails
   puma (~> 3.11)

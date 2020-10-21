@@ -47,7 +47,7 @@ gem 'rack-cors', :require => 'rack/cors'
 
 gem 'ledermann-rails-settings'
 
-
+gem 'pg'
 
 
 
