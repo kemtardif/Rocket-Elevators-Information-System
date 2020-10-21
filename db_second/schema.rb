@@ -19,15 +19,36 @@ ActiveRecord::Schema.define(version: 2020_10_21_164754) do
   end
 
   create_table "dim_customers", force: :cascade do |t|
+    t.string "customerCreationDate"
+    t.string "companyName"
+    t.string "companyMainContactFullName"
+    t.string "companyMainContactEmail"
+    t.integer "numberOfElevators"
+    t.string "customerCity"
   end
 
   create_table "fact_contacts", force: :cascade do |t|
+    t.string "contactid"
+    t.string "contactCreationDate"
+    t.string "contactCompanyName"
+    t.string "contactEmail"
+    t.string "projectName"
   end
 
   create_table "fact_elevators", force: :cascade do |t|
+    t.string "elevatorSerialNumber"
+    t.string "elevatorComissioningDate"
+    t.integer "buildingId"
+    t.integer "customerId"
+    t.string "buildingCity"
   end
 
   create_table "fact_quotes", force: :cascade do |t|
+    t.integer "quoteId"
+    t.string "quoteCreationDate"
+    t.string "companyName"
+    t.string "email"
+    t.integer "numberOfElevators"
   end
 
 end
