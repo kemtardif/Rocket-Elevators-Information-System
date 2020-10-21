@@ -8,6 +8,7 @@ class CreateBuildings < ActiveRecord::Migration[5.2]
       t.string :TechName
       t.string :TechEmail
       t.string :TechPhone
+      t.belongs_to :customer
 
       t.timestamps
     end

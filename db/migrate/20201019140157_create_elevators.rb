@@ -11,6 +11,7 @@ class CreateElevators < ActiveRecord::Migration[5.2]
       t.string :elevatorCertificateOfInspection
       t.string :elevatorInformation
       t.string :elevatorNotes
+      t.belongs_to :column
 
       t.timestamps
     end

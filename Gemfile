@@ -47,6 +47,10 @@ gem 'rack-cors', :require => 'rack/cors'
 
 gem 'ledermann-rails-settings'
 
+gem 'pg', '~> 0.18.4'
+
+gem 'blazer'
+
 
 
 

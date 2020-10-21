@@ -63,12 +63,11 @@ end
 
 User.find_each(finish: 5) do |u|
 
-    Customer.create!(
-        customersCreationDate: Faker::Date.between(from: '2017-12-31', to: '2020-12-31'),
+   cust = Customer.create!(
+        customersCreationDate: Faker::Time.backward(days: 1200, period: :evening),
         companyName: Faker::Company.industry,
         companyHHAddress: Address.find(u.id).streetNumberAndName,
         user_id: u.id,
-        address_id: u.id,
         companyContactFullName: Faker::GreekPhilosophers,
         companyContactPhone: Faker::PhoneNumber.cell_phone,
         companyContactEmail: Faker::Internet.email,
@@ -76,7 +75,9 @@ User.find_each(finish: 5) do |u|
         technicalAuthorityFullName: Faker::FunnyName,
         technicalAuthorityPhone: Faker::PhoneNumber.cell_phone,
         technicalManagerEmail: Faker::Internet.email
-    )
+        )
+    u.update_attribute(:customer_id, cust.id)
+    Address.find(u.id).update_attribute(:customer_id, cust.id)
 
 end
 
@@ -84,9 +85,8 @@ end
 
 Customer.find_each do |c|
 
-    Building.create!(
+  build = Building.create!(
         customer_id: c.id,
-        address_id: c.id + 6,
         Address:  Address.find(c.id + 6).streetNumberAndName,
         AdminName: Faker::FunnyName.name,
         AdminEmail: Faker::Internet.email,
@@ -95,8 +95,9 @@ Customer.find_each do |c|
         TechEmail: Faker::Internet.email,
         TechPhone: Faker::PhoneNumber.cell_phone,
         
-
     )
+
+    Address.find(c.id + 6).update_attribute(:building_id, build.id)
 
 end
 
@@ -131,7 +132,8 @@ Building.find_each do |b|
         batteryInformation: Faker::Quote.most_interesting_man_in_the_world,
         batteryNotes: Faker::ChuckNorris
     )
-    b.update_attribute(:battery_id, a.id)
+ 
+    
 end
 
 ##POPULATE COLUMNS TABLE

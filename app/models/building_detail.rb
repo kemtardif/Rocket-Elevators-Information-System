@@ -1,6 +1,6 @@
 class BuildingDetail < ApplicationRecord
 
-    belongs_to :building, optional: true
+    belongs_to :building
 
     has_settings do |s|
         s.key :information

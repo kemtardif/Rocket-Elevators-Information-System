@@ -15,7 +15,7 @@ RailsAdmin.config do |config|
         field :quotes     
       end   
     end
-    
+
    config.model 'User' do
     create do
       field :name
@@ -23,6 +23,8 @@ RailsAdmin.config do |config|
       # etc....
     end
   end
+
+  
 
   ## == CancanCan ==
   # config.authorize_with :cancancan

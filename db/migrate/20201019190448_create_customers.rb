@@ -11,6 +11,7 @@ class CreateCustomers < ActiveRecord::Migration[5.2]
       t.string :technicalAuthorityFullName
       t.string :technicalAuthorityPhone
       t.string :technicalManagerEmail
+      t.belongs_to :user
     end
   end
 end
