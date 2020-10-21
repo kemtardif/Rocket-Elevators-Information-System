@@ -124,6 +124,7 @@ ActiveRecord::Schema.define(version: 2020_10_21_024501) do
 
   create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "numberOfServedFloors"
+    t.string "columnType"
     t.string "columnStatus"
     t.string "columnInformation"
     t.string "columnNotes"
