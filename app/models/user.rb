@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :quotes, dependent: :destroy
+  belongs_to :customer, optional: true
 end
