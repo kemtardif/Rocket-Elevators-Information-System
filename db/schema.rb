@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_21_024501) do
+ActiveRecord::Schema.define(version: 2020_10_21_164754) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "typeOfAddress"
@@ -149,6 +149,15 @@ ActiveRecord::Schema.define(version: 2020_10_21_024501) do
     t.index ["user_id"], name: "index_customers_on_user_id"
   end
 
+  create_table "dim_customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "customerCreationDate"
+    t.string "companyName"
+    t.string "companyMainContactFullName"
+    t.string "companyMainContactEmail"
+    t.integer "numberOfElevators"
+    t.string "customerCity"
+  end
+
   create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "elevatorSerialNumber"
     t.string "elevatorModel"
@@ -178,6 +187,30 @@ ActiveRecord::Schema.define(version: 2020_10_21_024501) do
     t.string "function"
     t.index ["email"], name: "index_employees_on_email", unique: true
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
+  end
+
+  create_table "fact_contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "contactid"
+    t.string "contactCreationDate"
+    t.string "contactCompanyName"
+    t.string "contactEmail"
+    t.string "projectName"
+  end
+
+  create_table "fact_elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "elevatorSerialNumber"
+    t.string "elevatorComissioningDate"
+    t.integer "buildingId"
+    t.integer "customerId"
+    t.string "buildingCity"
+  end
+
+  create_table "fact_quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "quoteId"
+    t.string "quoteCreationDate"
+    t.string "companyName"
+    t.string "email"
+    t.integer "numberOfElevators"
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

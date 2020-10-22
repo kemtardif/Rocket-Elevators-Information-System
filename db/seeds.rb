@@ -11,23 +11,15 @@ require_relative '../lib/populator_fix.rb'
 
 #Populate Users
 
-User.populate 1500 do |u|
-    u.username = Faker::FunnyName.name
-    u.email = Faker::Internet.email
-    u.encrypted_password = Faker::Internet.password
+1500.times  do 
+
+    User.create!(
+        username: Faker::FunnyName.name,
+        email: Faker::Internet.email,
+        encrypted_password: "123456"
+    )
+
 end
-
-#POPULATE EMPLOYEES
-
-Employee.populate 200 do |e|
-    e.email = Faker::Internet.email
-    e.encrypted_password = 123456
-    e.firstname = Faker::Name.first_name
-    e.lastname = Faker::Name.last_name  
-    e.function = "Employee"
-end
-
-
 
 
     
@@ -63,11 +55,10 @@ end
 
 User.find_each(finish: 300) do |u|
 
-   cust = Customer.create!(
+    u.customer = Customer.create!(
         customersCreationDate: Faker::Time.backward(days: 1200, period: :evening),
         companyName: Faker::Company.industry,
         companyHHAddress: Address.find(u.id).streetNumberAndName,
-        user_id: u.id,
         companyContactFullName: Faker::GreekPhilosophers,
         companyContactPhone: Faker::PhoneNumber.cell_phone,
         companyContactEmail: Faker::Internet.email,
@@ -76,8 +67,8 @@ User.find_each(finish: 300) do |u|
         technicalAuthorityPhone: Faker::PhoneNumber.cell_phone,
         technicalManagerEmail: Faker::Internet.email
         )
-    u.update_attribute(:customer_id, cust.id)
-    Address.find(u.id).update_attribute(:customer_id, cust.id)
+    ##u.update_attribute(:customer_id, cust.id)
+    Address.find(u.id).update_attribute(:customer_id, u.customer.id)
 
 end
 
@@ -86,8 +77,7 @@ end
 Customer.find_each do |c|
 
 
-    build =Building.create!(
-            customer_id: c.id,
+    build = c.buildings.create!(
             Address:  Address.find(c.id + 301).streetNumberAndName,
             AdminName: Faker::FunnyName.name,
             AdminEmail: Faker::Internet.email,
@@ -104,39 +94,52 @@ end
 
 ## POPULATE BUILDING_DETAILS TABLE
 
-Building.find_each do |b|
+Building.find_each do |c|
 
-    BuildingDetail.create!(
-        building_id: b.id
+    c.building_detail = BuildingDetail.create!(
+        ##building_id: b.id
     )
 
 end
 
+##POPULATE EMPLOYESS
+
+200.times do 
+    Employee.create!(
+    email:  Faker::Internet.email,
+    encrypted_password:  "123456",
+    firstname:  Faker::Name.first_name,
+    lastname:  Faker::Name.last_name , 
+    function:  "Employee"
+    )
+end
 
 
 ##POPULATE BATTERIES TABLE
 buildType = ["Commercial", "Residential", "Corporate"]
 
+
 Building.find_each do |b|
 
-    x = Employee.find(rand(1..200)).id
 
+    x = Employee.find(rand(1..200)).id
     rnd = rand(1..3)
     a = buildType[rand(0..2)]
 
     rnd.times {
 
-        Battery.create!(
-            building_id: b.id,
+        b.batteries.create!(
             buildingType: a,
-            batteryStatus: status[rand(0..1)],
             employee_id: x,
+            batteryStatus: status[rand(0..1)],
             commissioningDate:Faker::Time.backward(days: 1000, period: :evening),
             lastInspectionDate:Faker::Time.backward(days: 1000, period: :evening),
             operationCertificate: Faker::Barcode.upc_e_with_composite_symbology,  
             batteryInformation: Faker::Quote.most_interesting_man_in_the_world,
             batteryNotes: Faker::Quote.most_interesting_man_in_the_world
         )
+
+
     }
  
 end
@@ -150,8 +153,7 @@ Battery.find_each do |bat|
 
     rnd.times{
  
-        Column.create!(
-            battery_id: bat.id,
+        bat.columns.create!(
             numberOfServedFloors: s,
             columnType: bat.buildingType,
             columnStatus: status[rand(0..1)],
@@ -174,8 +176,7 @@ Column.find_each do |col|
 
     rnd.times {
 
-        Elevator.create!(
-            column_id: col.id,
+        col.elevators.create!(
             elevatorSerialNumber: Faker::Barcode.ean(8), 
             elevatorModel: mod,
             elevatorType: col.columnType,
