@@ -4,8 +4,6 @@ data_sources:
   main:
     url: <%= ENV["BLAZER_DATABASE_URL"] %>
 
-    before_action_method: require_employee
-
     # statement timeout, in seconds
     # none by default
     # timeout: 15

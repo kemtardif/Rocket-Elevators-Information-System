@@ -3,9 +3,9 @@ class CreateDimcustomers < ActiveRecord::Migration[5.2]
     create_table :dimcustomers do |t|
       t.string :customercreationdate
       t.string :companyname
-      t.string :companymaincontactfullName
+      t.string :companymaincontactfullname
       t.string :companymaincontactemail
-      t.integer :numberOfelevators
+      t.integer :numberofelevators
       t.string :customercity
     end
   end

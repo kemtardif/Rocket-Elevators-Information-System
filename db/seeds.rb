@@ -25,6 +25,7 @@ end
     
 
 #ARRAYS WITH VARIOUS ATTRIBUTES USED tO RANDOMLY POPULATE TABLES 
+
 typeArr = ["Shipping", "Billing", "Home", "Business"]
 status = ["Active", "Inactive"]
 entity = ["Building", "Customer"]
@@ -51,6 +52,7 @@ address["addresses"].map do |add|
 
 end
 
+
 ##POPULATE CUSTOMERS TABLE AS FIRST 500 users
 
 User.find_each(finish: 300) do |u|
@@ -73,6 +75,8 @@ User.find_each(finish: 300) do |u|
 
 end
 
+
+
 ##POPULATE BUILDINGS TABLE
 
 Customer.find_each do |c|
@@ -94,6 +98,27 @@ Customer.find_each do |c|
 
 end
 
+buildType = ["Commercial", "Residential", "Corporate"]
+model = ["Standard", "Premium", "Excelium"]
+
+##POPULATE QUOTES TABLES
+
+User.find_each do |u|
+
+    rdm = rand(1..3)
+
+    rdm.times{
+
+        u.quotes.create!(
+            buildingType: buildType[rand(0..2)],
+            estimatedCagesNeeded: rand(5..20),
+            packageSelection: model[rand(0..2)],
+            totalPrice: rand(15000..75000)
+        )
+
+    }
+
+end
 ## POPULATE BUILDING_DETAILS TABLE
 
 Building.find_each do |c|
@@ -118,7 +143,6 @@ end
 
 
 ##POPULATE BATTERIES TABLE
-buildType = ["Commercial", "Residential", "Corporate"]
 
 
 Building.find_each do |b|
@@ -168,8 +192,6 @@ Battery.find_each do |bat|
 end
 
 ##POPULATE ELEVATORS TABLE
-model = ["Standard", "Premium", "Excelium"]
-
 
 Column.find_each do |col|
 

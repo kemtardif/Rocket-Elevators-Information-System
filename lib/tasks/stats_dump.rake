@@ -8,16 +8,34 @@ namespace :feed_dwh do
 
     conn.exec('TRUNCATE factelevators;')
 
-    Elevator.find_each do |e|
-      query1 = "INSERT INTO factelevators (elevatorserialnumber, elevatorcomissioningdate, buildingid, customerid, buildingcity ) VALUES ('#{e.elevatorSerialNumber}', '#{e.elevatorDateOfComissioning}', '#{e.column.battery.building.id}', '#{e.column.battery.building.customer.id}', '#{e.column.battery.building.buildingCity}')"
-      conn.exec(query1)
+    #Elevator.find_each do |e|
+     # query3 = "INSERT INTO factelevators (elevatorserialnumber, elevatorcomissioningdate, buildingid, customerid, buildingcity ) VALUES ('#{e.elevatorSerialNumber}', '#{e.elevatorDateOfComissioning}', '#{e.column.battery.building.id}', '#{e.column.battery.building.customer.id}', '#{e.column.battery.building.buildingCity}')"
+     # conn.exec(query3)
+    #end
+  
+    #conn.exec('TRUNCATE factquotes;')
+
+    #Quote.find_each do |q|
+
+     #query1 = "INSERT INTO factquotes (quoteid, quotecreationdate, quotecompanyname, quoteemail, quotenbelevator ) VALUES ('#{q.id}', '#{Faker::Time.between(from: 1000.days.ago, to: Time.now)}', 'Company XYZ', '#{q.user.email}', '#{q.estimatedCagesNeeded}')"
+      #conn.exec(query1)
+      
+    #end
+
+    conn.exec('TRUNCATE dimcustomers')
+
+    Customer.find_each do |c|
+
+      total = 0
+
+      c.buildings.each{|b| b.batteries.each{|bat| bat.columns.each{|col| total += col.elevators.count}}}
+
+      query4 = "INSERT INTO dimcustomers (customercreationdate, companyname, companymaincontactfullname, companymaincontactemail, numberofelevators, customercity) VALUES ('#{c.customersCreationDate}', '#{c.companyName}', '#{c.companyContactFullName}', '#{c.companyContactEmail}', '#{total}', 'Somewhere')"
+      conn.exec(query4)
+
     end
-      ##query2 = "INSERT INTO \"FactIntervention\" (employee_id, building_id, column_id, result, status) VALUES (101, #{c.battery.building_id}, #{c.id}, 'Succes', 'Complete')"
-     ## conn.exec(query2)
-    ##end
-   ## Battery.all.take(750).each do |b|
-      ##query3 = "INSERT INTO \"FactIntervention\" (employee_id, building_id, battery_id, result, status) VALUES (101, #{b.building_id}, #{b.id}, 'Succes', 'Complete')"
-    ##  conn.exec(query3)
-   ## end
+
+
   end
 end
+
