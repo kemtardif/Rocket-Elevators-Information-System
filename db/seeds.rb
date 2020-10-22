@@ -56,7 +56,7 @@ end
 User.find_each(finish: 300) do |u|
 
     u.customer = Customer.create!(
-        customersCreationDate: Faker::Time.backward(days: 1200, period: :evening),
+        customersCreationDate: Faker::Time.between(from: 1000.days.ago, to: Time.now) ,
         companyName: Faker::Company.industry,
         companyHHAddress: Address.find(u.id).streetNumberAndName,
         companyContactFullName: Faker::GreekPhilosophers,
@@ -65,7 +65,8 @@ User.find_each(finish: 300) do |u|
         companyDescription: Faker::Company.industry,
         technicalAuthorityFullName: Faker::FunnyName,
         technicalAuthorityPhone: Faker::PhoneNumber.cell_phone,
-        technicalManagerEmail: Faker::Internet.email
+        technicalManagerEmail: Faker::Internet.email,
+        customerCity: Address.find(u.id).cityName
         )
     ##u.update_attribute(:customer_id, cust.id)
     Address.find(u.id).update_attribute(:customer_id, u.customer.id)
@@ -85,6 +86,7 @@ Customer.find_each do |c|
             TechName: Faker::FunnyName.name,
             TechEmail: Faker::Internet.email,
             TechPhone: Faker::PhoneNumber.cell_phone,
+            buildingCity: Address.find(c.id + 301).cityName
      
         )
 
@@ -132,8 +134,8 @@ Building.find_each do |b|
             buildingType: a,
             employee_id: x,
             batteryStatus: status[rand(0..1)],
-            commissioningDate:Faker::Time.backward(days: 1000, period: :evening),
-            lastInspectionDate:Faker::Time.backward(days: 1000, period: :evening),
+            commissioningDate:Faker::Time.between(from: 1000.days.ago, to: Time.now),
+            lastInspectionDate:Faker::Time.between(from: 1000.days.ago, to: Time.now),
             operationCertificate: Faker::Barcode.upc_e_with_composite_symbology,  
             batteryInformation: Faker::Quote.most_interesting_man_in_the_world,
             batteryNotes: Faker::Quote.most_interesting_man_in_the_world
@@ -181,8 +183,8 @@ Column.find_each do |col|
             elevatorModel: mod,
             elevatorType: col.columnType,
             elevatorStatus: status[rand(0..1)],
-            elevatorDateOfComissioning: Faker::Time.backward(days: 1000, period: :evening),
-            elevatorDateOfLastInspection: Faker::Time.backward(days: 1000, period: :evening),
+            elevatorDateOfComissioning: Faker::Time.between(from: 1000.days.ago, to: Time.now),
+            elevatorDateOfLastInspection: Faker::Time.between(from: 1000.days.ago, to: Time.now),
             elevatorCertificateOfInspection: Faker::Barcode.upc_e_with_composite_symbology,
             elevatorInformation: Faker::Quote.most_interesting_man_in_the_world,
             elevatorNotes: Faker::Quote.most_interesting_man_in_the_world
