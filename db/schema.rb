@@ -173,6 +173,21 @@ ActiveRecord::Schema.define(version: 2020_10_21_024501) do
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
   end
 
+  create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "ContactFullName"
+    t.string "CompanyName"
+    t.string "Email"
+    t.string "Phone"
+    t.string "ProjectName"
+    t.string "ProjectDescription"
+    t.string "Department"
+    t.string "Message"
+    t.binary "AttachedFile", limit: 4294967295
+    t.string "ContactRequestDate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "buildingType"
     t.integer "apartmentNumbers"
