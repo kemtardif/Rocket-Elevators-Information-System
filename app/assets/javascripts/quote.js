@@ -106,7 +106,7 @@ function pricecalculator()
         var totalcost = shaftsneeded*7565*1.1;
         var servicecostfixed = servicecost.toFixed(2);
         var totalcostfixed = totalcost.toFixed(2);
-
+        ( !isNaN(standardUnitPrice) )
         $("#elevatortotal").val(elevatorcost);
         $("#servicetotal").val(servicecostfixed);
         $("#totalprice").val(totalcostfixed);
@@ -117,7 +117,7 @@ function pricecalculator()
         var totalcost = shaftsneeded*12345*1.13;
         var servicecostfixed = servicecost.toFixed(2);
         var totalcostfixed = totalcost.toFixed(2);
-
+        ( !isNaN(standardUnitPrice) )
         $("#elevatortotal").val(elevatorcost);
         $("#servicetotal").val(servicecostfixed);
         $("#totalprice").val(totalcostfixed);
@@ -128,7 +128,7 @@ function pricecalculator()
         var totalcost = shaftsneeded*15400*1.16;
         var servicecostfixed = servicecost.toFixed(2);
         var totalcostfixed = totalcost.toFixed(2);
-
+        ( !isNaN(standardUnitPrice) )
         $("#elevatortotal").val(elevatorcost);
         $("#servicetotal").val(servicecostfixed);
         $("#totalprice").val(totalcostfixed);
