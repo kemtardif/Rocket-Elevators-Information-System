@@ -8,7 +8,14 @@ Rails.application.routes.draw do
   get '/home/commercial'
   get 'quotes/new', to: 'quotes#new', as: 'quote'
   get 'welcome/terms', to: 'welcome#terms', as: 'terms'
+
+  get 'leads', to: 'leads#new'
+  post '', to: 'leads#create'
+
   resources :quotes
+
+  resources :leads
+
 
 
 end

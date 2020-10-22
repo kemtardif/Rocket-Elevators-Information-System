@@ -1358,16 +1358,12 @@
           fields!
         </div>
         <!-- /Alert Mandatory -->
-
-        <form
-          action="php/contact.php"
-          method="post"
-          enctype="multipart/form-data"
-        >
+       
+        <%= form_for( :lead , :html => {:class => "form-horizontal", :role => "form"}, url: root_path) do |form| %>
           <fieldset>
             <input type="hidden" name="action" value="contact_send" />
 
-            
+           
             <div class="row">
               <div class="col-md-4">
                 <label for="contact:name">Contact Full Name *</label>
@@ -1376,7 +1372,7 @@
                   type="text"
                   value=""
                   class="form-control"
-                  name="contact[name][required]"
+                  name='ContactName'
                   id="contact:name"/>
               </div>
               <div class="col-md-4">
@@ -1386,7 +1382,7 @@
                   type="text"
                   value=""
                   class="form-control"
-                  name="contact[email][required]"
+                  name='CompanyName'
                   id="contact:email"/>
               </div>
               <div class="col-md-4">
@@ -1395,7 +1391,7 @@
                   type="email"
                   value=""
                   class="form-control"
-                  name="contact[phone]"
+                  name='Email'
                   id="contact:phone"/>
               </div>
             </div>
@@ -1407,7 +1403,7 @@
                   type="text"
                   value=""
                   class="form-control"
-                  name="contact[name][required]"
+                  name='ProjectName'
                   id="contact:name"/>
               </div>
               <div class="col-md-4">
@@ -1417,7 +1413,7 @@
                   type="text"
                   value=""
                   class="form-control"
-                  name="contact[email][required]"
+                  name='Phone'
                   id="contact:email"/>
               </div>
               
@@ -1430,7 +1426,7 @@
                   maxlength="10000"
                   rows="1"
                   class="form-control"
-                  name="contact[message]"
+                  name='Description'
                   id="contact:message"
                 ></textarea>
           
@@ -1439,7 +1435,7 @@
                 <label for="contact_department">Department</label>
                 <select
                   class="form-control pointer"
-                  name="contact[department]"
+                  name='Department'
                 >
                   <option value="">--- Select ---</option>
                   <option value="Residential">Residential</option>
@@ -1456,7 +1452,7 @@
                   maxlength="10000"
                   rows="8"
                   class="form-control"
-                  name="contact[message]"
+                  name='Message'
                   id="contact:message"
                 ></textarea>
               </div>
@@ -1470,7 +1466,7 @@
                   class="custom-file-upload"
                   type="file"
                   id="file"
-                  name="contact[attachment]"
+                  name='Attachment'
                   id="contact:attachment"
                   data-btn-text="Select a File"/>
                 <small class="text-muted block"
@@ -1479,16 +1475,16 @@
               </div>
             </div>
           </fieldset>
-
+          
           <div class="row">
             <div class="col-md-12">
-              <button type="submit" class="btn btn-primary">
-                <i class="fa fa-check"></i> SEND MESSAGE
-              </button>
+            <%= form.submit %>
             </div>
           </div>
-        </form>
+        <% end %>
+        
       </div>
+    
       <!-- /FORM -->
       
 
