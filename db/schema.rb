@@ -22,28 +22,22 @@ ActiveRecord::Schema.define(version: 2020_10_21_024501) do
     t.string "postalCode"
     t.string "countryAddress"
     t.string "addressNotes"
-    t.bigint "customer_id"
-    t.bigint "building_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["building_id"], name: "index_addresses_on_building_id"
-    t.index ["customer_id"], name: "index_addresses_on_customer_id"
   end
 
   create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "buildingId"
     t.string "buildingType"
     t.string "batteryStatus"
+    t.integer "employeeId"
     t.string "commissioningDate"
     t.string "lastInspectionDate"
     t.string "operationCertificate"
     t.string "batteryInformation"
     t.string "batteryNotes"
-    t.bigint "employee_id"
-    t.bigint "building_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["building_id"], name: "index_batteries_on_building_id"
-    t.index ["employee_id"], name: "index_batteries_on_employee_id"
   end
 
   create_table "blazer_audits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -123,14 +117,13 @@ ActiveRecord::Schema.define(version: 2020_10_21_024501) do
   end
 
   create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "batteryId"
     t.integer "numberOfServedFloors"
     t.string "columnStatus"
     t.string "columnInformation"
     t.string "columnNotes"
-    t.bigint "battery_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["battery_id"], name: "index_columns_on_battery_id"
   end
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -144,11 +137,14 @@ ActiveRecord::Schema.define(version: 2020_10_21_024501) do
     t.string "technicalAuthorityFullName"
     t.string "technicalAuthorityPhone"
     t.string "technicalManagerEmail"
+    t.bigint "address_id"
     t.bigint "user_id"
+    t.index ["address_id"], name: "index_customers_on_address_id"
     t.index ["user_id"], name: "index_customers_on_user_id"
   end
 
   create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "columnId"
     t.string "elevatorSerialNumber"
     t.string "elevatorModel"
     t.string "elevatorType"
@@ -158,10 +154,8 @@ ActiveRecord::Schema.define(version: 2020_10_21_024501) do
     t.string "elevatorCertificateOfInspection"
     t.string "elevatorInformation"
     t.string "elevatorNotes"
-    t.bigint "column_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["column_id"], name: "index_elevators_on_column_id"
   end
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -180,7 +174,6 @@ ActiveRecord::Schema.define(version: 2020_10_21_024501) do
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
     t.string "buildingType"
     t.integer "apartmentNumbers"
     t.integer "numberOfFloors"
@@ -197,6 +190,7 @@ ActiveRecord::Schema.define(version: 2020_10_21_024501) do
     t.decimal "totalPrice", precision: 10, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_quotes_on_user_id"
   end
 
@@ -216,14 +210,15 @@ ActiveRecord::Schema.define(version: 2020_10_21_024501) do
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.bigint "customer_id"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
-    t.index ["customer_id"], name: "index_users_on_customer_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "customers", "addresses"
+  add_foreign_key "customers", "users"
+  add_foreign_key "quotes", "users"
 end

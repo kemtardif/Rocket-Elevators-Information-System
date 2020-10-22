@@ -45,7 +45,7 @@ gem "mixitup-rails"
 
 gem 'rack-cors', :require => 'rack/cors'
 
-gem 'activewarehouse'
+
 gem 'ledermann-rails-settings'
 
 gem 'pg'

@@ -97,9 +97,7 @@ function pricecalculator()
     var excelium = $("#excelium").is(":checked");
     var shaftsneeded = parseFloat($("#numberneeded").val());
 
-    if (isNaN(elevatortotal)) elevatortotal = 0;
-    if (isNaN(servicetotal)) servicetotal = 0;
-    if (isNaN(totalprice)) totalprice = 0;
+   
 
    if (stan == true) {
 
@@ -114,7 +112,6 @@ function pricecalculator()
         $("#totalprice").val(totalcostfixed);
 
     } else if (premium == true) {
-
         var elevatorcost = (shaftsneeded*12345).toFixed(2);
         var servicecost = shaftsneeded*12345*0.13;
         var totalcost = shaftsneeded*12345*1.13;
@@ -126,7 +123,6 @@ function pricecalculator()
         $("#totalprice").val(totalcostfixed);
 
     } else if (excelium == true) {
-
         var elevatorcost = (shaftsneeded*15400).toFixed(2);
         var servicecost = shaftsneeded*15400*0.16;
         var totalcost = shaftsneeded*15400*1.16;
