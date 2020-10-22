@@ -11,9 +11,6 @@ document.addEventListener("turbolinks:load", function() {
 
 
 
-  
-  
-
 
   //Function for Residential Quote    
 
@@ -100,6 +97,9 @@ function pricecalculator()
     var excelium = $("#excelium").is(":checked");
     var shaftsneeded = parseFloat($("#numberneeded").val());
 
+    if (isNaN(elevatortotal)) elevatortotal = 0;
+    if (isNaN(servicetotal)) servicetotal = 0;
+    if (isNaN(totalprice)) totalprice = 0;
 
    if (stan == true) {
 
