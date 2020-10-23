@@ -8,7 +8,7 @@ class QuotesController < ApplicationController
            
             @quote = Quote.new
           else 
-            redirect_to new_user_registration_path, notice: 'You must be signed in to send form!'
+            redirect_to new_user_session_path, notice: 'You must be signed in to send form!'
           end
         end  
          
