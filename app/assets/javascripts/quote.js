@@ -8,19 +8,10 @@ document.addEventListener("turbolinks:load", function() {
   })
 })
 
-if (isNaN(elevatorcost)) {
-  elevatorcost = 0;
-}
 
-if(isNaN(servicecostfixed)) {
-  servicecostfixed = 0;
-}
-
-if (isNaN(totalcostfixed)) {
-
-  totalcostfixed = 0;
-}
-
+elevatorcost = elevatorcost ? elevatorcost : 0;
+servicecostfixed = servicecostfixed ? servicecostfixed : 0;
+totalcostfixed = totalcostfixed ? totalcostfixed : 0;
 
 
 
