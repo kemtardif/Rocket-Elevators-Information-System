@@ -1,170 +1,35 @@
 
-  <body class="enable-animation">
-    <!-- SLIDE TOP -->
-    <div id="slidetop">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <h6><i class="icon-heart"></i> Why Rocket Elevators?</h6>
-            <p>
-              Since 1976, we have always kept our goal in sight; to be at the
-              forefront of the elevator industry. By having the highest standard
-              for our services, products and warranties, we have earned the
-              trust of our many estimated clients. Let us find a mobility
-              solution perfectly suited for your building, and most importantly
-              let us offer you peace of mind!
-            </p>
-          </div>
-
-          <div class="col-md-4">
-            <h6><i class="icon-envelope"></i> Contact Us</h6>
-            <ul class="list-unstyled">
-              <li>725 Boulevard Lebourneuf, Quebec, Canada</li>
-              <li>1-581-701-0303</li>
-              <li>
-                <a href="mailto:info@codeboxx.biz">info@codeboxx.biz</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <a class="slidetop-toggle" href="#"><!-- toggle button --></a>
-    </div>
-    <!-- /SLIDE TOP -->
-
-    <!-- wrapper -->
-    <div id="wrapper">
-      <!-- 
-				AVAILABLE HEADER CLASSES
-
-				Default nav height: 96px
-				.header-md 		= 70px nav height
-				.header-sm 		= 60px nav height
-
-				.b-0 		= remove bottom border (only with transparent use)
-				.transparent	= transparent header
-				.translucent	= translucent header
-				.sticky			= sticky header
-				.static			= static header
-				.dark			= dark header
-				.bottom			= header on bottom
-				
-				shadow-before-1 = shadow 1 header top
-				shadow-after-1 	= shadow 1 header bottom
-				shadow-before-2 = shadow 2 header top
-				shadow-after-2 	= shadow 2 header bottom
-				shadow-before-3 = shadow 3 header top
-				shadow-after-3 	= shadow 3 header bottom
-
-				.clearfix		= required for mobile menu, do not remove!
-
-				Example Usage:  class="clearfix sticky header-sm transparent b-0"
-			-->
-      <div id="header" class="navbar-toggleable-md sticky header-md clearfix">
-        <!-- TOP NAV -->
-        <header id="topNav">
-          <div class="container">
-            <!-- Mobile Menu Button -->
-            <button
-              class="btn btn-mobile"
-              data-toggle="collapse"
-              data-target=".nav-main-collapse"
-            >
-              <i class="fa fa-bars"></i>
-            </button>
-
-            <!-- Logo -->
-            <a class="logo float-left" >
-              <img
-                src="/assets/rocketlogonoslogan.png"
-                alt=""
-                style="width: 200px; height: 70px"
-              />
-            </a>
-
-            <!-- 
-							Top Nav 
-							
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
-            <div
-              class="navbar-collapse collapse float-right nav-main-collapse submenu-dark"
-            >
-              <nav class="nav-main">
-                <!-- 
-									.nav-onepage
-									Required for onepage navigation links
-									
-									Add .external for an external link!
-								-->
-                <ul
-                  id="topMain"
-                  class="nav nav-pills nav-justified nav-onepage"
-                >
-                  <li class="active">
-                    <!-- HOME -->
-                    <a <%= link_to 'Home',root_path %> </a>
-                  </li>
-                  <li>
-                    <!-- SERVICES -->
-                    <a <%= link_to 'Services',root_path, :id => "services" %> </a>
-                  </li>
-                  <li>
-                    <!-- WORK -->
-                    <a <%= link_to 'Portfolio',root_path, :id => "work" %> </a>
-                  </li>
-                  <li>
-                    <!-- NEWS -->
-                    <a <%= link_to 'News',root_path, :id => "news" %> </a>
-                  </li>
-                  <li>
-                    <!-- CLIENTS -->
-                    <a <%= link_to 'Clients',root_path, :id => "clients" %> </a>
-                  </li>
-                  <li>
-                    <!-- CONTACT -->
-                    <a <%= link_to 'Contact',root_path, :id => "contact" %> </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </header>
-        <!-- /Top Nav -->
-      </div>
 
       <!-- REVOLUTION SLIDER -->
       <div class="slider fullwidthbanner-container roundedcorners">
         <!--
-    Navigation Styles:
-    
-      data-navigationStyle="" theme default navigation
-      
-      data-navigationStyle="preview1"
-      data-navigationStyle="preview2"
-      data-navigationStyle="preview3"
-      data-navigationStyle="preview4"
-      
-    Bottom Shadows
-      data-shadow="1"
-      data-shadow="2"
-      data-shadow="3"
-      
-    Slider Height (do not use on fullscreen mode)
-      data-height="300"
-      data-height="350"
-      data-height="400"
-      data-height="450"
-      data-height="500"
-      data-height="550"
-      data-height="600"
-      data-height="650"
-      data-height="700"
-      data-height="750"
-      data-height="800"
-  -->
+					Navigation Styles:
+					
+						data-navigationStyle="" theme default navigation
+						
+						data-navigationStyle="preview1"
+						data-navigationStyle="preview2"
+						data-navigationStyle="preview3"
+						data-navigationStyle="preview4"
+						
+					Bottom Shadows
+						data-shadow="1"
+						data-shadow="2"
+						data-shadow="3"
+						
+					Slider Height (do not use on fullscreen mode)
+						data-height="300"
+						data-height="350"
+						data-height="400"
+						data-height="450"
+						data-height="500"
+						data-height="550"
+						data-height="600"
+						data-height="650"
+						data-height="700"
+						data-height="750"
+						data-height="800"
+				-->
         <div
           class="fullwidthbanner"
           data-height="600"
@@ -172,6 +37,11 @@
           data-navigationStyle="preview2"
         >
           <ul class="hide">
+
+
+
+
+
             <!-- Slide 1: Slogan - Lien vers l’offre de services, Lien vers le formulaire de demande de soumission  -->
             <li
               data-transition="parallaxtotop"
@@ -193,6 +63,8 @@
                 <!-- dark overlay [0 to 9 opacity] -->
               </div>
 
+             
+
               <div
                 class="tp-caption font-roboto skewfromleft tp-resizeme"
                 data-x="50"
@@ -207,7 +79,7 @@
                 data-endspeed="500"
                 style="
                   z-index: 2;
-                  color: rgb(210, 222, 233);
+                  color:rgb(210, 222, 233);
                   font-size: 65px;
                   line-height: 85px;
                   font-weight: bold;
@@ -218,53 +90,53 @@
                 Elevate Safety,
               </div>
               <div
-                class="tp-caption font-roboto skewfromleft tp-resizeme"
-                data-x="525"
-                data-y="200"
-                data-speed="500"
-                data-start="2500"
-                data-easing="Cubic.easeOut"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                data-endspeed="500"
-                style="
-                  z-index: 2;
-                  color: rgb(210, 222, 233);
-                  font-size: 65px;
-                  line-height: 85px;
-                  font-weight: bold;
-                  letter-spacing: 0;
-                  text-shadow: none;
-                "
-              >
-                Speed
-              </div>
-              <div
-                class="tp-caption font-roboto skewfromleft tp-resizeme"
-                data-x="730"
-                data-y="200"
-                data-speed="500"
-                data-start="3500"
-                data-easing="Cubic.easeOut"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                data-endspeed="500"
-                style="
-                  z-index: 2;
-                  color: rgb(210, 222, 233);
-                  font-size: 65px;
-                  line-height: 85px;
-                  font-weight: bold;
-                  letter-spacing: 0;
-                  text-shadow: none;
-                "
-              >
-                and Style
-              </div>
+              class="tp-caption font-roboto skewfromleft tp-resizeme"
+              data-x="525"
+              data-y="200"
+              data-speed="500"
+              data-start="2500"
+              data-easing="Cubic.easeOut"
+              data-splitin="none"
+              data-splitout="none"
+              data-elementdelay="0.1"
+              data-endelementdelay="0.1"
+              data-endspeed="500"
+              style="
+                z-index: 2;
+                color:rgb(210, 222, 233);
+                font-size: 65px;
+                line-height: 85px;
+                font-weight: bold;
+                letter-spacing: 0;
+                text-shadow: none;
+              "
+            >
+              Speed
+            </div>
+            <div
+            class="tp-caption font-roboto skewfromleft tp-resizeme"
+            data-x="730"
+            data-y="200"
+            data-speed="500"
+            data-start="3500"
+            data-easing="Cubic.easeOut"
+            data-splitin="none"
+            data-splitout="none"
+            data-elementdelay="0.1"
+            data-endelementdelay="0.1"
+            data-endspeed="500"
+            style="
+              z-index: 2;
+              color:rgb(210, 222, 233);
+              font-size: 65px;
+              line-height: 85px;
+              font-weight: bold;
+              letter-spacing: 0;
+              text-shadow: none;
+            "
+          >
+            and Style
+          </div>
               <div
                 class="tp-caption sfb tp-resizeme"
                 data-x="850"
@@ -277,16 +149,15 @@
                 data-elementdelay="1"
                 data-endelementdelay="0.1"
                 data-endspeed="500"
-                style="
-                  z-index: 4;
-                  max-width: auto;
-                  max-height: auto;
-                  white-space: nowrap;
-                "
-              >
-              <a <%= link_to ' Services offered',root_path,:class => "btn btn-secondary btn-lg" %>
-              >Services Offered &nbsp; <i class="fa fa-angle-right"></i
-              ></a>
+				style="
+				z-index: 4;
+				max-width: auto;
+				max-height: auto;
+				white-space: nowrap;
+				  "
+			  >	      
+          <%= link_to "Services Offered" , home_index_path(anchor: 'services'), class: "btn btn-secondary btn-lg", method: :get %>
+                
               </div>
 
               <div
@@ -308,32 +179,40 @@
                   white-space: nowrap;
                 "
               >
-                <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-secondary btn-lg" %>
-                  >Get a Quote &nbsp; <i class="fa fa-angle-right"></i
-                ></a>
+               
+              <%= link_to "Get a Quote" , quote_path, class: "btn btn-secondary btn-lg", method: :get %>
+                
+                
               </div>
               <div
-                class="tp-caption tp-fade"
-                data-x="center"
-                data-y="center"
-                data-speed="300"
-                data-start="800"
-                data-easing="Power3.easeInOut"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                data-endspeed="300"
-                style="z-index: 1"
-              >
-                <img
-                  src="/assets/rocketlogo.png"
-                  alt=""
-                  style="width: 300px; height: 400px"
-                />
-              </div>
+              class="tp-caption tp-fade"
+              data-x="center"
+              data-y="center"
+              data-speed="300"
+              data-start="800"
+              data-easing="Power3.easeInOut"
+              data-elementdelay="0.1"
+              data-endelementdelay="0.1"
+              data-endspeed="300"
+              style="z-index: 1"
+            >
+              <img
+                src="/assets/rocketlogo.png"
+                alt=""
+                style="width:300px;height:400px;"
+              />
+            </div>
+
             </li>
 
+
+
+
+
+
+
             <!-- Slide 2: Promotion du service pour immeubles résidentiels et lien vers la page de détail du service résidentiel
--->
+  -->
             <li
               data-transition="parallaxtobottom"
               data-slotamount="7"
@@ -396,11 +275,12 @@
                   white-space: nowrap;
                 "
               >
-              <a <%= link_to 'Residential Services',home_residential_path, :class => "btn btn-red btn-lg" %>
-              > <i class="fa fa-angle-right"></i
-              ></a>
+                <%= link_to "Residential Services" , home_residential_path, class: "btn btn-red btn-lg", method: :get %>
               </div>
             </li>
+
+
+
 
             <!-- Slide 3: Promotion du service pour immeubles corporatifs et lien vers la page de détail du service corporatif -->
             <li
@@ -435,7 +315,7 @@
                 data-endspeed="600"
                 style="
                   z-index: 2;
-                  color: rgb(229, 235, 241);
+                  color:rgb(229, 235, 241);
                   font-size: 46px;
                   line-height: 85px;
                   font-weight: bold;
@@ -443,8 +323,8 @@
                   text-shadow: none;
                 "
               >
-                Let us help you lift your company to prosperity!
-              </div>
+              Let us help you lift your company to prosperity!
+            </div>
 
               <div
                 class="tp-caption skewfromleft tp-resizeme un-button-2-lg"
@@ -465,15 +345,21 @@
                   white-space: nowrap;
                 "
               >
-              <a <%= link_to 'Commercial Services',home_commercial_path, :class => "btn btn-blue btn-lg" %>
-              >Commercial Services &nbsp; <i class="fa fa-angle-right"> </a>
+              <%= link_to "Commercial Services" , home_commercial_path, class: "btn btn-blue btn-lg", method: :get %>
               </div>
             </li>
+
           </ul>
         </div>
       </div>
 
+
+
+
+
+
       <!-- /REVOLUTION SLIDER -->
+
       <section class="section-xs dark">
         <div class="container">
          <center>
@@ -514,7 +400,7 @@
                   the minimum price available on the market.
                 </p>
 
-                <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-red btn-lg" %></a>
+                <%= link_to 'Get a Quote ',quote_path, method: :get, :class => "btn btn-red btn-lg" %>
               </center>
               <br /><br />
             </div>
@@ -610,7 +496,7 @@
                   services, this might be the perfect option for you!
                 </p>
                 <br /><br />
-                <a <%= link_to 'Get A quote',quote_path, :class => "btn btn-red btn-lg" %>></a>
+                <%= link_to 'Get a Quote ',quote_path, method: :get, :class => "btn btn-red btn-lg" %>
               </center>
             </div>
           </div>
@@ -640,7 +526,7 @@
                   the Premium Package!
                 </p>
                 <br /><br />
-                <a<%= link_to 'Get A quote',quote_path, :class => "btn btn-red btn-lg" %></a>
+                <%= link_to 'Get a Quote ',quote_path, method: :get, :class => "btn btn-red btn-lg" %>
               </center>
             </div>
 
@@ -716,7 +602,7 @@
         <div class="copyright">
           <div class="container">
             <ul class="float-right m-0 list-inline mobile-block">
-              <li><a <%= link_to 'Terms and services',terms_path %></a></a></li>
+              <li><%= link_to 'Terms and Conditions', terms_path, method: :get %></li>
             </ul>
             &copy; All Rights Reserved, Company LTD
           </div>
@@ -757,5 +643,6 @@
         });
       });
     </script>
-  </body>
-</html>
+
+
+

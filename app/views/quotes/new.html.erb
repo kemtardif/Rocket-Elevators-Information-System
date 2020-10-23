@@ -1,49 +1,4 @@
-<head>
-<meta charset="utf-8" />
-<title>Rocket Elevators</title>
-<meta name="description" content="" />
-<meta name="Author" content="Louis Marmen [Mermaid]" />
 
-<!-- mobile settings -->
-<meta
-  name="viewport"
-  content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0"/>
-
-
-<!-- WEB FONTS : use %7C instead of | (pipe) -->
-<link
-  href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
-  rel="stylesheet"
-  type="text/css"/>
-
-<!-- CORE CSS -->
-<link
-  href="assets/plugins/bootstrap/css/bootstrap.min.css"
-  rel="stylesheet"
-  type="text/css"/>
-
-<!-- REVOLUTION SLIDER -->
-<link
-  href="assets/plugins/slider.revolution/css/extralayers.css"
-  rel="stylesheet"
-  type="text/css"/>
-<link
-  href="assets/plugins/slider.revolution/css/settings.css"
-  rel="stylesheet"
-  type="text/css"/>
-
-<!-- THEME CSS -->
-<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
-<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
-
-<!-- PAGE LEVEL SCRIPTS -->
-<link href="assets/css/header-2.css" rel="stylesheet" type="text/css" />
-<link
-  href="assets/css/color_scheme/blue.css"
-  rel="stylesheet"
-  type="text/css"
-  id="color_scheme"/>
-</head>
 
 <%= form_for @quote do |f| %>
 
@@ -51,8 +6,12 @@
 <br>
 <div class="heading-title heading-dotted text-center">
   <h2>Quote Form</h2>
+  
 </div>
+
 <center>
+<h2>Quote Form</h2>
+ 
       <label for="buildingtype"><strong>Select the Building Type</strong></label>
       <select id="selectator" name="buildingType">
           <option value="">Select an Option</option>
@@ -77,19 +36,19 @@
       <center>
       <label for="building-appartments"><strong>How many appartments are in the building?</strong>
       </label>
-      <input name= 'ResidentialApartmentNumbers' required type="number" id="res1"></center>
+      <input name= 'ResidentialApartmentNumbers' type="number" id="res1"></center>
       </div>
       <div class="col-md-4">
         <center>
       <label for="building-stories"><strong>How many stories are in the building?</strong>
       </label>
-      <input name= 'ResidentialNumberOfFloors' required type="number" id="res2"></center>
+      <input name= 'ResidentialNumberOfFloors' type="number" id="res2"></center>
     </div>
     <div class="col-md-4">
       <center>
       <label for="building-basements"><strong>How many basements in the building?</strong>
       </label>
-      <input name= 'ResidentialNumberOfBasements' required type="number" id="res3"></center>
+      <input name= 'ResidentialNumberOfBasements' type="number" id="res3"></center>
     </div><br><br>
  </div>
 </div>
@@ -108,19 +67,19 @@
     <center>
     <label for="building-units"><strong>How many commercial units are in the building?</strong>
     </label>
-    <input name= 'CommercialNumberOfStores' required type="number" id="com1"></center>
+    <input name= 'CommercialNumberOfStores' type="number" id="com1"></center>
     </div>
     <div class="col-md-4">
       <center>
     <label for="building-stories"><strong>How many stories are in the building?</strong>
     </label>
-    <input name= 'CommercialNumberOfFloors' required type="number" id="com2"></center>
+    <input name= 'CommercialNumberOfFloors' type="number" id="com2"></center>
   </div>
   <div class="col-md-4">
     <center>
     <label for="building-basements"><strong>How many basements in the building?</strong>
     </label>
-    <input name= 'CommercialNumberOfBasements' required type="number" id="com3"></center>
+    <input name= 'CommercialNumberOfBasements' type="number" id="com3"></center>
   </div><br><br>
 </div>
 <div class="row">
@@ -128,13 +87,13 @@
   <center>
 <label for="building-parkings"><strong>How many parking lots are in the building?</strong>
 </label>
-<input name= 'CommercialParkingLevels' required type="number" id="com4"></center>
+<input name= 'CommercialParkingLevels' type="number" id="com4"></center>
 </div>
 <div class="col-md-4">
 <center>
 <label for="building-shafts"><strong>How many elevator shafts is needed the building?</strong>
 </label>
-<input name= 'CommercialNumberCages' required type="number" id="com5"></center>
+<input name= 'CommercialNumberCages' type="number" id="com5"></center>
 </div><br><br>
 
 
@@ -154,19 +113,19 @@
     <center>
     <label for="building-businesses"><strong>How many businesses are in the building?</strong>
     </label>
-    <input name= 'CorporateNumberOfCompanies' required type="number" id="cor1"></center>
+    <input name= 'CorporateNumberOfCompanies' type="number" id="cor1"></center>
     </div>
     <div class="col-md-4">
       <center>
     <label for="building-stories"><strong>How many stories are in the building?</strong>
     </label>
-    <input name= 'CorporateNumberOfFloors' required type="number" id="cor2"></center>
+    <input name= 'CorporateNumberOfFloors' type="number" id="cor2"></center>
   </div>
   <div class="col-md-4">
     <center>
     <label for="building-basements"><strong>How many basements in the building?</strong>
     </label>
-    <input name= 'CorporateNumberOfBasements' required type="number" id="cor3"></center>
+    <input name= 'CorporateNumberOfBasements' type="number" id="cor3"></center>
   </div><br><br>
 </div>
 <div class="row">
@@ -174,13 +133,13 @@
   <center>
 <label for="building-parkings"><strong>How many parking lots are in the building?</strong>
 </label>
-<input name= 'CorporateParkingLevels' required type="number" id="cor4"></center>
+<input name= 'CorporateParkingLevels' type="number" id="cor4"></center>
 </div>
 <div class="col-md-4">
 <center>
 <label for="building-occupants"><strong>What is the maximum number of occupants per stories</strong>
 </label>
-<input name= 'CorporateOccupantsPerFloor' required type="number" id="cor5"></center>
+<input name= 'CorporateOccupantsPerFloor' type="number" id="cor5"></center>
 </div><br><br>
 
 
@@ -200,19 +159,19 @@
     <center>
     <label for="building-units"><strong>How many commercial units are in the building?</strong>
     </label>
-    <input name= 'HybridNumberOfStores' required type="number" id="hyb1"></center>
+    <input name= 'HybridNumberOfStores' type="number" id="hyb1"></center>
     </div>
     <div class="col-md-4">
       <center>
     <label for="building-stories"><strong>How many stories are in the building?</strong>
     </label>
-    <input name= 'HybridNumberOfFloors' required type="number" id="hyb2"></center>
+    <input name= 'HybridNumberOfFloors' type="number" id="hyb2"></center>
   </div>
   <div class="col-md-4">
     <center>
     <label for="building-basements"><strong>How many basements in the building?</strong>
     </label>
-    <input name= 'HybridNumberOfBasements' required type="number" id="hyb3"></center>
+    <input name= 'HybridNumberOfBasements' type="number" id="hyb3"></center>
   </div><br><br>
 </div>
 <div class="row">
@@ -220,13 +179,13 @@
   <center>
 <label for="building-parkings"><strong>How many parking lots are in the building?</strong>
 </label>
-<input name= 'HybridParkingLevels' required type="number" id="hyb4"></center>
+<input name= 'HybridParkingLevels' type="number" id="hyb4"></center>
 </div>
 <div class="col-md-4">
 <center>
 <label for="building-occupants"><strong>What is the maximum number of occupants per stories</strong>
 </label>
-<input name= 'HybridOccupantsPerFloor' required type="number" id="hyb5"></center>
+<input name= 'HybridOccupantsPerFloor' type="number" id="hyb5"></center>
 </div>
 
 
@@ -266,7 +225,7 @@
 </div>
 <br>
 <div class="heading-title heading-dotted text-center">
-  <h2>Pricing</h2>
+  <h2>Pricing</h2>  
 </div>
 <label><strong>Elevators (CAD$) </strong></label>
 <input name= 'elevatorPrice'readonly type="text" id="elevatortotal"><br>
@@ -276,34 +235,18 @@
 <br>
 <label><strong>Total Price (CAD$)</strong></label>
 <input name= 'totalPrice' readonly type="text" id="totalprice">
-</center>   
+ 
 <br><br>
-# <button class="btn btn-green btn-lg" type= 'submit'>SUBMIT QUOTE</button>
-<%= f.submit %>
-
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+<%= f.submit 'Submit Request', class: "btn btn-primary" %>
+</center>
 
 
 <% end %>
 
 
 
-
-
-<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
-        <script src="assets\js\form.js"></script>
-
-<!-- JAVASCRIPT FILES -->
-<script>
-  var plugin_path = "assets/plugins/";
-</script>
-<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
-
-<script src="assets/js/scripts.js"></script>
-
-<!-- REVOLUTION SLIDER -->
-<script src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
-<script src="assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
-<script src="assets/js/view/demo.revolution_slider.js"></script>
-
-<!-- PAGELEVEL SCRIPTS -->
-<script src="assets/js/contact.js"></script>

@@ -4,11 +4,14 @@ Rails.application.routes.draw do
   devise_for :users
   
   root 'home#index'
-  get 'home/residential', to: 'home#residential'
-  get '/home/commercial'
-  get 'quotes/new', to: 'quotes#new', as: 'quote'
-  get 'welcome/terms', to: 'welcome#terms', as: 'terms'
 
+  get 'home/index', to: 'home#index'
+  get 'home/residential', to: 'home#residential'
+  get 'home/commercial', to: 'home#commercial'
+  get 'home/terms', to: 'home#terms', as: 'terms'
+
+  get 'quotes/new', to: 'quotes#new', as: 'quote'
+  
   get 'leads', to: 'leads#new'
   post '', to: 'leads#create'
 
@@ -16,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :leads
 
+  mount Blazer::Engine, at: "blazer"
 
 
 end
