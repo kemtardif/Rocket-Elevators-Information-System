@@ -9,17 +9,17 @@ class LeadsController < ApplicationController
 
         @lead = Lead.new()
 
-        @lead.contactFullName = params['ContactName']
-        @lead.companyName = params['CompanyName']
-        @lead.email = params['Email']
-        @lead.phone = params['Phone']
-        @lead.projectName = params['ProjectName']
-        @lead.projectDescription = params['Description']
-        @lead.department = params['Department']
-        @lead.message = params['Message']
+        @lead.ContactFullName = params['ContactName']
+        @lead.CompanyName = params['CompanyName']
+        @lead.Email = params['Email']
+        @lead.Phone = params['Phone']
+        @lead.ProjectName = params['ProjectName']
+        @lead.ProjectDescription = params['Description']
+        @lead.Department = params['Department']
+        @lead.Message = params['Message']
 
         # @lead.image.attach(params['Attachment'])
-        @lead.attachedFile = params[:Attachment]
+        @lead.AttachedFile = params[:Attachment]
 
         @lead.save!
     end

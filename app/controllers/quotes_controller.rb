@@ -5,7 +5,7 @@ class QuotesController < ApplicationController
         before_action :set_quote, only: [:show, :edit, :update, :destroy]
         def new
           if user_signed_in?
-            @quote.user = current_user
+           
             @quote = Quote.new
           else 
             redirect_to new_user_registration_path, notice: 'You must be signed in to send form!'
@@ -16,7 +16,7 @@ class QuotesController < ApplicationController
       
           buildingType = params['buildingType']
       
-          residentialApartmentNumbers = params['ResidentialApartmentNumbers']
+          residentialApartmentNumbers = params['esidentialApartmentNumbers']
           residentialNumberofFloors = params['ResidentialNumberOfFloors']
           residentialNumberOfBasements = params['ResidentialNumberOfBasements']
       
