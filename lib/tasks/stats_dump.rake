@@ -30,11 +30,16 @@ namespace :feed_dwh do
 
       c.buildings.each{|b| b.batteries.each{|bat| bat.columns.each{|col| total += col.elevators.count}}}
 
-      query4 = "INSERT INTO dimcustomers (customercreationdate, companyname, companymaincontactfullname, companymaincontactemail, numberofelevators, customercity) VALUES ('#{c.customersCreationDate}', '#{c.companyName}', '#{c.companyContactFullName}', '#{c.companyContactEmail}', '#{total}', 'Somewhere')"
+      query4 = "INSERT INTO dimcustomers (customercreationdate, companyname, companymaincontactfullname, companymaincontactemail, numberofelevators, customercity) VALUES ('#{c.customersCreationDate}', 'LLKK CORP ', 'company xyz', '#{c.companyContactEmail}', '#{total}', 'Somewhere')"
       conn.exec(query4)
 
     end
-
+    
+    conn.exec('TRUNCATE factcontacts')
+    Lead.find_each do |x|
+      query2 = "INSERT INTO factcontacts (contactid, contactcreationdate, contactcompanyname, contactemail, projectname ) VALUES ('#{x.id}', '#{x.contactcreationdate}', 'Company XYZ', '#{x.email}', 'ProjectX')"
+      conn.exec(query2)
+    end
 
   end
 end

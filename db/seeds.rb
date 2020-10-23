@@ -61,11 +61,11 @@ User.find_each(finish: 300) do |u|
         customersCreationDate: Faker::Time.between(from: 1000.days.ago, to: Time.now) ,
         companyName: Faker::Company.industry,
         companyHHAddress: Address.find(u.id).streetNumberAndName,
-        companyContactFullName: Faker::GreekPhilosophers,
+        companyContactFullName: Faker::FunnyName.name,
         companyContactPhone: Faker::PhoneNumber.cell_phone,
         companyContactEmail: Faker::Internet.email,
         companyDescription: Faker::Company.industry,
-        technicalAuthorityFullName: Faker::FunnyName,
+        technicalAuthorityFullName: Faker::FunnyName.name,
         technicalAuthorityPhone: Faker::PhoneNumber.cell_phone,
         technicalManagerEmail: Faker::Internet.email,
         customerCity: Address.find(u.id).cityName
@@ -216,3 +216,18 @@ Column.find_each do |col|
 
 end
 
+1500.times  do    
+    Lead.create!(
+        contactFullName: Faker::FunnyName.name,
+        companyName: Faker::Company.industry,
+        email: Faker::Internet.email,
+        phone: Faker::PhoneNumber.cell_phone,
+        projectName: Faker::FunnyName.name,
+        projectDescription: Faker::Quote.most_interesting_man_in_the_world,
+        department: "Customer Service",
+        message: Faker::Quote.most_interesting_man_in_the_world,
+        attachedFile:"file",
+        contactcreationdate: Faker::Time.between(from: 1000.days.ago, to: Time.now)
+    )
+    
+end

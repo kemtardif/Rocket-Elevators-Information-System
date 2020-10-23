@@ -11,9 +11,6 @@ document.addEventListener("turbolinks:load", function() {
 
 
 
-  
-  
-
 
   //Function for Residential Quote    
 
@@ -100,6 +97,7 @@ function pricecalculator()
     var excelium = $("#excelium").is(":checked");
     var shaftsneeded = parseFloat($("#numberneeded").val());
 
+   
 
    if (stan == true) {
 
@@ -108,31 +106,29 @@ function pricecalculator()
         var totalcost = shaftsneeded*7565*1.1;
         var servicecostfixed = servicecost.toFixed(2);
         var totalcostfixed = totalcost.toFixed(2);
-
+        ( !isNaN(standardUnitPrice) )
         $("#elevatortotal").val(elevatorcost);
         $("#servicetotal").val(servicecostfixed);
         $("#totalprice").val(totalcostfixed);
 
     } else if (premium == true) {
-
         var elevatorcost = (shaftsneeded*12345).toFixed(2);
         var servicecost = shaftsneeded*12345*0.13;
         var totalcost = shaftsneeded*12345*1.13;
         var servicecostfixed = servicecost.toFixed(2);
         var totalcostfixed = totalcost.toFixed(2);
-
+        ( !isNaN(standardUnitPrice) )
         $("#elevatortotal").val(elevatorcost);
         $("#servicetotal").val(servicecostfixed);
         $("#totalprice").val(totalcostfixed);
 
     } else if (excelium == true) {
-
         var elevatorcost = (shaftsneeded*15400).toFixed(2);
         var servicecost = shaftsneeded*15400*0.16;
         var totalcost = shaftsneeded*15400*1.16;
         var servicecostfixed = servicecost.toFixed(2);
         var totalcostfixed = totalcost.toFixed(2);
-
+        ( !isNaN(standardUnitPrice) )
         $("#elevatortotal").val(elevatorcost);
         $("#servicetotal").val(servicecostfixed);
         $("#totalprice").val(totalcostfixed);

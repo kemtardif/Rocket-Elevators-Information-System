@@ -45,14 +45,16 @@ gem "mixitup-rails"
 
 gem 'rack-cors', :require => 'rack/cors'
 
+
 gem 'ledermann-rails-settings'
 
 gem 'pg'
 
 gem 'blazer'
 
+gem 'activestorage-database-service', github: 'TitovDigital/activestorage-database-service'
 
-
+gem 'activestorage'
 
 
 
