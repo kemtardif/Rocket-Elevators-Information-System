@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  buildingId: 1
+  buildingType: MyString
+  batteryStatus: MyString
+  employeeId: 1
+  commissioningDate: MyString
+  lastInspectionDate: MyString
+  operationCertificate: MyString
+  batteryInformation: MyString
+  batteryNotes: MyString
+
+two:
+  buildingId: 1
+  buildingType: MyString
+  batteryStatus: MyString
+  employeeId: 1
+  commissioningDate: MyString
+  lastInspectionDate: MyString
+  operationCertificate: MyString
+  batteryInformation: MyString
+  batteryNotes: MyString

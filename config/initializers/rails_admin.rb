@@ -8,6 +8,24 @@ RailsAdmin.config do |config|
    end
    config.current_user_method(&:current_employee)
 
+   config.model 'User' do  
+      list do       
+        field :username             
+        field :email               
+        field :quotes     
+      end   
+    end
+
+   config.model 'User' do
+    create do
+      field :name
+      field :email
+      # etc....
+    end
+  end
+
+  
+
   ## == CancanCan ==
   # config.authorize_with :cancancan
 

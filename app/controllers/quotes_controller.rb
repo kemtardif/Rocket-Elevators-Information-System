@@ -157,18 +157,3 @@ class QuotesController < ApplicationController
   
 end 
 
-    # def save
-    #     @quote.save
-    #     respond_to do |format|
-    #     
-    #     end
-    # end
-    
-    # def delete
-    #     @quote.delete
-    #     respond_to do |format|
-    #   
-    #     end
-    # end
-        
-    

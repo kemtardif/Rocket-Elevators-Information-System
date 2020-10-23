@@ -46,8 +46,15 @@ gem "mixitup-rails"
 gem 'rack-cors', :require => 'rack/cors'
 
 
+gem 'ledermann-rails-settings'
 
+gem 'pg'
 
+gem 'blazer'
+
+gem 'activestorage-database-service', github: 'TitovDigital/activestorage-database-service'
+
+gem 'activestorage'
 
 
 
@@ -64,6 +71,9 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'faker'
+  gem 'populator'
 
   gem 'capistrano', '~> 3.10', require: false
   gem 'capistrano-rails', '~> 1.4', require: false

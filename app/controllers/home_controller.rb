@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
-    def index
-    end
+   
     def residential
     end
     def commercial
@@ -9,4 +8,14 @@ class HomeController < ApplicationController
     end
     def terms
     end
+
+   
+    
+    def index
+     @lead = Lead.new
+    end
+    
+    
+
+
   end

@@ -1,0 +1,4 @@
+LOAD DATABASE
+   FROM mysql://root:kemtardif@localhost/RocketElevatorsInformationSystem_development
+   INTO postgresql://postgres:kemtardif@localhost/myapp_stats_development
+ALTER schema 'RocketElevatorsInformationSystem_development' rename to 'public';

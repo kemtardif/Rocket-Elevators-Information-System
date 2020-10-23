@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/TitovDigital/activestorage-database-service.git
+  revision: f04c537f6a6c2cafe90d37845bce7310d2ed5bf0
+  specs:
+    activestorage-database-service (1.0.0)
+      rails (>= 5.2.1.1)
+
+GIT
   remote: https://github.com/mshibuya/remotipart.git
   revision: a1860d64aef484047bc1ef50e2f19ef2480eacf9
   specs:
@@ -80,6 +87,11 @@ GEM
       execjs
     bcrypt (3.1.16)
     bindex (0.8.1)
+    blazer (2.2.7)
+      activerecord (>= 5)
+      chartkick (>= 3.2)
+      railties (>= 5)
+      safely_block (>= 0.1.1)
     bootsnap (1.4.8)
       msgpack (~> 1.0)
     bootstrap (4.4.1)
@@ -111,6 +123,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
+    chartkick (3.4.2)
     childprocess (3.0.0)
     chromedriver-helper (2.1.1)
       archive-zip (~> 0.10)
@@ -131,8 +144,11 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    errbase (0.2.0)
     erubi (1.9.0)
     execjs (2.7.0)
+    faker (2.14.0)
+      i18n (>= 1.6, < 2)
     ffi (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -166,6 +182,8 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
+    ledermann-rails-settings (2.5.0)
+      activerecord (>= 4.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -194,7 +212,9 @@ GEM
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    pg (1.2.3)
     popper_js (1.16.0)
+    populator (1.0.0)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -251,6 +271,8 @@ GEM
     rvm1-capistrano3 (1.4.0)
       capistrano (~> 3.0)
       sshkit (>= 1.2)
+    safely_block (0.3.0)
+      errbase (>= 0.1.1)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -318,6 +340,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activestorage
+  activestorage-database-service!
+  blazer
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.4.1)
   byebug
@@ -330,12 +355,16 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  faker
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3.3)
   jquery-turbolinks
+  ledermann-rails-settings
   listen (>= 3.0.5, < 3.2)
   mixitup-rails
   mysql2 (>= 0.4.4, < 0.6.0)
+  pg
+  populator
   pry-rails
   puma (~> 3.11)
   rack-cors

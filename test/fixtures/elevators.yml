@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  columnId: 1
+  elevatorSerialNumber: MyString
+  elevatorModel: MyString
+  elevatorType: MyString
+  elevatorStatus: MyString
+  elevatorDateOfComissioning: MyString
+  elevatorDateOfLastInspection: MyString
+  elevatorDateOfLastInspection: MyString
+  elevatorCertificateOfInspection: MyString
+  elevatorInformation: MyString
+  elevatorNotes: MyString
+
+two:
+  columnId: 1
+  elevatorSerialNumber: MyString
+  elevatorModel: MyString
+  elevatorType: MyString
+  elevatorStatus: MyString
+  elevatorDateOfComissioning: MyString
+  elevatorDateOfLastInspection: MyString
+  elevatorDateOfLastInspection: MyString
+  elevatorCertificateOfInspection: MyString
+  elevatorInformation: MyString
+  elevatorNotes: MyString
