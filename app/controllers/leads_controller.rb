@@ -17,7 +17,9 @@ class LeadsController < ApplicationController
         @lead.ProjectDescription = params['Description']
         @lead.Department = params['Department']
         @lead.Message = params['Message']
-        @lead.AttachedFile = params['Attachment']
+
+        # @lead.image.attach(params['Attachment'])
+        @lead.AttachedFile = params[:Attachment]
 
         @lead.save!
     end

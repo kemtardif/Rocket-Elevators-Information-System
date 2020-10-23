@@ -52,8 +52,9 @@ gem 'pg'
 
 gem 'blazer'
 
+gem 'activestorage-database-service', github: 'TitovDigital/activestorage-database-service'
 
-
+gem 'activestorage'
 
 
 

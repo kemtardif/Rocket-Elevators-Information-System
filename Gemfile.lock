@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/TitovDigital/activestorage-database-service.git
+  revision: f04c537f6a6c2cafe90d37845bce7310d2ed5bf0
+  specs:
+    activestorage-database-service (1.0.0)
+      rails (>= 5.2.1.1)
+
+GIT
   remote: https://github.com/mshibuya/remotipart.git
   revision: a1860d64aef484047bc1ef50e2f19ef2480eacf9
   specs:
@@ -333,6 +340,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activestorage
+  activestorage-database-service!
   blazer
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.4.1)
