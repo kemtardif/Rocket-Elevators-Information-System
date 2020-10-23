@@ -9,9 +9,7 @@ document.addEventListener("turbolinks:load", function() {
 })
 
 
-elevatorcost = elevatorcost ? elevatorcost : 0;
-servicecostfixed = servicecostfixed ? servicecostfixed : 0;
-totalcostfixed = totalcostfixed ? totalcostfixed : 0;
+
 
 
 
@@ -110,6 +108,18 @@ function pricecalculator()
         var servicecostfixed = servicecost.toFixed(2);
         var totalcostfixed = totalcost.toFixed(2);
       // ( !isNaN(standardUnitPrice) )
+      if (isNaN(elevatorcost)) {
+        elevatorcost = 0;
+      }
+      
+      if(isNaN(servicecostfixed)) {
+        servicecostfixed = 0;
+      }
+      
+      if (isNaN(totalcostfixed)) {
+      
+        totalcostfixed = 0;
+      }
         $("#elevatortotal").val(elevatorcost);
         $("#servicetotal").val(servicecostfixed);
         $("#totalprice").val(totalcostfixed);
@@ -121,6 +131,18 @@ function pricecalculator()
         var servicecostfixed = servicecost.toFixed(2);
         var totalcostfixed = totalcost.toFixed(2);
        // ( !isNaN(standardUnitPrice) )
+       if (isNaN(elevatorcost)) {
+        elevatorcost = 0;
+      }
+      
+      if(isNaN(servicecostfixed)) {
+        servicecostfixed = 0;
+      }
+      
+      if (isNaN(totalcostfixed)) {
+      
+        totalcostfixed = 0;
+      }
         $("#elevatortotal").val(elevatorcost);
         $("#servicetotal").val(servicecostfixed);
         $("#totalprice").val(totalcostfixed);
@@ -132,6 +154,18 @@ function pricecalculator()
         var servicecostfixed = servicecost.toFixed(2);
         var totalcostfixed = totalcost.toFixed(2);
        // ( !isNaN(standardUnitPrice) )
+       if (isNaN(elevatorcost)) {
+        elevatorcost = 0;
+      }
+      
+      if(isNaN(servicecostfixed)) {
+        servicecostfixed = 0;
+      }
+      
+      if (isNaN(totalcostfixed)) {
+      
+        totalcostfixed = 0;
+      }
         $("#elevatortotal").val(elevatorcost);
         $("#servicetotal").val(servicecostfixed);
         $("#totalprice").val(totalcostfixed);
