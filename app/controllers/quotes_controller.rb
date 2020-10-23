@@ -4,7 +4,12 @@ class QuotesController < ApplicationController
 
         before_action :set_quote, only: [:show, :edit, :update, :destroy]
         def new
-          @quote = Quote.new
+          if user_signed_in?
+            @quote.user = current_user
+            @quote = Quote.new
+          else 
+            redirect_to new_user_registration_path, notice: 'You must be signed in to send form!'
+          end
         end  
          
     def create
@@ -61,13 +66,8 @@ class QuotesController < ApplicationController
             @quote.installationCost = installationCost
             @quote.totalPrice = totalPrice
             
-            if user_signed_in?
-              @quote.user = current_user
               @quote.save
               redirect_to new_quote_path, notice: 'Form succesfully sent!'
-            else 
-              redirect_to new_user_registration_path, notice: 'You must be signed in to send form!'
-            end 
             
 
         
@@ -87,13 +87,8 @@ class QuotesController < ApplicationController
             @quote.installationCost = installationCost
             @quote.totalPrice = totalPrice
          
-            if user_signed_in?
-              @quote.user = current_user
               @quote.save
               redirect_to new_quote_path, notice: 'Form succesfully sent!'
-            else 
-              redirect_to new_user_registration_path, notice: 'You must be signed in to send form!'
-            end 
             
         
           end
@@ -112,13 +107,8 @@ class QuotesController < ApplicationController
             @quote.installationCost = installationCost
             @quote.totalPrice = totalPrice
             
-            if user_signed_in?
-              @quote.user = current_user
               @quote.save
               redirect_to new_quote_path, notice: 'Form succesfully sent!'
-            else 
-              redirect_to new_user_registration_path, notice: 'You must be signed in to send form!'
-            end 
             
           
           end
@@ -138,13 +128,8 @@ class QuotesController < ApplicationController
             @quote.installationCost = installationCost
             @quote.totalPrice = totalPrice
          
-            if user_signed_in?
-              @quote.user = current_user
               @quote.save
               redirect_to new_quote_path, notice: 'Form succesfully sent!'
-            else 
-              redirect_to new_user_registration_path, notice: 'You must be signed in to send form!'
-            end 
             
 
           end
