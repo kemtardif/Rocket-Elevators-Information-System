@@ -12,23 +12,30 @@ namespace :feed_dwh do
       query3 = "INSERT INTO factelevators (elevatorserialnumber, elevatorcomissioningdate, buildingid, customerid, buildingcity ) VALUES ('#{e.elevatorSerialNumber}', '#{e.elevatorDateOfComissioning}', '#{e.column.battery.building.id}', '#{e.column.battery.building.customer.id}', '#{e.column.battery.building.buildingCity}')"
       conn.exec(query3)
     end
+  
+    conn.exec('TRUNCATE factquotes;')
 
-    conn.exec('TRUNCATE factquotes')
     Quote.find_each do |q|
-      query1 = "INSERT INTO factquotes (quoteid, quotecreationdate, quotecompanyname, quoteemail, quoteNbelevator ) VALUES ('#{q.id}', '#{q.quotecreationdate}', 'Company XYZ', '#{q.user.email}', '#{q.quoteNbelevator}')"
+
+     query1 = "INSERT INTO factquotes (quoteid, quotecreationdate, quotecompanyname, quoteemail, quotenbelevator ) VALUES ('#{q.id}', '#{Faker::Time.between(from: 1000.days.ago, to: Time.now)}', 'Company XYZ', '#{q.user.email}', '#{q.estimatedCagesNeeded}')"
       conn.exec(query1)
-    end
-    
-    conn.exec('TRUNCATE dimcustomers')
-    Customer.find_each do |c|
-      query4 = "INSERT INTO dimcustomers (customercreationdate, companyname, companymaincontactfullName, companymaincontactemail, numberOfelevators, customercity) VALUES ('#{c.customersCreationDate}', '#{c.companyName}', '#{c.companyContactFullName}', '#{c.companyContactEmail}', '#{c.buildings.batteries.column.elevator.count}', '#{c.customerCity}')"
-      conn.exec(query4)
+      
     end
 
-    conn.exec('TRUNCATE factcontacts')
-    Contact.find_each do |x|
-      query2 = "INSERT INTO factcontacts (contactid, contactcreationdate, contactcompanyname, contactemail, contactprojectname ) VALUES ('#{x.id}', '#{x.contactcreationdate}', 'Company XYZ', '#{x.contactemail}', '#{x.contactprojectname}')"
-      conn.exec(query2)
+    conn.exec('TRUNCATE dimcustomers')
+
+    Customer.find_each do |c|
+
+      total = 0
+
+      c.buildings.each{|b| b.batteries.each{|bat| bat.columns.each{|col| total += col.elevators.count}}}
+
+      query4 = "INSERT INTO dimcustomers (customercreationdate, companyname, companymaincontactfullname, companymaincontactemail, numberofelevators, customercity) VALUES ('#{c.customersCreationDate}', '#{c.companyName}', '#{c.companyContactFullName}', '#{c.companyContactEmail}', '#{total}', 'Somewhere')"
+      conn.exec(query4)
+
     end
+
+
   end
 end
+

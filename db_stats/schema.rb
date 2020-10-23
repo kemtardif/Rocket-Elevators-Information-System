@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 2020_10_22_103722) do
   create_table "dimcustomers", force: :cascade do |t|
     t.string "customercreationdate"
     t.string "companyname"
-    t.string "companymaincontactfullName"
+    t.string "companymaincontactfullname"
     t.string "companymaincontactemail"
-    t.integer "numberOfelevators"
+    t.integer "numberofelevators"
     t.string "customercity"
   end
 
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_103722) do
     t.string "quotecreationdate"
     t.string "quotecompanyname"
     t.string "quoteemail"
-    t.string "quoteNbelevator"
+    t.string "quotenbelevator"
   end
 
 end
