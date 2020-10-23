@@ -1,4 +1,4 @@
-conn = PG::Connection.new( :host => "localhost", :port => 5432, :dbname => 'myapp_stats_development', :user => 'mrcbilou', :password => 'louisfelix95' )
+conn = PG::Connection.new( :host => "codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com", :port => 5432, :dbname => 'myapp_stats_development', :user => 'codeboxx', :password => 'Codeboxx1!' )
 
 namespace :feed_dwh do
 
