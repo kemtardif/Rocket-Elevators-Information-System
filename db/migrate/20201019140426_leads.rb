@@ -9,7 +9,7 @@ class Leads < ActiveRecord::Migration[5.2]
       t.string :ProjectDescription
       t.string :Department
       t.string :Message
-      t.longblob :AttachedFile
+      t.binary :AttachedFile
       t.timestamps
     end
   end
