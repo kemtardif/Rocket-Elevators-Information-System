@@ -1,15 +1,16 @@
 class Leads < ActiveRecord::Migration[5.2]
   def change
     create_table :leads  do |t|
-      t.string :ContactFullName
-      t.string :CompanyName
-      t.string :Email
-      t.string :Phone
-      t.string :ProjectName
-      t.string :ProjectDescription
-      t.string :Department
-      t.string :Message
-      t.binary :AttachedFile
+      t.string :contactFullName
+      t.string :companyName
+      t.string :email
+      t.string :phone
+      t.string :projectName
+      t.string :projectDescription
+      t.string :department
+      t.string :message
+      t.binary :attachedFile
+      t.string :contactcreationdate
       t.timestamps
     end
   end

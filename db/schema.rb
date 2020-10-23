@@ -145,6 +145,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_230959) do
     t.string "TechName"
     t.string "TechEmail"
     t.string "TechPhone"
+    t.string "buildingCity"
     t.bigint "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -153,6 +154,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_230959) do
 
   create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "numberOfServedFloors"
+    t.string "columnType"
     t.string "columnStatus"
     t.string "columnInformation"
     t.string "columnNotes"
@@ -173,6 +175,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_230959) do
     t.string "technicalAuthorityFullName"
     t.string "technicalAuthorityPhone"
     t.string "technicalManagerEmail"
+    t.string "customerCity"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_customers_on_user_id"
   end
@@ -209,15 +212,16 @@ ActiveRecord::Schema.define(version: 2020_10_22_230959) do
   end
 
   create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "ContactFullName"
-    t.string "CompanyName"
-    t.string "Email"
-    t.string "Phone"
-    t.string "ProjectName"
-    t.string "ProjectDescription"
-    t.string "Department"
-    t.string "Message"
-    t.binary "AttachedFile"
+    t.string "contactFullName"
+    t.string "companyName"
+    t.string "email"
+    t.string "phone"
+    t.string "projectName"
+    t.string "projectDescription"
+    t.string "department"
+    t.string "message"
+    t.binary "attachedFile"
+    t.string "contactcreationdate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
