@@ -23,6 +23,10 @@ document.addEventListener("turbolinks:load", function() {
       var total= Math.ceil (resapp/(resstories*6));
       var total2= Math.ceil (resstories/20);
       var total3= total*total2;
+
+      if(isNaN(total3)) {
+        total3 = 0;
+      }
   
       if (true)  {  
   
@@ -42,6 +46,10 @@ function commercialcalculator()
       var combasements = $("#com3").val();
       var comparkings = $("#com4").val();
       var comshaftstotal = $("#com5").val();
+
+      if(isNaN(comshaftstotal)) {
+        comshaftstotal = 0;
+      }
   
       if (true)  {  
   
@@ -62,6 +70,10 @@ function corporatecalculator()
       var corpoccupantstotal = Math.ceil ((corpstories + corpbasements) * corpoccupants);
       var corpshaftstotal = Math.ceil (corpoccupantstotal/1000);
 
+      if(isNaN(comshaftstotal)) {
+        comshaftstotal = 0;
+      }
+
       if (true)  {  
   
           $("#numberneeded").val(corpshaftstotal);
@@ -80,6 +92,10 @@ function hybridcalculator()
       var hyboccupants = $("#hyb5").val();
       var hyboccupantstotal = Math.ceil ((hybstories + hybbasements) * hyboccupants)
       var hybshaftstotal = Math.ceil (hyboccupantstotal/1000)
+
+      if(isNaN(hybshaftstotal)) {
+        hybshaftstotal = 0;
+      }
   
       if (true)  {  
   
