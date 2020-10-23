@@ -212,15 +212,15 @@ ActiveRecord::Schema.define(version: 2020_10_22_230959) do
   end
 
   create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "contactFullName"
-    t.string "companyName"
-    t.string "email"
-    t.string "phone"
-    t.string "projectName"
-    t.string "projectDescription"
-    t.string "department"
-    t.string "message"
-    t.binary "attachedFile"
+    t.string "ContactFullName"
+    t.string "CompanyName"
+    t.string "Email"
+    t.string "Phone"
+    t.string "ProjectName"
+    t.string "ProjectDescription"
+    t.string "Department"
+    t.string "Message"
+    t.binary "AttachedFile"
     t.string "contactcreationdate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
