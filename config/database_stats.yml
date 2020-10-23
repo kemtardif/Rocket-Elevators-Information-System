@@ -5,8 +5,8 @@ development:
   host: localhost
   pool: 10
   database: myapp_stats_development
-  username: postgres
-  password: kemtardif
+  username: mrcbilou
+  password: louisfelix95
  
 test:
   adapter: postgresql
@@ -14,13 +14,13 @@ test:
   host: localhost
   pool: 10
   database: myapp_stats_test
-  username: postgres
-  password: kemtardif
+  username: mrcbilou
+  password: louisfelix95
  
 production:
   adapter: postgresql
   encoding: utf8
   pool: 10
   database: myapp_stats_production
-  username: postgres
-  password: kemtardif
+  username: mrcbilou
+  password: louisfelix95

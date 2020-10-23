@@ -41,11 +41,11 @@ ActiveRecord::Schema.define(version: 2020_10_22_103722) do
   end
 
   create_table "factquotes", force: :cascade do |t|
-    t.string "contactid"
-    t.string "contactcreationdate"
-    t.string "contactcompanyname"
-    t.string "contactemail"
-    t.string "projectname"
+    t.string "quoteid"
+    t.string "quotecreationdate"
+    t.string "quotecompanyname"
+    t.string "quoteemail"
+    t.string "quoteNbelevator"
   end
 
 end
