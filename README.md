@@ -24,3 +24,7 @@ you can acces the query section at kemverynice.com/blazer.
 
 *****NOTE*****
 the data present in the database as been randomly seeded
+
+*****Update****
+IT was noted in the video that attached files didn't work. However, after checking with a local version, 
+they are indeed saved, except they do not appear in the admin section, but can be seen on DBeaver. Thank you.
